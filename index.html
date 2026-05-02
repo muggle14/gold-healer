@@ -33,18 +33,18 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
 .page.active{display:block}
 
 /* HERO */
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background-image:url('sun-hero.png');background-size:cover;background-position:center;background-repeat:no-repeat}
-.hero-sky{position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,246,241,0.06) 0%,rgba(250,246,241,0.18) 55%,rgba(250,246,241,0.36) 100%)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background-image:linear-gradient(rgba(250,246,241,0.34),rgba(250,246,241,0.46)),url('sun-hero.png');background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-sky{display:none}
 .hero-stars{display:none}
 .hero-moon{display:none}
 .hero-sparkle-tr{display:none}
-.hero-content{position:relative;z-index:2;max-width:600px;padding:5rem 2rem 3rem}
-.hero h1{font-family:'Cinzel Decorative',serif;font-size:3rem;font-weight:400;color:#2E1E45;line-height:1.2;margin-bottom:0.6rem;text-shadow:0 2px 24px rgba(255,255,255,0.95)}
+.hero-content{position:relative;z-index:2;max-width:720px;padding:4.5rem 2.5rem 3rem;background:rgba(250,246,241,0.22);border:1px solid rgba(196,162,101,0.18);backdrop-filter:blur(2px)}
+.hero h1{font-family:'Cinzel Decorative',serif;font-size:clamp(2.4rem,5vw,3.4rem);font-weight:400;color:#2E1E45;line-height:1.16;margin-bottom:0.6rem;text-shadow:0 1px 6px rgba(255,255,255,0.65)}
 .hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:#8A631D;margin-bottom:0.5rem;font-weight:400;text-shadow:0 1px 12px rgba(255,255,255,0.9)}
 .hero-star{color:#C4A265;font-size:0.8rem;margin:0.8rem 0;opacity:0.7}
-.hero-desc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2E1E45;line-height:1.7;margin-bottom:2rem;text-shadow:0 1px 12px rgba(255,255,255,0.95)}
+.hero-desc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2E1E45;line-height:1.7;margin-bottom:2rem;text-shadow:0 1px 6px rgba(255,255,255,0.7)}
 .hero-buttons{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap}
-.h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(255,255,255,0.52);backdrop-filter:blur(4px);cursor:pointer}
+.h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(255,255,255,0.78);backdrop-filter:blur(6px);cursor:pointer}
 .h-btn:hover{background:#4A3066;color:#FAF6F1}
 
 /* SECTIONS */
@@ -60,11 +60,31 @@ section{padding:4.5rem 2.5rem}
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  background:
-    linear-gradient(180deg,rgba(46,30,69,0.12),rgba(46,30,69,0.10)),
-    url('moon-bg.png');
+  position:relative;
+  overflow:hidden;
+  background:#2E1E45;
+}
+.page-header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url('moon-bg.png');
   background-size:cover;
-  background-position:left 22% center;
+  background-position:right center;
+  background-repeat:no-repeat;
+  opacity:.96;
+}
+.page-header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+  pointer-events:none;
+}
+.page-header h1,
+.page-header .star{
+  position:relative;
+  z-index:1;
 }
 .page-header h1{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:400;color:#FFFFFF;margin-bottom:0.3rem;text-shadow:0 2px 18px rgba(30,15,58,0.72)}
 .page-header .star{color:#D9B56D;font-size:0.9rem;margin-top:0.65rem;text-shadow:0 1px 10px rgba(30,15,58,0.45)}
@@ -360,6 +380,62 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   .page-header{
     min-height:340px;
     background-position:left 8% center;
+  }
+}
+
+
+/* FINAL MOON BANNER FIT OVERRIDE */
+@media(max-width:900px){
+  .page-header{
+    min-height:300px;
+    padding:6.2rem 1.5rem 2.8rem;
+    background:#2E1E45;
+  }
+  .page-header::before{
+    background-size:auto 100%;
+    background-position:left center;
+  }
+}
+@media(max-width:600px){
+  .page-header{
+    min-height:285px;
+  }
+  .page-header::before{
+    background-size:auto 100%;
+    background-position:left center;
+  }
+}
+
+
+/* FINAL FIXED HERO + MOON BANNER OVERRIDES */
+@media(max-width:900px){
+  .hero-content{
+    max-width:88vw;
+    padding:3.5rem 1.6rem 2.4rem;
+  }
+  .page-header{
+    min-height:300px;
+    padding:6.2rem 1.5rem 2.8rem;
+    background:#2E1E45;
+  }
+  .page-header::before{
+    background-size:cover !important;
+    background-position:right center !important;
+  }
+}
+@media(max-width:600px){
+  .hero h1{font-size:1.7rem}
+  .hero-content{
+    max-width:90vw;
+    padding:3rem 1.25rem 2.2rem;
+    background:rgba(250,246,241,0.26);
+  }
+  .page-header{
+    min-height:285px;
+  }
+  .page-header::before{
+    background-size:cover !important;
+    background-position:center center !important;
   }
 }
 
