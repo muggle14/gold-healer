@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:400;background:#FAF6F1}
 
@@ -34,18 +33,18 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
 .page.active{display:block}
 
 /* HERO */
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background-image:url('hero-bg.png');background-size:cover;background-position:center;background-repeat:no-repeat}
-.hero-sky{position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,246,241,0.10) 0%,rgba(250,246,241,0.22) 55%,rgba(250,246,241,0.52) 100%)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background-image:url('sun-hero.png');background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-sky{position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,246,241,0.06) 0%,rgba(250,246,241,0.18) 55%,rgba(250,246,241,0.36) 100%)}
 .hero-stars{display:none}
 .hero-moon{display:none}
 .hero-sparkle-tr{display:none}
 .hero-content{position:relative;z-index:2;max-width:600px;padding:5rem 2rem 3rem}
-.hero h1{font-family:'Cinzel Decorative',serif;font-size:3rem;font-weight:400;color:#2E1E45;line-height:1.2;margin-bottom:0.6rem;text-shadow:0 2px 22px rgba(255,255,255,0.95)}
-.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:#7C5A2A;margin-bottom:0.5rem;font-weight:400;text-shadow:0 1px 10px rgba(255,255,255,0.9)}
+.hero h1{font-family:'Cinzel Decorative',serif;font-size:3rem;font-weight:400;color:#2E1E45;line-height:1.2;margin-bottom:0.6rem;text-shadow:0 2px 24px rgba(255,255,255,0.95)}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:#8A631D;margin-bottom:0.5rem;font-weight:400;text-shadow:0 1px 12px rgba(255,255,255,0.9)}
 .hero-star{color:#C4A265;font-size:0.8rem;margin:0.8rem 0;opacity:0.7}
-.hero-desc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2E1E45;line-height:1.7;margin-bottom:2rem;text-shadow:0 1px 10px rgba(255,255,255,0.95)}
+.hero-desc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2E1E45;line-height:1.7;margin-bottom:2rem;text-shadow:0 1px 12px rgba(255,255,255,0.95)}
 .hero-buttons{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap}
-.h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(250,246,241,0.52);backdrop-filter:blur(4px);cursor:pointer}
+.h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(255,255,255,0.52);backdrop-filter:blur(4px);cursor:pointer}
 .h-btn:hover{background:#4A3066;color:#FAF6F1}
 
 /* SECTIONS */
@@ -53,8 +52,8 @@ section{padding:4.5rem 2.5rem}
 .section-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#C4A265;margin-bottom:0.3rem;font-weight:500;text-align:center}
 .section-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:400;color:#4A3066;margin-bottom:0.6rem;text-align:center}
 .div-line{width:35px;height:1px;background:#C4A265;margin:0.6rem auto 1.5rem}
-.page-header{padding:7rem 2rem 3rem;text-align:center;background:linear-gradient(180deg,#E8E0F0 0%,#F0EAF4 60%,#FAF6F1 100%)}
-.page-header h1{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:400;color:#4A3066;margin-bottom:0.3rem}
+.page-header{padding:7rem 2rem 3rem;text-align:center;background:linear-gradient(180deg,rgba(46,30,69,0.40),rgba(240,234,244,0.75),#FAF6F1),url('moon-bg.png');background-size:cover;background-position:center 38%}
+.page-header h1{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:400;color:#FAF6F1;margin-bottom:0.3rem;text-shadow:0 2px 16px rgba(30,15,58,0.42)}
 .page-header .star{color:#C4A265;font-size:0.8rem;margin-top:0.5rem}
 
 /* WELCOME */
@@ -128,8 +127,8 @@ section{padding:4.5rem 2.5rem}
 .t-card .qm{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:#D8C8E8;line-height:1;margin-bottom:0.3rem}
 .t-card p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;line-height:1.75;color:#2E1E45;margin-bottom:0.7rem}
 .t-card .who{font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:#5D4A78;font-weight:500}
-.cta-band{padding:2.5rem 2rem;background:linear-gradient(180deg,#E8E0F0 0%,#D8CEE8 50%,#E8E0F0 100%);text-align:center}
-.cta-band p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#4A3066;margin-bottom:1.2rem;font-style:italic}
+.cta-band{padding:2.5rem 2rem;background:linear-gradient(90deg,rgba(46,30,69,0.78),rgba(74,48,102,0.62)),url('moon-bg.png');background-size:cover;background-position:center 55%;text-align:center}
+.cta-band p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#FAF6F1;margin-bottom:1.2rem;font-style:italic;text-shadow:0 1px 12px rgba(30,15,58,0.45)}
 
 /* FAQ */
 .faq{padding:3rem 2rem;background:#FAF6F1}
@@ -144,7 +143,7 @@ section{padding:4.5rem 2.5rem}
 .faq-a p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;line-height:1.8;color:#2E1E45}
 
 /* SHOP */
-.shop-coming{padding:4rem 2rem;background:#FAF6F1;text-align:center}
+.shop-coming{padding:4rem 2rem;background:linear-gradient(180deg,rgba(250,246,241,0.72),rgba(250,246,241,0.92)),url('moon-bg.png');background-size:cover;background-position:center;text-align:center}
 .coming-box{max-width:350px;margin:2rem auto;border:2px solid #C4A265;padding:2.5rem 2rem}
 .coming-box h3{font-family:'Cinzel',serif;font-size:1.3rem;color:#4A3066;font-weight:400;letter-spacing:0.08em}
 .shop-note{font-family:'Cormorant Garamond',serif;font-size:1.0rem;color:#2E1E45;margin-top:1.5rem;line-height:1.7}
