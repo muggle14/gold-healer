@@ -52,9 +52,22 @@ section{padding:4.5rem 2.5rem}
 .section-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#C4A265;margin-bottom:0.3rem;font-weight:500;text-align:center}
 .section-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:400;color:#4A3066;margin-bottom:0.6rem;text-align:center}
 .div-line{width:35px;height:1px;background:#C4A265;margin:0.6rem auto 1.5rem}
-.page-header{padding:7rem 2rem 3rem;text-align:center;background:linear-gradient(180deg,rgba(46,30,69,0.40),rgba(240,234,244,0.75),#FAF6F1),url('moon-bg.png');background-size:cover;background-position:center 38%}
-.page-header h1{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:400;color:#FAF6F1;margin-bottom:0.3rem;text-shadow:0 2px 16px rgba(30,15,58,0.42)}
-.page-header .star{color:#C4A265;font-size:0.8rem;margin-top:0.5rem}
+.page-header{
+  min-height:280px;
+  padding:7.5rem 2rem 4rem;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(180deg,rgba(46,30,69,0.36) 0%,rgba(74,48,102,0.18) 55%,rgba(250,246,241,0.12) 100%),
+    url('moon-bg.png');
+  background-size:cover;
+  background-position:center 32%;
+}
+.page-header h1{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:400;color:#FFFFFF;margin-bottom:0.3rem;text-shadow:0 2px 18px rgba(30,15,58,0.65)}
+.page-header .star{color:#D9B56D;font-size:0.9rem;margin-top:0.65rem;text-shadow:0 1px 10px rgba(30,15,58,0.45)}
 
 /* WELCOME */
 .welcome{padding:4rem 2.5rem;background:#FAF6F1}
@@ -272,6 +285,11 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   .about-text{padding:2rem 1.5rem}
   section,.book-section,.contact-section,.offerings-detail{padding:3rem 1.5rem}
 }
+
+@media(max-width:600px){
+  .page-header{min-height:220px;padding:6.5rem 1.5rem 3rem;background-position:center 35%}
+}
+
 </style>
 </head>
 <body>
