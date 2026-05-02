@@ -34,23 +34,23 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
 
 /* HERO - background image does all the talking */
 .hero{
-  min-height:145vh;
+  min-height:100vh;
   position:relative;
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   justify-content:center;
   text-align:center;
   overflow:hidden;
   background-image:url('sun-hero.png');
   background-size:cover;
-  background-position:center top;
+  background-position:center;
   background-repeat:no-repeat;
 }
 .hero-content{
   position:relative;
   z-index:2;
   max-width:600px;
-  padding:0 2rem 3rem;
+  padding:0 2rem 2rem;
 }
 .hero-buttons{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap}
 .h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(255,255,255,0.52);backdrop-filter:blur(4px);cursor:pointer}
@@ -297,13 +297,6 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 <!-- ==================== PAGE: HOME ==================== -->
 <div class="page active" id="home">
   <section class="hero">
-    <!-- No text here. The background image (sun-hero.png) has the branding. Just buttons at the bottom. -->
-    <div class="hero-content">
-      <div class="hero-buttons">
-        <a class="h-btn" onclick="showPage('offerings-page')">Explore Offerings →</a>
-        <a class="h-btn" onclick="showPage('book')">Book a Session →</a>
-      </div>
-    </div>
   </section>
 
   <section class="welcome">
