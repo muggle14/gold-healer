@@ -34,18 +34,14 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
 
 /* HERO - background image does all the talking */
 .hero{
-  min-height:120vh;
   position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
   overflow:hidden;
-  background-image:url('sun-hero.png');
-  background-size:contain;
-  background-position:center top;
-  background-repeat:no-repeat;
-  background-color:#FAF0E8;
+  padding-top:60px;
+}
+.hero img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 .hero-content{
   position:relative;
@@ -298,6 +294,7 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 <!-- ==================== PAGE: HOME ==================== -->
 <div class="page active" id="home">
   <section class="hero">
+    <img src="sun-hero.png" alt="Transmutative Journey of Soul - Celestial Guidance, Sovereign Truth">
   </section>
 
   <section class="welcome">
