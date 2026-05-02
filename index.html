@@ -94,6 +94,67 @@ section{padding:4.5rem 2.5rem}
 .philosophy-body h2{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:400;color:#4A3066;margin-bottom:0.8rem;font-style:italic}
 .philosophy-body p{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.9;color:#2E1E45;margin-bottom:0.8rem}
 
+
+/* AKASHIC / ASTRAL TRAVEL VISUAL */
+.akashic-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  padding:1.15rem 1rem 1rem;
+  margin-top:1rem;
+  min-height:150px;
+  background:
+    radial-gradient(circle at 18% 52%,rgba(255,218,108,.95) 0 8%,rgba(255,188,58,.55) 9% 13%,transparent 14%),
+    radial-gradient(circle at 50% 38%,rgba(184,145,255,.45) 0 6%,transparent 7%),
+    radial-gradient(circle at 72% 64%,rgba(255,255,255,.65) 0 4%,transparent 5%),
+    linear-gradient(135deg,rgba(74,48,102,.92),rgba(139,99,159,.65)),
+    url('moon-bg.png');
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 12px 34px rgba(74,48,102,.16);
+  border:1px solid rgba(196,162,101,.35);
+}
+.akashic-card::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(216,187,116,.55);
+  border-radius:50%;
+  transform:rotate(-12deg) scaleX(1.55);
+}
+.akashic-card::after{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  left:62%;
+  top:34%;
+  background:#F5E7FF;
+  box-shadow:
+    -58px 28px 0 3px rgba(216,187,116,.95),
+    62px 36px 0 2px rgba(255,255,255,.85),
+    18px -24px 0 1px rgba(196,162,101,.8);
+}
+.akashic-card span{
+  position:relative;
+  z-index:1;
+  display:block;
+  color:#FAF6F1;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.98rem;
+  line-height:1.55;
+  text-shadow:0 1px 12px rgba(30,15,58,.6);
+}
+.akashic-note{
+  color:#FAF6F1;
+  opacity:.88;
+  font-size:.62rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:.35rem;
+}
+
 /* OFFERINGS DETAIL PAGE */
 .offerings-detail{padding:3rem 2.5rem;background:#FAF6F1}
 .off-detail-list{max-width:800px;margin:0 auto}
@@ -103,7 +164,7 @@ section{padding:4.5rem 2.5rem}
 .off-detail-icon::before{content:'';position:absolute;inset:3px;border:1px solid rgba(196,162,101,0.2);border-radius:50%}
 .off-detail-body h3{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;margin-bottom:0.4rem}
 .off-detail-body p{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.8;color:#2E1E45;margin-bottom:0.8rem}
-.off-detail-body .book-link{font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;text-decoration:none;font-weight:500;border:1px solid #4A3066;padding:0.4rem 1rem;display:inline-flex;align-items:center;gap:0.3rem;transition:all 0.3s;cursor:pointer}
+.off-detail-body .book-link{margin-top:1rem;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;text-decoration:none;font-weight:500;border:1px solid #4A3066;padding:0.4rem 1rem;display:inline-flex;align-items:center;gap:0.3rem;transition:all 0.3s;cursor:pointer}
 .off-detail-body .book-link:hover{background:#4A3066;color:#FAF6F1}
 
 /* BOOK A SESSION */
@@ -271,7 +332,7 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
     <div class="offerings-orn"><div class="ln"></div><span class="st">✦</span><div class="ln"></div></div>
     <h2>OUR OFFERINGS</h2>
     <div class="off-grid">
-      <div class="off-item"><div class="off-icon">☉</div><h4>I. The<br>Channeled Oracle</h4><p>Akashic Records, Automatic Writing, and Tarot.</p><a class="lm" onclick="showPage('offerings-page')">Learn More →</a></div>
+      <div class="off-item"><div class="off-icon">☉</div><h4>I. The<br>Channeled Oracle</h4><p>Akashic Records, astral travel, Automatic Writing, and Tarot.</p><a class="lm" onclick="showPage('offerings-page')">Learn More →</a></div>
       <div class="off-item"><div class="off-icon">☾</div><h4>II. The<br>Cosmic Blueprint</h4><p>Astrology and Numerology for your soul's map.</p><a class="lm" onclick="showPage('offerings-page')">Learn More →</a></div>
       <div class="off-item"><div class="off-icon">✧</div><h4>III. The<br>Luminous Restoration</h4><p>Energy healing for transformation and alignment.</p><a class="lm" onclick="showPage('offerings-page')">Learn More →</a></div>
       <div class="off-item"><div class="off-icon">♢</div><h4>IV. The<br>Elemental Forge</h4><p>Fire and intention to manifest and transmute.</p><a class="lm" onclick="showPage('offerings-page')">Learn More →</a></div>
@@ -310,7 +371,7 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   <div class="page-header"><h1>Our Offerings</h1><div class="star">✦</div></div>
   <section class="offerings-detail">
     <div class="off-detail-list">
-      <div class="off-detail-item"><div class="off-detail-icon">☉</div><div class="off-detail-body"><h3>I. The Channeled Oracle</h3><p>Receive divine guidance through Akashic Records, Automatic Writing, and Tarot.</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
+      <div class="off-detail-item"><div class="off-detail-icon">☉</div><div class="off-detail-body"><h3>I. The Channeled Oracle</h3><p>Receive divine guidance through Akashic Records, Automatic Writing, and Tarot — with a cosmic visual language inspired by astral travel, soul timelines, and the solar system.</p><div class="akashic-card"><div class="akashic-note">Akashic Records • Astral Travel</div><span>Journey through the soul’s energetic library, where patterns, memories, and possibilities appear like constellations across time.</span></div><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
       <div class="off-detail-item"><div class="off-detail-icon">♄</div><div class="off-detail-body"><h3>II. The Cosmic Blueprint</h3><p>Decode your soul's map with Astrology and Numerology.</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
       <div class="off-detail-item"><div class="off-detail-icon">✧</div><div class="off-detail-body"><h3>III. The Luminous Restoration</h3><p>Energy healing modalities for deep transformation and alignment.</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
       <div class="off-detail-item"><div class="off-detail-icon">♢</div><div class="off-detail-body"><h3>IV. The Elemental Forge</h3><p>Work with fire and intention to manifest and transmute.</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
