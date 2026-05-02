@@ -37,14 +37,22 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
   position:relative;
   overflow:hidden;
   margin-top:60px;
-  max-height:75vh;
 }
 .hero img{
   width:100%;
   height:auto;
   display:block;
-  margin-top:-6%;
 }
+.hero-buttons{
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:1.5rem 2rem 2rem;
+  background:linear-gradient(180deg,#F0E4F0 0%,#FAF6F1 100%);
+}
+.h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.5rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(255,255,255,0.5);cursor:pointer}
+.h-btn:hover{background:#4A3066;color:#FAF6F1}
 .hero-content{
   position:relative;
   z-index:2;
@@ -297,6 +305,10 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 <div class="page active" id="home">
   <section class="hero">
     <img src="sun-hero.png" alt="Transmutative Journey of Soul - Celestial Guidance, Sovereign Truth">
+    <div class="hero-buttons">
+      <a class="h-btn" onclick="showPage('offerings-page')">Explore Offerings →</a>
+      <a class="h-btn" onclick="showPage('book')">Book a Session →</a>
+    </div>
   </section>
 
   <section class="welcome">
