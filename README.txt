@@ -1,2 +1,5 @@
-Upload index.html and the assets folder to your GitHub Pages repository root.
-The hero section now uses assets/hero-bg.png as the background image.
+Fixes:
+- Moon page banner repositioned so the moon is visible, especially on mobile.
+- Mobile hamburger/menu icon pushed to the far right.
+
+Upload/replace index.html. Keep sun-hero.png and moon-bg.png in the same folder.
