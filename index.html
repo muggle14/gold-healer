@@ -37,11 +37,15 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
   position:relative;
   overflow:hidden;
   padding-top:60px;
+  max-height:80vh;
 }
 .hero img{
   width:100%;
   height:auto;
   display:block;
+  max-height:calc(80vh - 60px);
+  object-fit:cover;
+  object-position:center top;
 }
 .hero-content{
   position:relative;
