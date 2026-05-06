@@ -98,7 +98,12 @@ section{padding:4.5rem 2.5rem}
 /* OFFERINGS DETAIL PAGE */
 .offerings-detail{padding:3rem 2.5rem;background:#FAF6F1}
 .off-detail-list{max-width:800px;margin:0 auto}
-.off-service-img{width:100%;max-height:350px;object-fit:contain;border-radius:8px;margin-bottom:0.8rem;background:#F0EAF4}
+.off-service-img{display:none}
+.off-service{padding:1rem 0 1rem 1.5rem;border-bottom:1px solid #F0EAF4}
+.off-service:last-child{border-bottom:none}
+.off-service.has-img{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;align-items:center;padding:1.5rem 0;padding-left:0}
+.off-service.has-img img{width:200px;height:200px;object-fit:cover;border-radius:8px;display:block}
+.off-service.has-img .off-service-text{}
 .off-category{margin-bottom:2.5rem}
 .off-cat-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,162,101,0.2)}
 .off-cat-icon{font-size:1rem;color:#C4A265}
@@ -327,24 +332,24 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
       <!-- I. THE CHANNELED ORACLE -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✦</span><span class="off-cat-title">I. The Channeled Oracle</span></div>
-        <div class="off-service"><img src="automatic%20writing.jpeg" alt="Automatic Writing" class="off-service-img"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><img src="akashic%20records.jpeg" alt="Akashic Records Reading" class="off-service-img"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><img src="tarot%20card%20reading.jpeg" alt="Tarot Reading" class="off-service-img"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service has-img"><img src="automatic%20writing.jpeg" alt="Automatic Writing"><div class="off-service-text"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
+        <div class="off-service has-img"><img src="akashic%20records.jpeg" alt="Akashic Records Reading"><div class="off-service-text"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
+        <div class="off-service has-img"><img src="tarot%20card%20reading.jpeg" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
       </div>
 
       <!-- II. THE COSMIC BLUEPRINT -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">☾</span><span class="off-cat-title">II. The Cosmic Blueprint</span></div>
-        <div class="off-service"><img src="astrology.jpeg" alt="Astrology Consultation" class="off-service-img"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><img src="numerology.jpeg" alt="Numerology Reading" class="off-service-img"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service has-img"><img src="astrology.jpeg" alt="Astrology Consultation"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
+        <div class="off-service has-img"><img src="numerology.jpeg" alt="Numerology Reading"><div class="off-service-text"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
       </div>
 
       <!-- III. ENERGY HEALING & RESTORATION -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✧</span><span class="off-cat-title">III. Energy Healing &amp; Restoration</span></div>
-        <div class="off-service"><img src="reiki%20healing.jpeg" alt="Reiki Chakra Healing" class="off-service-img"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service has-img"><img src="reiki%20healing.jpeg" alt="Reiki Chakra Healing"><div class="off-service-text"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
         <div class="off-service"><h4>Deep Meditation with Healing</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><img src="quantum%20healing.jpeg" alt="Quantum Healing" class="off-service-img"><h4>Quantum Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service has-img"><img src="quantum%20healing.jpeg" alt="Quantum Healing"><div class="off-service-text"><h4>Quantum Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
         <div class="off-service"><h4>Deep Quantum Healing (DNA Revitalization)</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
       </div>
 
