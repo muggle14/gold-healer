@@ -81,7 +81,7 @@ section{padding:4.5rem 2.5rem}
 .off-item .lm:hover{color:#C4A265}
 
 /* ABOUT */
-.about-section{display:grid;grid-template-columns:1fr 1.3fr;min-height:420px}
+.about-section{display:grid;grid-template-columns:1fr 1.3fr;max-height:500px;overflow:hidden}
 .about-photo{background:linear-gradient(135deg,#D8C8E8 0%,#E8D0E0 40%,#F0E0E8 70%,#F5EAF0 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem}
 .about-photo .ph-icon{font-size:2.5rem;color:#C4A265;opacity:0.25}
 .about-photo .ph-text{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#5D4A78;font-weight:500}
@@ -97,6 +97,7 @@ section{padding:4.5rem 2.5rem}
 /* OFFERINGS DETAIL PAGE */
 .offerings-detail{padding:3rem 2.5rem;background:#FAF6F1}
 .off-detail-list{max-width:800px;margin:0 auto}
+.off-service-img{width:100%;max-height:180px;object-fit:cover;border-radius:8px;margin-bottom:0.8rem;border:1px solid rgba(196,162,101,0.15)}
 .off-category{margin-bottom:2.5rem}
 .off-cat-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,162,101,0.2)}
 .off-cat-icon{font-size:1rem;color:#C4A265}
@@ -325,31 +326,31 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
       <!-- I. THE CHANNELED ORACLE -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✦</span><span class="off-cat-title">I. The Channeled Oracle</span></div>
-        <div class="off-service"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><img src="automatic_writing.jpeg" alt="Automatic Writing" class="off-service-img"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><img src="akashic_records.jpeg" alt="Akashic Records Reading" class="off-service-img"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><img src="tarot_card_reading.jpeg" alt="Tarot Reading" class="off-service-img"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
       </div>
 
       <!-- II. THE COSMIC BLUEPRINT -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">☾</span><span class="off-cat-title">II. The Cosmic Blueprint</span></div>
-        <div class="off-service"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><img src="astrology.jpeg" alt="Astrology Consultation" class="off-service-img"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><img src="numerology.jpeg" alt="Numerology Reading" class="off-service-img"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
       </div>
 
       <!-- III. ENERGY HEALING & RESTORATION -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✧</span><span class="off-cat-title">III. Energy Healing &amp; Restoration</span></div>
-        <div class="off-service"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><img src="reiki_healing.jpeg" alt="Reiki Chakra Healing" class="off-service-img"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
         <div class="off-service"><h4>Deep Meditation with Healing</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><h4>Quantum Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><img src="quantum_healing.jpeg" alt="Quantum Healing" class="off-service-img"><h4>Quantum Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
         <div class="off-service"><h4>Deep Quantum Healing (DNA Revitalization)</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
       </div>
 
       <!-- IV. SACRED FLAME & KARMIC RELEASE -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">♢</span><span class="off-cat-title">IV. Sacred Flame &amp; Karmic Release</span></div>
-        <div class="off-service"><h4>Violet Flame Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><img src="violet_flame.jpeg" alt="Violet Flame Healing" class="off-service-img"><h4>Violet Flame Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
         <div class="off-service"><h4>Violet Flame Healing with Karmic Cord Cutting</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
       </div>
 
