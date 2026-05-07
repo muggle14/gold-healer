@@ -444,6 +444,46 @@ p{color:#140B22}
 .page-header h1{color:#FFFFFF !important;}
 .page-header .star{color:#D9B56D !important;}
 
+
+/* Offerings: style Book Session links even for rows without images */
+.off-service .book-link{
+  display:inline-flex;
+  align-items:center;
+  gap:0.3rem;
+  font-size:0.58rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:#2A1540;
+  text-decoration:none;
+  font-weight:500;
+  border:1px solid #2A1540;
+  padding:0.42rem 1rem;
+  transition:all 0.3s;
+  cursor:pointer;
+}
+.off-service .book-link:hover{
+  background:#2A1540;
+  color:#FAF6F1;
+}
+
+
+/* Offerings: placeholder image block for services without photos yet */
+.off-service.no-photo .img-ph{
+  width:190px;
+  height:190px;
+  flex:0 0 190px;
+  border-radius:14px;
+  border:1px solid rgba(196,162,101,0.18);
+  background:#F0EAF4;
+  display:block;
+}
+@media(max-width:900px){
+  .off-service.no-photo .img-ph{width:160px;height:160px;flex-basis:160px}
+}
+@media(max-width:600px){
+  .off-service.no-photo .img-ph{width:100%;height:220px;max-width:360px;flex-basis:auto}
+}
+
 </style>
 </head>
 <body>
@@ -542,35 +582,35 @@ p{color:#140B22}
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✦</span><span class="off-cat-title">I. The Channeled Oracle</span></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="auto%20writing.png" alt="Automatic Writing"><div class="off-service-text"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">Channeled messages for clarity, comfort, and next steps.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="akashic%20records.png" alt="Akashic Records Reading"><div class="off-service-text"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">A deep read into patterns, blocks, and soul-level direction.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="tarot%20card%20reading.png" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">Quick insight on your current energy and what’s unfolding next.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="auto%20writing.png" alt="Automatic Writing"><div class="off-service-text"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">Channeled messages for clarity, comfort, and next steps.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="akashic%20records.png" alt="Akashic Records Reading"><div class="off-service-text"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">A deep read into patterns, blocks, and soul-level direction.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="tarot%20card%20reading.png" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">Quick insight on your current energy and what’s unfolding next.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
       </div>
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">☾</span><span class="off-cat-title">II. The Cosmic Blueprint</span></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="astrology.png" alt="Astrology Consultation"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Your chart translated into practical timing and self-understanding.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="numerology.png" alt="Numerology Reading"><div class="off-service-text"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Life path themes, strengths, and lessons you’re here to master.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="astrology.png" alt="Astrology Consultation"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Your chart translated into practical timing and self-understanding.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="numerology.png" alt="Numerology Reading"><div class="off-service-text"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Life path themes, strengths, and lessons you’re here to master.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
       </div>
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✧</span><span class="off-cat-title">III. Energy Healing &amp; Restoration</span></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="reiki%20healing.png" alt="Reiki Chakra Healing"><div class="off-service-text"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><p class="svc-desc">Energy reset for stress, heaviness, and emotional clearing.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div></div>
-        <div class="off-service"><h4>Deep Meditation with Healing</h4><p class="duration">60 mins</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="quantum%20healing.png" alt="Quantum Healing"><div class="off-service-text"><h4>Quantum Healing</h4><p class="duration">30 mins</p><p class="svc-desc">Deep energetic work for subconscious patterns and renewal.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div></div>
-        <div class="off-service"><h4>Deep Quantum Healing (DNA Revitalization)</h4><p class="duration">60 mins</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="reiki%20healing.png" alt="Reiki Chakra Healing"><div class="off-service-text"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><p class="svc-desc">Energy reset for stress, heaviness, and emotional clearing.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
+        <div class="off-service has-img no-photo"><span class="img-ph" aria-hidden="true"></span><div class="off-service-text"><h4>Deep Meditation with Healing</h4><p class="duration">60 mins</p><p class="svc-desc">A guided session to quiet the mind, soothe the body, and restore balance.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="quantum%20healing.png" alt="Quantum Healing"><div class="off-service-text"><h4>Quantum Healing</h4><p class="duration">30 mins</p><p class="svc-desc">Deep energetic work for subconscious patterns and renewal.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
+        <div class="off-service has-img no-photo"><span class="img-ph" aria-hidden="true"></span><div class="off-service-text"><h4>Deep Quantum Healing (DNA Revitalization)</h4><p class="duration">60 mins</p><p class="svc-desc">A longer session for deeper energetic rewiring and full-body reset.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
       </div>
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">♢</span><span class="off-cat-title">IV. Sacred Flame &amp; Karmic Release</span></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="violet%20flame.png" alt="Violet Flame Healing"><div class="off-service-text"><h4>Violet Flame Healing</h4><p class="duration">30 mins</p><p class="svc-desc">Transmutation work for cords, guilt, fear, and energetic residue.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div></div>
-        <div class="off-service"><h4>Violet Flame Healing with Karmic Cord Cutting</h4><p class="duration">60 mins</p><p class="svc-desc">Release energetic cords and reclaim your power with gentle clearing.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="violet%20flame.png" alt="Violet Flame Healing"><div class="off-service-text"><h4>Violet Flame Healing</h4><p class="duration">30 mins</p><p class="svc-desc">Transmutation work for cords, guilt, fear, and energetic residue.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
+        <div class="off-service has-img no-photo"><span class="img-ph" aria-hidden="true"></span><div class="off-service-text"><h4>Violet Flame Healing with Karmic Cord Cutting</h4><p class="duration">60 mins</p><p class="svc-desc">Release energetic cords and reclaim your power with gentle clearing.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
       </div>
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✺</span><span class="off-cat-title">V. Specialized Healing Sessions</span></div>
-        <div class="off-service"><h4>Personalized Healing for Specific Health Concerns</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Focused healing tailored to your intention and what you’re moving through.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div>
-        <div class="off-service"><h4>Shalvik Pranik Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Targeted pranic healing to support the body, mind, and emotional field.</p><a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session →</a></div>
+        <div class="off-service has-img no-photo"><span class="img-ph" aria-hidden="true"></span><div class="off-service-text"><h4>Personalized Healing for Specific Health Concerns</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Focused healing tailored to your intention and what you’re moving through.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
+        <div class="off-service has-img no-photo"><span class="img-ph" aria-hidden="true"></span><div class="off-service-text"><h4>Shalvik Pranik Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Targeted pranic healing to support the body, mind, and emotional field.</p><a href="#" class="book-link" onclick="showPage('book'); return false;; return false;">Book Session →</a></div></div>
       </div>
 
     </div>
