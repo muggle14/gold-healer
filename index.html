@@ -47,7 +47,7 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
   justify-content:center;
   text-align:center;
   overflow:hidden;
-  background-image:url('sun-hero.png');
+  background-image:url('sun_banner_v2.png');
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -117,9 +117,9 @@ section{padding:4.5rem 2.5rem}
   content:"";
   position:absolute;
   inset:0;
-  background-image:url('moon-banner-v2.png');
-  background-size:100% auto;
-  background-position:center top;
+  background-image:url('moon_banner_v3.png');
+  background-size:cover;
+  background-position:center 40%;
   background-repeat:no-repeat;
   opacity:1;
 }
@@ -234,7 +234,7 @@ section{padding:4.5rem 2.5rem}
 .philosophy-body p{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.9;color:#2E1E45;margin-bottom:0.8rem}
 
 /* AKASHIC CARD */
-.akashic-card{position:relative;overflow:hidden;border-radius:18px;padding:1.35rem 1.25rem;margin-top:1rem;margin-bottom:.25rem;min-height:150px;background:linear-gradient(135deg,rgba(250,246,241,.22),rgba(250,246,241,.06)),linear-gradient(135deg,rgba(46,30,69,.88),rgba(91,63,124,.76)),url('moon-banner-v2.png');background-size:cover;background-position:center 46%;box-shadow:0 14px 34px rgba(46,30,69,.14);border:1px solid rgba(196,162,101,.38)}
+.akashic-card{position:relative;overflow:hidden;border-radius:18px;padding:1.35rem 1.25rem;margin-top:1rem;margin-bottom:.25rem;min-height:150px;background:linear-gradient(135deg,rgba(250,246,241,.22),rgba(250,246,241,.06)),linear-gradient(135deg,rgba(46,30,69,.88),rgba(91,63,124,.76)),url('moon_banner_v3.png');background-size:cover;background-position:center 46%;box-shadow:0 14px 34px rgba(46,30,69,.14);border:1px solid rgba(196,162,101,.38)}
 .akashic-orbit{position:absolute;inset:18px 24px;border:1px solid rgba(216,181,109,.55);border-radius:50%;transform:rotate(-10deg) scaleX(1.38);opacity:.72}
 .akashic-orbit::before,.akashic-orbit::after{content:"";position:absolute;inset:18px;border:1px solid rgba(250,246,241,.22);border-radius:50%}
 .akashic-orbit::after{inset:36px;border-color:rgba(216,181,109,.32)}
@@ -317,7 +317,7 @@ section{padding:4.5rem 2.5rem}
 .t-card .qm{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:#D8C8E8;line-height:1;margin-bottom:0.3rem}
 .t-card p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;line-height:1.75;color:#2E1E45;margin-bottom:0.7rem}
 .t-card .who{font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:#5D4A78;font-weight:500}
-.cta-band{padding:2.5rem 2rem;background:linear-gradient(90deg,rgba(46,30,69,0.78),rgba(74,48,102,0.62)),url('moon-banner-v2.png');background-size:cover;background-position:center 55%;text-align:center}
+.cta-band{padding:2.5rem 2rem;background:linear-gradient(90deg,rgba(46,30,69,0.78),rgba(74,48,102,0.62)),url('moon_banner_v3.png');background-size:cover;background-position:center 55%;text-align:center}
 .cta-band p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#FAF6F1;margin-bottom:1.2rem;font-style:italic;text-shadow:0 1px 12px rgba(30,15,58,0.45)}
 
 /* FAQ */
@@ -333,7 +333,7 @@ section{padding:4.5rem 2.5rem}
 .faq-a p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;line-height:1.8;color:#2E1E45}
 
 /* SHOP */
-.shop-coming{padding:4rem 2rem;background:linear-gradient(180deg,rgba(250,246,241,0.72),rgba(250,246,241,0.92)),url('moon-banner-v2.png');background-size:cover;background-position:center;text-align:center}
+.shop-coming{padding:4rem 2rem;background:linear-gradient(180deg,rgba(250,246,241,0.72),rgba(250,246,241,0.92)),url('moon_banner_v3.png');background-size:cover;background-position:center;text-align:center}
 .coming-box{max-width:350px;margin:2rem auto;border:2px solid #C4A265;padding:2.5rem 2rem}
 .coming-box h3{font-family:'Cinzel',serif;font-size:1.3rem;color:#4A3066;font-weight:400;letter-spacing:0.08em}
 .shop-note{font-family:'Cormorant Garamond',serif;font-size:1.0rem;color:#2E1E45;margin-top:1.5rem;line-height:1.7}
@@ -394,7 +394,16 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   .nav-inner{max-width:none;width:100%;justify-content:space-between}
   .nav-logo-name{font-size:0.88rem}
   .page-header{min-height:300px;padding:6.2rem 1.5rem 2.8rem}
-  .page-header::before{background-size:auto 100%;background-position:left center}
+  .page-header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url('moon_banner_v3.png');
+  background-size:cover;
+  background-position:center 40%;
+  background-repeat:no-repeat;
+  opacity:1;
+}
 }
 @media(max-width:600px){
   .hero h1{font-size:1.6rem}
@@ -407,7 +416,16 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   .about-text{padding:2rem 1.5rem}
   section,.book-section,.contact-section,.offerings-detail{padding:3rem 1.5rem}
   .page-header{min-height:285px}
-  .page-header::before{background-size:auto 100%;background-position:left center}
+  .page-header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url('moon_banner_v3.png');
+  background-size:cover;
+  background-position:center 40%;
+  background-repeat:no-repeat;
+  opacity:1;
+}
   .akashic-card span,.akashic-note{margin-left:0}
   .akashic-sun{opacity:.35}
 }
