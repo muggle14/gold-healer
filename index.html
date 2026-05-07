@@ -160,9 +160,17 @@ section{padding:4.5rem 2.5rem}
 
 /* ABOUT */
 .about-section{display:grid;grid-template-columns:1fr 1.3fr;min-height:420px}
-.about-photo{background:linear-gradient(135deg,#D8C8E8 0%,#E8D0E0 40%,#F0E0E8 70%,#F5EAF0 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem}
+.about-photo{
+  background:linear-gradient(135deg,#D8C8E8 0%,#E8D0E0 40%,#F0E0E8 70%,#F5EAF0 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:0.5rem;
+}
 .about-photo .ph-icon{font-size:2.5rem;color:#C4A265;opacity:0.25}
 .about-photo .ph-text{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#5D4A78;font-weight:500}
+
 .about-text{background:linear-gradient(180deg,#F0EAF4 0%,#F5F0F8 100%);padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
 .about-text h2{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:400;color:#4A3066;margin-bottom:1rem}
 .about-text p{font-family:'Cormorant Garamond',serif;font-size:1.0rem;line-height:1.85;color:#2E1E45;margin-bottom:0.7rem}
@@ -201,6 +209,8 @@ section{padding:4.5rem 2.5rem}
 .off-service-text .book-link:hover{background:#4A3066;color:#FAF6F1}
 
 @media(max-width:900px){
+  .about-photo{padding:1.6rem}
+
   .off-detail-list{max-width:760px}
   .off-service img{width:160px;height:160px;flex-basis:160px}
 }
