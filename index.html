@@ -37,7 +37,7 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
   min-height:100vh;
   position:relative;
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   justify-content:center;
   text-align:center;
   overflow:hidden;
@@ -46,11 +46,45 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
   background-position:center;
   background-repeat:no-repeat;
 }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(250,246,241,0.06) 0%,rgba(250,246,241,0.18) 55%,rgba(250,246,241,0.36) 100%);
+  pointer-events:none;
+}
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:600px;
-  padding:0 2rem 4rem;
+  max-width:720px;
+  padding:5rem 2rem 3rem;
+}
+.hero-star{color:#C4A265;font-size:0.8rem;margin:0.8rem 0;opacity:0.7}
+.hero h1{
+  font-family:'Cinzel Decorative',serif;
+  font-size:3rem;
+  font-weight:400;
+  color:#2E1E45;
+  line-height:1.18;
+  margin-bottom:0.6rem;
+  text-shadow:0 2px 24px rgba(255,255,255,0.95);
+}
+.hero-subtitle{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;
+  font-style:italic;
+  color:#8A631D;
+  margin-bottom:0.5rem;
+  font-weight:400;
+  text-shadow:0 1px 12px rgba(255,255,255,0.9);
+}
+.hero-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;
+  color:#2E1E45;
+  line-height:1.7;
+  margin-bottom:2rem;
+  text-shadow:0 1px 12px rgba(255,255,255,0.95);
 }
 .hero-buttons{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap}
 .h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(255,255,255,0.52);backdrop-filter:blur(4px);cursor:pointer}
@@ -315,13 +349,9 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 <!-- ==================== PAGE: HOME ==================== -->
 <div class="page active" id="home">
   <section class="hero">
-    <div class="hero-sky"></div>
-    <div class="hero-stars"></div>
-    <div class="hero-moon">☽</div>
-    <div class="hero-sparkle-tr">✦</div>
     <div class="hero-content">
       <div class="hero-star">✧</div>
-      <h1>Transmutative<br>Journey of Soul</h1>
+      <h1>TRANSMUTATIVE<br>JOURNEY OF SOUL</h1>
       <p class="hero-subtitle">Celestial Guidance. Sovereign Truth.</p>
       <div class="hero-star">✦</div>
       <p class="hero-desc">You have arrived by way of sacred gravity.<br>This is your invitation to remember.</p>
@@ -330,7 +360,7 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
         <a class="h-btn" onclick="showPage('book')">Book a Session →</a>
       </div>
     </div>
-  </section>
+</section>
 
   <section class="welcome">
     <div class="welcome-inner">
