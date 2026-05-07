@@ -162,71 +162,50 @@ section{padding:4.5rem 2.5rem}
 /* ABOUT */
 .about-section{
   display:grid;
-  grid-template-columns:320px minmax(0, 1fr);
-  gap:3.25rem;
-  align-items:start;
-  max-width:950px;
-  margin:0 auto;
+  grid-template-columns:clamp(260px, 32vw, 420px) 1fr;
+  gap:3rem;
+  align-items:stretch;
+  min-height:420px;
+  max-width:950px;          /* align with .philosophy-inner */
+  margin:0 auto;            /* center on page */
 }
 .about-photo{
   background:transparent;
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   justify-content:center;
-  padding:0;
-  margin-top:0.1rem;
+  padding:2rem;
 }
 .about-photo .about-brand{
   display:block;
-  width:auto;
-  height:324px;            /* top aligns with first sentence, bottom near last sentence */
-  max-width:100%;
-  object-fit:contain;
-}
-.about-text{
-  background:transparent;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  align-items:flex-start;
-}
-.about-text h2{
-  font-family:'Cinzel',serif;
-  font-size:1.5rem;
-  font-weight:400;
-  color:#4A3066;
-  margin-bottom:1rem;
-}
-.about-text p{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1rem;
-  line-height:1.9;
-  color:#2E1E45;
-  margin-bottom:0.8rem;
-  max-width:41ch;          /* cleaner wrap */
-}
-.about-text .outline-btn{
-  margin-top:1.15rem;
+  height:420px !important;     /* portrait */
+  width:auto !important;
+  max-width:260px !important;  /* keeps it from feeling “landscape” */
+  object-fit:contain !important;
 }
 @media(max-width:900px){
-  .about-section{
-    grid-template-columns:1fr;
-    gap:2rem;
-    max-width:950px;
-    margin:0 auto;
-  }
-  .about-photo{
-    justify-content:center;
-  }
-  .about-photo .about-brand{
-    height:300px;
-  }
-  .about-text p{
-    max-width:62ch;
-  }
+  .about-section{grid-template-columns:1fr}
+  .about-photo{padding:1.5rem; min-height:320px}
+  .about-photo .about-brand{height:320px !important; max-width:210px !important}
+}
+.about-photo .about-brand{height:280px; max-width:175px}
+}
+.about-text{
+  background:linear-gradient(180deg,#F0EAF4 0%,#F5F0F8 100%);
+  padding:3.0rem 3rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+.about-text p{
+  max-width:62ch;
+  line-height:1.9;
 }
 
+
+.about-text h2{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:400;color:#4A3066;margin-bottom:1rem}
+.about-text p{font-family:'Cormorant Garamond',serif;font-size:1.0rem;line-height:1.85;color:#2E1E45;margin-bottom:0.7rem}
 .philosophy{padding:3.5rem 2.5rem;background:linear-gradient(90deg,#FAF6F1 0%,#F5F0E8 100%)}
 .philosophy-inner{max-width:950px;margin:0 auto;display:flex;align-items:flex-start;gap:2rem}
 .philosophy-moon{flex-shrink:0;font-size:3.5rem;color:#C4A265;opacity:0.18;margin-top:0.3rem}
