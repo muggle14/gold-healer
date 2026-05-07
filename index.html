@@ -142,6 +142,7 @@ section{padding:4.5rem 2.5rem}
 .welcome-body p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.85;color:#2E1E45;margin-bottom:1.2rem}
 .outline-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.6rem 1.5rem;border:1.5px solid #4A3066;color:#4A3066;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;font-weight:500;cursor:pointer}
 .outline-btn:hover{background:#4A3066;color:#FAF6F1}
+.about-text .outline-btn{margin-top:1.4rem}
 
 /* OFFERINGS OVERVIEW (HOME) */
 .offerings{padding:4rem 2rem;background:#F0EAF4;text-align:center}
@@ -159,25 +160,50 @@ section{padding:4.5rem 2.5rem}
 .off-item .lm:hover{color:#C4A265}
 
 /* ABOUT */
-.about-section{display:grid;grid-template-columns:1fr 1.3fr;min-height:420px}
+.about-section{
+  display:grid;
+  grid-template-columns:clamp(260px, 32vw, 420px) 1fr;
+  gap:3rem;
+  align-items:stretch;
+  min-height:420px;
+  max-width:950px;          /* align with .philosophy-inner */
+  margin:0 auto;            /* center on page */
+}
 .about-photo{
-  background: linear-gradient(135deg,#D8C8E8 0%,#E8D0E0 40%,#F0E0E8 70%,#F5EAF0 100%);
+  background:linear-gradient(135deg,#D8C8E8 0%,#E8D0E0 40%,#F0E0E8 70%,#F5EAF0 100%);
   display:flex;
   align-items:center;
   justify-content:center;
   padding:2rem;
 }
-
-.about-photo img{
-  width: 180px;
-  max-width: 48%;
-  height: auto;
-  max-height: 280px;
-  object-fit: contain;
-  display: block;
+.about-photo .about-brand{
+  display:block;
+  height:420px !important;     /* portrait */
+  width:auto !important;
+  max-width:260px !important;  /* keeps it from feeling “landscape” */
+  object-fit:contain !important;
+}
+@media(max-width:900px){
+  .about-section{grid-template-columns:1fr}
+  .about-photo{padding:1.5rem; min-height:320px}
+  .about-photo .about-brand{height:320px !important; max-width:210px !important}
+}
+.about-photo .about-brand{height:280px; max-width:175px}
+}
+.about-text{
+  background:linear-gradient(180deg,#F0EAF4 0%,#F5F0F8 100%);
+  padding:3.0rem 3rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+.about-text p{
+  max-width:62ch;
+  line-height:1.9;
 }
 
-.about-text{background:linear-gradient(180deg,#F0EAF4 0%,#F5F0F8 100%);padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
+
 .about-text h2{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:400;color:#4A3066;margin-bottom:1rem}
 .about-text p{font-family:'Cormorant Garamond',serif;font-size:1.0rem;line-height:1.85;color:#2E1E45;margin-bottom:0.7rem}
 .philosophy{padding:3.5rem 2.5rem;background:linear-gradient(90deg,#FAF6F1 0%,#F5F0E8 100%)}
@@ -215,10 +241,6 @@ section{padding:4.5rem 2.5rem}
 .off-service-text .book-link:hover{background:#4A3066;color:#FAF6F1}
 
 @media(max-width:900px){
-  .about-photo{padding:1.5rem}
-  .about-photo img{width:min(210px, 70vw)}
-  .about-photo{padding:1.6rem}
-
   .off-detail-list{max-width:760px}
   .off-service img{width:160px;height:160px;flex-basis:160px}
 }
@@ -229,7 +251,7 @@ section{padding:4.5rem 2.5rem}
   .off-service-text .book-link{justify-content:center}
 }
 
-/* BOOK A SESSION */
+/* BOOK A SESSION *//* BOOK A SESSION */
 .book-section{padding:3rem 2.5rem;background:#FAF6F1}
 .book-inner{max-width:700px;margin:0 auto;text-align:center}
 .book-inner .lead{font-family:'Cinzel',serif;font-size:1.15rem;color:#4A3066;margin-bottom:0.6rem;font-weight:400}
@@ -414,7 +436,7 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 <div class="page" id="about">
   <div class="page-header"><h1>About Me</h1><div class="star">✦</div></div>
   <section class="about-section">
-    <div class="about-photo"><img src="brand.jpeg" alt="The Cosmic Alchemy brand logo"></div>
+    <div class="about-photo"><img class="about-brand" src="brand.jpeg" alt="The Cosmic Alchemy brand logo"></div>
     <div class="about-text">
       <p>For a decade, I navigated the corporate architecture of a world that looked complete to the eye but felt silent to the soul. Amidst the height of external success, a singular whisper persisted: <em>There is more.</em></p>
       <p>That whisper became a summon, leading me away from the known and into the heart of the Divine. Through Reiki and celestial channels, my world underwent a profound transmutation — shifting from shadow into gold.</p>
