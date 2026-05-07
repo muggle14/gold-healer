@@ -15,11 +15,11 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
 .nav.scrolled{box-shadow:0 2px 20px rgba(46,32,64,0.06)}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;padding:0.6rem 2.5rem;gap:2rem}
 .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;flex-shrink:1;cursor:pointer}
-.nav-logo-circle{width:42px;height:42px;border:1.5px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#2E1E45}
+.nav-logo-circle{width:48px;height:48px;border:1.5px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#2E1E45}
 .nav-logo-circle img{width:100%;height:100%;object-fit:cover;display:block}
 .nav-logo-circle::before{content:'';position:absolute;inset:3px;border:1px solid rgba(196,162,101,0.3);border-radius:50%}
 .nav-logo-text{line-height:1.15}
-.nav-logo-name{font-family:'Cinzel Decorative',serif;font-size:1rem;color:#2E1E45;font-weight:700}
+.nav-logo-name{font-family:'Cinzel Decorative',serif;font-size:1.02rem;color:#2E1E45;font-weight:700}
 .nav-logo-sub{font-size:0.55rem;color:#3D2B56;letter-spacing:0.08em;font-weight:400}
 .nav-menu{display:flex;gap:1.6rem;list-style:none;margin-left:auto;align-items:center}
 .nav-menu a{text-decoration:none;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#2E1E45;transition:color 0.2s;cursor:pointer}
@@ -32,17 +32,26 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
 .page{display:none}
 .page.active{display:block}
 
-/* HERO */
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background-image:url('sun-hero.png');background-size:cover;background-position:center;background-repeat:no-repeat}
-.hero-sky{position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,246,241,0.06) 0%,rgba(250,246,241,0.18) 55%,rgba(250,246,241,0.36) 100%)}
-.hero-stars{display:none}
-.hero-moon{display:none}
-.hero-sparkle-tr{display:none}
-.hero-content{position:relative;z-index:2;max-width:600px;padding:5rem 2rem 3rem}
-.hero h1{font-family:'Cinzel Decorative',serif;font-size:3rem;font-weight:400;color:#2E1E45;line-height:1.2;margin-bottom:0.6rem;text-shadow:0 2px 24px rgba(255,255,255,0.95)}
-.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:#8A631D;margin-bottom:0.5rem;font-weight:400;text-shadow:0 1px 12px rgba(255,255,255,0.9)}
-.hero-star{color:#C4A265;font-size:0.8rem;margin:0.8rem 0;opacity:0.7}
-.hero-desc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2E1E45;line-height:1.7;margin-bottom:2rem;text-shadow:0 1px 12px rgba(255,255,255,0.95)}
+/* HERO - background image does all the talking */
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background-image:url('sun-hero.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:600px;
+  padding:0 2rem 4rem;
+}
 .hero-buttons{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap}
 .h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(255,255,255,0.52);backdrop-filter:blur(4px);cursor:pointer}
 .h-btn:hover{background:#4A3066;color:#FAF6F1}
@@ -52,7 +61,36 @@ section{padding:4.5rem 2.5rem}
 .section-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#C4A265;margin-bottom:0.3rem;font-weight:500;text-align:center}
 .section-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:400;color:#4A3066;margin-bottom:0.6rem;text-align:center}
 .div-line{width:35px;height:1px;background:#C4A265;margin:0.6rem auto 1.5rem}
-.page-header{padding:7rem 2rem 3.5rem;text-align:center;min-height:330px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(46,30,69,0.12),rgba(46,30,69,0.10)),url('moon-bg.png');background-size:cover;background-position:left 22% center}
+.page-header{
+  padding:7rem 2rem 3.5rem;
+  text-align:center;
+  min-height:330px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  background:#2E1E45;
+}
+.page-header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url('moon-bg.png');
+  background-size:100% auto;
+  background-position:center top;
+  background-repeat:no-repeat;
+  opacity:1;
+}
+.page-header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(46,30,69,.18),rgba(46,30,69,.08) 48%,rgba(250,246,241,.12));
+  pointer-events:none;
+}
+.page-header h1,.page-header .star{position:relative;z-index:1}
 .page-header h1{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:400;color:#FFFFFF;margin-bottom:0.3rem;text-shadow:0 2px 18px rgba(30,15,58,0.72)}
 .page-header .star{color:#D9B56D;font-size:0.9rem;margin-top:0.65rem;text-shadow:0 1px 10px rgba(30,15,58,0.45)}
 
@@ -94,31 +132,25 @@ section{padding:4.5rem 2.5rem}
 .philosophy-body h2{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:400;color:#4A3066;margin-bottom:0.8rem;font-style:italic}
 .philosophy-body p{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.9;color:#2E1E45;margin-bottom:0.8rem}
 
+/* AKASHIC CARD */
+.akashic-card{position:relative;overflow:hidden;border-radius:18px;padding:1.35rem 1.25rem;margin-top:1rem;margin-bottom:.25rem;min-height:150px;background:linear-gradient(135deg,rgba(250,246,241,.22),rgba(250,246,241,.06)),linear-gradient(135deg,rgba(46,30,69,.88),rgba(91,63,124,.76)),url('moon-bg.png');background-size:cover;background-position:center 46%;box-shadow:0 14px 34px rgba(46,30,69,.14);border:1px solid rgba(196,162,101,.38)}
+.akashic-orbit{position:absolute;inset:18px 24px;border:1px solid rgba(216,181,109,.55);border-radius:50%;transform:rotate(-10deg) scaleX(1.38);opacity:.72}
+.akashic-orbit::before,.akashic-orbit::after{content:"";position:absolute;inset:18px;border:1px solid rgba(250,246,241,.22);border-radius:50%}
+.akashic-orbit::after{inset:36px;border-color:rgba(216,181,109,.32)}
+.akashic-sun{position:absolute;left:28px;top:50%;width:30px;height:30px;margin-top:-15px;border-radius:50%;background:radial-gradient(circle,#FFF7CA 0%,#F4C65E 52%,#C89432 100%);box-shadow:0 0 24px rgba(244,198,94,.65)}
+.akashic-planet{position:absolute;right:54px;top:34px;width:13px;height:13px;border-radius:50%;background:#F5E7FF;box-shadow:-96px 64px 0 2px rgba(216,181,109,.85),-36px 20px 0 1px rgba(250,246,241,.65),28px 70px 0 2px rgba(196,162,101,.72)}
+.akashic-card span{position:relative;z-index:2;display:block;max-width:560px;margin-left:72px;color:#FAF6F1;font-family:'Cormorant Garamond',serif;font-size:.98rem;line-height:1.62;text-shadow:0 1px 12px rgba(30,15,58,.62)}
+.akashic-note{position:relative;z-index:2;margin-left:72px;color:#E8C98A;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+
 /* OFFERINGS DETAIL PAGE */
 .offerings-detail{padding:3rem 2.5rem;background:#FAF6F1}
 .off-detail-list{max-width:800px;margin:0 auto}
-.off-service-img{display:none}
-.off-service{padding:1rem 0 1rem 1.5rem;border-bottom:1px solid #F0EAF4}
-.off-service:last-child{border-bottom:none}
-.off-service.has-img{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;align-items:center;padding:1.5rem 0;padding-left:0}
-.off-service.has-img img{width:200px;height:200px;object-fit:cover;border-radius:8px;display:block}
-.off-service.has-img .off-service-text{}
-.off-category{margin-bottom:2.5rem}
-.off-cat-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,162,101,0.2)}
-.off-cat-icon{font-size:1rem;color:#C4A265}
-.off-cat-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:400;color:#4A3066;letter-spacing:0.04em}
-.off-service{padding:1rem 0 1rem 1.5rem;border-bottom:1px solid #F0EAF4}
-.off-service:last-child{border-bottom:none}
-.off-service h4{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;color:#2E1E45;margin-bottom:0.3rem}
-.off-service .duration{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:#8A631D;font-style:italic;margin-bottom:0.5rem}
-.off-service .book-link{font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;text-decoration:none;font-weight:500;border:1px solid #4A3066;padding:0.35rem 0.8rem;display:inline-flex;align-items:center;gap:0.3rem;transition:all 0.3s;cursor:pointer}
-.off-service .book-link:hover{background:#4A3066;color:#FAF6F1}
-
-/* CTA BAND */
-.cta-band{padding:2.5rem 2rem;background:linear-gradient(90deg,rgba(46,30,69,0.78),rgba(74,48,102,0.62)),url('moon-bg.png');background-size:cover;background-position:center 55%;text-align:center}
-.cta-band p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#FAF6F1;margin-bottom:1.2rem;font-style:italic;text-shadow:0 1px 12px rgba(30,15,58,0.45)}
-.cta-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.8rem 2rem;background:#4A3066;color:#FAF6F1;border:1.5px solid #4A3066;font-family:'Jost',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all 0.3s;cursor:pointer}
-.cta-btn:hover{background:#6B4D8A;border-color:#6B4D8A}
+.off-detail-icon{width:50px;height:50px;border:1.5px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#C4A265;flex-shrink:0;position:relative}
+.off-detail-icon::before{content:'';position:absolute;inset:3px;border:1px solid rgba(196,162,101,0.2);border-radius:50%}
+.off-detail-body h3{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;margin-bottom:0.4rem}
+.off-detail-body p{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.8;color:#2E1E45;margin-bottom:0.8rem}
+.off-detail-body .book-link{margin-top:1rem;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;text-decoration:none;font-weight:500;border:1px solid #4A3066;padding:0.4rem 1rem;display:inline-flex;align-items:center;gap:0.3rem;transition:all 0.3s;cursor:pointer}
+.off-detail-body .book-link:hover{background:#4A3066;color:#FAF6F1}
 
 /* BOOK A SESSION */
 .book-section{padding:3rem 2.5rem;background:#FAF6F1}
@@ -130,8 +162,10 @@ section{padding:4.5rem 2.5rem}
 .book-card .bc-icon{font-size:1.2rem;color:#C4A265;margin-bottom:0.5rem}
 .book-card h4{font-family:'Jost',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;margin-bottom:0.3rem}
 .book-card p{font-family:'Cormorant Garamond',serif;font-size:0.92rem;color:#2E1E45;line-height:1.6}
-.book-note{font-family:'Cormorant Garamond',serif;font-size:0.88rem;color:#5D4A78;margin-top:1rem;font-style:italic}
+.cta-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.8rem 2rem;background:#4A3066;color:#FAF6F1;border:1.5px solid #4A3066;font-family:'Jost',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all 0.3s;cursor:pointer}
+.cta-btn:hover{background:#6B4D8A;border-color:#6B4D8A}
 .payment-note{font-family:'Cormorant Garamond',serif;font-size:0.92rem;color:#2E1E45;margin-top:1.5rem;line-height:1.7;padding:1rem 1.5rem;background:#F0EAF4;border-left:2px solid #C4A265}
+.book-note{font-family:'Cormorant Garamond',serif;font-size:0.88rem;color:#5D4A78;margin-top:1rem;font-style:italic}
 
 /* TESTIMONIALS */
 .testimonials{padding:4rem 2rem;background:#FAF6F1;text-align:center}
@@ -140,6 +174,8 @@ section{padding:4.5rem 2.5rem}
 .t-card .qm{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:#D8C8E8;line-height:1;margin-bottom:0.3rem}
 .t-card p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;line-height:1.75;color:#2E1E45;margin-bottom:0.7rem}
 .t-card .who{font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:#5D4A78;font-weight:500}
+.cta-band{padding:2.5rem 2rem;background:linear-gradient(90deg,rgba(46,30,69,0.78),rgba(74,48,102,0.62)),url('moon-bg.png');background-size:cover;background-position:center 55%;text-align:center}
+.cta-band p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#FAF6F1;margin-bottom:1.2rem;font-style:italic;text-shadow:0 1px 12px rgba(30,15,58,0.45)}
 
 /* FAQ */
 .faq{padding:3rem 2rem;background:#FAF6F1}
@@ -200,11 +236,6 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .nav-inner{max-width:none;width:100%;justify-content:space-between}
-  .nav-logo-text{max-width:calc(100vw - 150px)}
-  .nav-logo-name{font-size:0.88rem}
-  .nav-logo-sub{font-size:0.5rem}
-  .page-header{min-height:330px;padding:6.5rem 1.5rem 3rem;background-size:cover;background-position:left 18% center}
   .hero h1{font-size:2rem}
   .off-grid{grid-template-columns:repeat(3,1fr)}
   .about-section{grid-template-columns:1fr}
@@ -214,9 +245,13 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   .foot-grid{grid-template-columns:1fr 1fr}
   .nav-menu{display:none}
   .nav-menu.show{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(250,246,241,0.98);padding:1rem 2rem;border-bottom:1px solid rgba(196,162,101,0.1);gap:0.6rem}
-  .mob-toggle{display:flex;margin-left:auto}
+  .mob-toggle{display:flex}
   .contact-grid{grid-template-columns:1fr}
   .book-details{grid-template-columns:1fr}
+  .nav-inner{max-width:none;width:100%;justify-content:space-between}
+  .nav-logo-name{font-size:0.88rem}
+  .page-header{min-height:300px;padding:6.2rem 1.5rem 2.8rem}
+  .page-header::before{background-size:auto 100%;background-position:left center}
 }
 @media(max-width:600px){
   .hero h1{font-size:1.6rem}
@@ -228,8 +263,10 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   .nav-logo-sub{font-size:0.48rem}
   .about-text{padding:2rem 1.5rem}
   section,.book-section,.contact-section,.offerings-detail{padding:3rem 1.5rem}
-  .page-header{min-height:330px;background-position:left 14% center}
-  .off-service{padding-left:0.5rem}
+  .page-header{min-height:285px}
+  .page-header::before{background-size:auto 100%;background-position:left center}
+  .akashic-card span,.akashic-note{margin-left:0}
+  .akashic-sun{opacity:.35}
 }
 </style>
 </head>
@@ -240,7 +277,7 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   <div class="nav-inner">
     <div class="nav-logo" onclick="showPage('home')">
       <div class="nav-logo-circle"><img src="cosmic-logo.png" alt="The Cosmic Alchemy logo"></div>
-      <div class="nav-logo-text"><div class="nav-logo-name">The Cosmic<br>Alchemy</div><div class="nav-logo-sub"></div></div>
+      <div class="nav-logo-text"><div class="nav-logo-name">The Cosmic<br>Alchemy</div><div class="nav-logo-sub">Celestial Guidance. Sovereign Truth.</div></div>
     </div>
     <ul class="nav-menu" id="navMenu">
       <li><a onclick="showPage('home')" class="active" data-page="home">Home</a></li>
@@ -259,13 +296,8 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 <!-- ==================== PAGE: HOME ==================== -->
 <div class="page active" id="home">
   <section class="hero">
-    <div class="hero-sky"></div>
+    <!-- No text here. The background image (sun-hero.png) has the branding. Just buttons at the bottom. -->
     <div class="hero-content">
-      <div class="hero-star">✧</div>
-      <h1>Transmutative<br>Journey of Soul</h1>
-      <p class="hero-subtitle">Celestial Guidance. Sovereign Truth.</p>
-      <div class="hero-star">✦</div>
-      <p class="hero-desc">You have arrived by way of sacred gravity.<br>This is your invitation to remember.</p>
       <div class="hero-buttons">
         <a class="h-btn" onclick="showPage('offerings-page')">Explore Offerings →</a>
         <a class="h-btn" onclick="showPage('book')">Book a Session →</a>
@@ -325,10 +357,9 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 <!-- ==================== PAGE: OFFERINGS ==================== -->
 <div class="page" id="offerings-page">
   <div class="page-header"><h1>Our Offerings</h1><div class="star">✦</div></div>
-  <section class="offerings-detail">
+<section class="offerings-detail">
     <div class="off-detail-list">
 
-      <!-- I. THE CHANNELED ORACLE -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✦</span><span class="off-cat-title">I. The Channeled Oracle</span></div>
         <div class="off-service has-img"><img src="automatic%20writing.jpeg" alt="Automatic Writing"><div class="off-service-text"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
@@ -336,14 +367,12 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
         <div class="off-service has-img"><img src="tarot%20card%20reading.jpeg" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
       </div>
 
-      <!-- II. THE COSMIC BLUEPRINT -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">☾</span><span class="off-cat-title">II. The Cosmic Blueprint</span></div>
         <div class="off-service has-img"><img src="astrology.jpeg" alt="Astrology Consultation"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
         <div class="off-service has-img"><img src="numerology.jpeg" alt="Numerology Reading"><div class="off-service-text"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
       </div>
 
-      <!-- III. ENERGY HEALING & RESTORATION -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✧</span><span class="off-cat-title">III. Energy Healing &amp; Restoration</span></div>
         <div class="off-service has-img"><img src="reiki%20healing.jpeg" alt="Reiki Chakra Healing"><div class="off-service-text"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
@@ -352,14 +381,12 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
         <div class="off-service"><h4>Deep Quantum Healing (DNA Revitalization)</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
       </div>
 
-      <!-- IV. SACRED FLAME & KARMIC RELEASE -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">♢</span><span class="off-cat-title">IV. Sacred Flame &amp; Karmic Release</span></div>
-        <div class="off-service"><img src="violet%20flame.jpeg" alt="Violet Flame Healing" class="off-service-img"><h4>Violet Flame Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service has-img"><img src="violet%20flame.jpeg" alt="Violet Flame Healing"><div class="off-service-text"><h4>Violet Flame Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
         <div class="off-service"><h4>Violet Flame Healing with Karmic Cord Cutting</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
       </div>
 
-      <!-- V. SPECIALIZED HEALING SESSIONS -->
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✺</span><span class="off-cat-title">V. Specialized Healing Sessions</span></div>
         <div class="off-service"><h4>Personalized Healing for Specific Health Concerns</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
@@ -436,7 +463,7 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
       <div class="contact-info">
         <div class="contact-item"><div class="ci-icon">✉</div><div><h4>Email</h4><p>hello@transmutativejourney.com</p></div></div>
         <div class="contact-item"><div class="ci-icon">◷</div><div><h4>Response Time</h4><p>Within 48 hours</p></div></div>
-        <div class="contact-item"><div class="ci-icon">⌖</div><div><h4>Location</h4><p>Online · Worldwide</p></div></div>
+        <div class="contact-item"><div class="ci-icon">⌖</div><div><h4>Location</h4><p>Online • Worldwide</p></div></div>
       </div>
       <div class="contact-form">
         <input type="text" placeholder="Your Name">
@@ -454,10 +481,10 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
   <div class="foot-grid">
     <div class="foot-logo"><div class="fl-name">The Cosmic<br>Alchemy</div><div class="fl-sub">Transmutative Journey of Soul</div><div class="foot-social"><a href="#">IG</a><a href="#">FB</a><a href="#">TK</a><a href="#">YT</a></div></div>
     <div class="foot-col"><h5>Quick Links</h5><a onclick="showPage('home')">Home</a><a onclick="showPage('about')">About Me</a><a onclick="showPage('offerings-page')">Offerings</a><a onclick="showPage('book')">Book a Session</a></div>
-    <div class="foot-col"><h5>Offerings</h5><a onclick="showPage('offerings-page')">The Channeled Oracle</a><a onclick="showPage('offerings-page')">The Cosmic Blueprint</a><a onclick="showPage('offerings-page')">Energy Healing &amp; Restoration</a><a onclick="showPage('offerings-page')">Sacred Flame &amp; Karmic Release</a><a onclick="showPage('offerings-page')">Specialized Healing</a></div>
+    <div class="foot-col"><h5>Offerings</h5><a onclick="showPage('offerings-page')">The Channeled Oracle</a><a onclick="showPage('offerings-page')">The Cosmic Blueprint</a><a onclick="showPage('offerings-page')">Energy Healing &amp; Restoration</a><a onclick="showPage('offerings-page')">Sacred Flame &amp; Karmic Release</a></div>
     <div class="foot-newsletter"><h5>Stay Connected</h5><p>Receive celestial insights, invitations, and offerings.</p><div class="email-row"><input type="email" placeholder="Your email address"><button>Subscribe</button></div></div>
   </div>
-  <div class="foot-bottom"><p>&copy; 2026 Transmutative Journey of Soul by Garima. All rights reserved.</p><div class="foot-bottom-links"><a href="#">Disclaimer</a><span class="sep">|</span><a href="#">Privacy Policy</a><span class="sep">|</span><a href="#">Terms &amp; Conditions</a></div></div>
+  <div class="foot-bottom"><p>&copy; 2026 The Cosmic Alchemy by Garima. All rights reserved.</p><div class="foot-bottom-links"><a href="#">Disclaimer</a><span class="sep">|</span><a href="#">Privacy Policy</a><span class="sep">|</span><a href="#">Terms &amp; Conditions</a></div></div>
 </footer>
 
 <script>
