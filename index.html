@@ -34,20 +34,22 @@ body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-
 
 /* HERO - background image does all the talking */
 .hero{
-  height: min(78vh, 820px);
-  min-height: 560px;
-  max-height: 820px;
+  height:min(78vh, 820px);
+  min-height:560px;
+  max-height:820px;
   position:relative;
-  width:100%;
-  padding:0;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  padding:0 !important;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   overflow:hidden;
   background-image:url('sun-hero.png');
-  background-size:clamp(1200px, 85vw, 1800px) auto;
-  background-position:center 35%;
+  background-size:cover;
+  background-position:center;
   background-repeat:no-repeat;
 }
 .hero::before{
