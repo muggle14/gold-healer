@@ -144,13 +144,32 @@ section{padding:4.5rem 2.5rem}
 
 /* OFFERINGS DETAIL PAGE */
 .offerings-detail{padding:3rem 2.5rem;background:#FAF6F1}
-.off-detail-list{max-width:800px;margin:0 auto}
-.off-detail-icon{width:50px;height:50px;border:1.5px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#C4A265;flex-shrink:0;position:relative}
-.off-detail-icon::before{content:'';position:absolute;inset:3px;border:1px solid rgba(196,162,101,0.2);border-radius:50%}
-.off-detail-body h3{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;margin-bottom:0.4rem}
-.off-detail-body p{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.8;color:#2E1E45;margin-bottom:0.8rem}
-.off-detail-body .book-link{margin-top:1rem;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;text-decoration:none;font-weight:500;border:1px solid #4A3066;padding:0.4rem 1rem;display:inline-flex;align-items:center;gap:0.3rem;transition:all 0.3s;cursor:pointer}
-.off-detail-body .book-link:hover{background:#4A3066;color:#FAF6F1}
+.off-detail-list{max-width:900px;margin:0 auto}
+.off-category{margin-bottom:2.2rem}
+.off-cat-header{display:flex;align-items:center;gap:0.7rem;margin:1.4rem 0 0.9rem}
+.off-cat-icon{width:34px;height:34px;border:1.5px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C4A265;background:#FFFFFF;font-size:0.85rem;flex-shrink:0;position:relative}
+.off-cat-icon::before{content:'';position:absolute;inset:3px;border:1px solid rgba(196,162,101,0.22);border-radius:50%}
+.off-cat-title{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:#4A3066}
+
+.off-service{display:flex;align-items:center;gap:1.25rem;padding:1rem;border:1px solid rgba(196,162,101,0.12);background:#FFFFFF;border-radius:16px;box-shadow:0 10px 22px rgba(46,30,69,0.06);margin-bottom:0.9rem}
+.off-service.has-img{padding:0.95rem}
+.off-service img{width:190px;height:190px;flex:0 0 190px;object-fit:cover;border-radius:14px;border:1px solid rgba(196,162,101,0.18);background:#F0EAF4;display:block}
+.off-service-text{flex:1;min-width:0}
+.off-service-text h4{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:400;color:#4A3066;margin-bottom:0.35rem}
+.off-service-text .duration{font-size:0.62rem;letter-spacing:0.10em;text-transform:uppercase;color:#5D4A78;margin-bottom:0.75rem}
+.off-service-text .book-link{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;text-decoration:none;font-weight:500;border:1px solid #4A3066;padding:0.42rem 1rem;transition:all 0.3s;cursor:pointer}
+.off-service-text .book-link:hover{background:#4A3066;color:#FAF6F1}
+
+@media(max-width:900px){
+  .off-detail-list{max-width:760px}
+  .off-service img{width:160px;height:160px;flex-basis:160px}
+}
+@media(max-width:600px){
+  .offerings-detail{padding:3rem 1.5rem}
+  .off-service{flex-direction:column;text-align:center}
+  .off-service img{width:100%;height:auto;max-width:360px;flex-basis:auto}
+  .off-service-text .book-link{justify-content:center}
+}
 
 /* BOOK A SESSION */
 .book-section{padding:3rem 2.5rem;background:#FAF6F1}
@@ -362,35 +381,35 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✦</span><span class="off-cat-title">I. The Channeled Oracle</span></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="auto%20writing.png" alt="Automatic Writing"><div class="off-service-text"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="akashic%20records.png" alt="Akashic Records Reading"><div class="off-service-text"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="tarot%20card%20reading.png" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="auto%20writing.png" alt="Automatic Writing"><div class="off-service-text"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="akashic%20records.png" alt="Akashic Records Reading"><div class="off-service-text"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="tarot%20card%20reading.png" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div></div>
       </div>
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">☾</span><span class="off-cat-title">II. The Cosmic Blueprint</span></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="astrology.png" alt="Astrology Consultation"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="numerology.png" alt="Numerology Reading"><div class="off-service-text"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="astrology.png" alt="Astrology Consultation"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="numerology.png" alt="Numerology Reading"><div class="off-service-text"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div></div>
       </div>
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✧</span><span class="off-cat-title">III. Energy Healing &amp; Restoration</span></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="reiki%20healing.png" alt="Reiki Chakra Healing"><div class="off-service-text"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
-        <div class="off-service"><h4>Deep Meditation with Healing</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="quantum%20healing.png" alt="Quantum Healing"><div class="off-service-text"><h4>Quantum Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
-        <div class="off-service"><h4>Deep Quantum Healing (DNA Revitalization)</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="reiki%20healing.png" alt="Reiki Chakra Healing"><div class="off-service-text"><h4>Reiki Chakra Healing</h4><p class="duration">30 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div></div>
+        <div class="off-service"><h4>Deep Meditation with Healing</h4><p class="duration">60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="quantum%20healing.png" alt="Quantum Healing"><div class="off-service-text"><h4>Quantum Healing</h4><p class="duration">30 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div></div>
+        <div class="off-service"><h4>Deep Quantum Healing (DNA Revitalization)</h4><p class="duration">60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div>
       </div>
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">♢</span><span class="off-cat-title">IV. Sacred Flame &amp; Karmic Release</span></div>
-        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="violet%20flame.png" alt="Violet Flame Healing"><div class="off-service-text"><h4>Violet Flame Healing</h4><p class="duration">30 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div></div>
-        <div class="off-service"><h4>Violet Flame Healing with Karmic Cord Cutting</h4><p class="duration">60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service has-img"><img width="170" height="170" loading="lazy" decoding="async" src="violet%20flame.png" alt="Violet Flame Healing"><div class="off-service-text"><h4>Violet Flame Healing</h4><p class="duration">30 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div></div>
+        <div class="off-service"><h4>Violet Flame Healing with Karmic Cord Cutting</h4><p class="duration">60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div>
       </div>
 
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✺</span><span class="off-cat-title">V. Specialized Healing Sessions</span></div>
-        <div class="off-service"><h4>Personalized Healing for Specific Health Concerns</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
-        <div class="off-service"><h4>Shalvik Pranik Healing</h4><p class="duration">30 mins · 60 mins</p><a class="book-link" onclick="showPage('book')">Book Session →</a></div>
+        <div class="off-service"><h4>Personalized Healing for Specific Health Concerns</h4><p class="duration">30 mins · 60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div>
+        <div class="off-service"><h4>Shalvik Pranik Healing</h4><p class="duration">30 mins · 60 mins</p><a href="#" class="book-link" onclick="showPage(\'book\'); return false;">Book Session →</a></div>
       </div>
 
     </div>
