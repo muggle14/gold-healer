@@ -165,11 +165,16 @@ section{padding:4.5rem 2.5rem}
   display:flex;
   align-items:center;
   justify-content:center;
-  flex-direction:column;
-  gap:0.5rem;
+  padding:2.2rem;
 }
-.about-photo .ph-icon{font-size:2.5rem;color:#C4A265;opacity:0.25}
-.about-photo .ph-text{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#5D4A78;font-weight:500}
+.about-photo img{
+  width:min(320px, 100%);
+  height:auto;
+  max-height:360px;
+  object-fit:contain;
+  display:block;
+  filter: drop-shadow(0 10px 24px rgba(46,30,69,0.10));
+}
 
 .about-text{background:linear-gradient(180deg,#F0EAF4 0%,#F5F0F8 100%);padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
 .about-text h2{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:400;color:#4A3066;margin-bottom:1rem}
@@ -406,7 +411,7 @@ footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.
 <div class="page" id="about">
   <div class="page-header"><h1>About Me</h1><div class="star">✦</div></div>
   <section class="about-section">
-    <div class="about-photo"><div class="ph-icon">✦</div><div class="ph-text">Add photo here</div></div>
+    <div class="about-photo"><img src="brand.jpeg" alt="The Cosmic Alchemy brand logo"></div>
     <div class="about-text">
       <p>For a decade, I navigated the corporate architecture of a world that looked complete to the eye but felt silent to the soul. Amidst the height of external success, a singular whisper persisted: <em>There is more.</em></p>
       <p>That whisper became a summon, leading me away from the known and into the heart of the Divine. Through Reiki and celestial channels, my world underwent a profound transmutation — shifting from shadow into gold.</p>
