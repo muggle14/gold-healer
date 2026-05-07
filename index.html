@@ -165,15 +165,14 @@ section{padding:4.5rem 2.5rem}
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:2.2rem;
+  padding:2rem;
 }
 .about-photo img{
-  width:min(320px, 100%);
+  width:min(230px, 72%);
   height:auto;
-  max-height:360px;
+  max-height:420px;
   object-fit:contain;
   display:block;
-  filter: drop-shadow(0 10px 24px rgba(46,30,69,0.10));
 }
 
 .about-text{background:linear-gradient(180deg,#F0EAF4 0%,#F5F0F8 100%);padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
@@ -214,6 +213,8 @@ section{padding:4.5rem 2.5rem}
 .off-service-text .book-link:hover{background:#4A3066;color:#FAF6F1}
 
 @media(max-width:900px){
+  .about-photo{padding:1.5rem}
+  .about-photo img{width:min(210px, 70vw)}
   .about-photo{padding:1.6rem}
 
   .off-detail-list{max-width:760px}
