@@ -3,398 +3,506 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Cosmic Alchemy — Garima Sharma</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<title>The Cosmic Alchemy - Garima Sharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
 <style>
-
-/* ── RESET ── */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;background:#FDFBFF}
+body{font-family:'Jost',sans-serif;color:#2E1E45;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:400;background:#FAF6F1}
 
-/* ── TOKENS ── */
-:root{
-  --white:#FDFBFF;
-  --lavender-soft:#F0EBF8;
-  --lavender-mid:#E2D5F0;
-  --purple-deep:#1E0A3C;
-  --purple:#3D1A6E;
-  --purple-mid:#5A2D9A;
-  --gold:#C49A2E;
-  --gold-light:#DDB548;
-  --gold-pale:#FBF5E6;
-  --text:#1E0A3C;
-  --muted:#6B5480;
-  --border:rgba(196,154,46,0.18);
-}
+/* NAV */
+.nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(250,246,241,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(168,136,90,0.1)}
+.nav.scrolled{box-shadow:0 2px 20px rgba(46,32,64,0.06)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;padding:0.6rem 2.5rem;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;flex-shrink:1;cursor:pointer}
+.nav-logo-circle{width:48px;height:48px;border:1.5px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#2E1E45}
+.nav-logo-circle img{width:100%;height:100%;object-fit:cover;display:block}
+.nav-logo-circle::before{content:'';position:absolute;inset:3px;border:1px solid rgba(196,162,101,0.3);border-radius:50%}
+.nav-logo-text{line-height:1.15}
+.nav-logo-name{font-family:'Cinzel Decorative',serif;font-size:1.02rem;color:#2E1E45;font-weight:700}
+.nav-logo-sub{font-size:0.55rem;color:#3D2B56;letter-spacing:0.08em;font-weight:400}
+.nav-menu{display:flex;gap:1.6rem;list-style:none;margin-left:auto;align-items:center}
+.nav-menu a{text-decoration:none;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#2E1E45;transition:color 0.2s;cursor:pointer}
+.nav-menu a:hover{color:#6B4D8A}
+.nav-menu a.active{text-decoration:underline;text-underline-offset:4px;text-decoration-color:#C4A265}
+.mob-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;margin-left:auto;padding:0.5rem}
+.mob-toggle span{width:18px;height:1.5px;background:#2E1E45}
 
-/* ── NAV ── */
-.nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(253,251,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav.scrolled{box-shadow:0 2px 40px rgba(30,10,60,0.07)}
-.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;padding:0 2.5rem;height:68px}
-.nav-logo{display:flex;align-items:center;gap:0.8rem;cursor:pointer;text-decoration:none}
-.nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden;border:1.5px solid var(--gold);background:var(--purple);flex-shrink:0;position:relative}
-.nav-logo-circle img{width:100%;height:100%;object-fit:cover}
-.nav-logo-circle::after{content:'';position:absolute;inset:3px;border:1px solid rgba(196,154,46,0.2);border-radius:50%}
-.nav-logo-name{font-family:'Cinzel Decorative',serif;font-size:0.88rem;color:var(--purple-deep);font-weight:700;line-height:1.2}
-.nav-logo-sub{font-size:0.44rem;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase}
-.nav-menu{display:flex;gap:1.8rem;list-style:none;margin-left:auto;align-items:center}
-.nav-menu a{text-decoration:none;font-size:0.65rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text);transition:color 0.2s;cursor:pointer}
-.nav-menu a:hover,.nav-menu a.active{color:var(--gold)}
-.nav-cta{margin-left:1.5rem;padding:0.55rem 1.4rem;background:var(--gold);color:var(--purple-deep);font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;transition:background 0.2s;text-decoration:none}
-.nav-cta:hover{background:var(--gold-light)}
-.mob-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;margin-left:auto;padding:4px}
-.mob-toggle span{width:22px;height:1.5px;background:var(--purple-deep);display:block}
-
-/* ── PAGE SYSTEM ── */
+/* PAGE SYSTEM */
 .page{display:none}
 .page.active{display:block}
 
-/* ── HERO ── */
+/* HERO */
 .hero{
-  height:100vh;min-height:620px;max-height:960px;
-  position:relative;width:100vw;
-  margin-left:calc(50% - 50vw);
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-  background:var(--purple-deep);
-  background-image:url('sun_banner_desktop_v1.png');
-  background-size:cover;background-position:center;
-}
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(to bottom,
-    rgba(30,10,60,0.62) 0%,
-    rgba(61,26,110,0.38) 50%,
-    rgba(30,10,60,0.78) 100%);
-}
-.hero-content{position:relative;z-index:2;text-align:center;padding:0 1.5rem;max-width:900px}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:0.8rem;
-  font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--gold-light);margin-bottom:1.4rem;
-}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--gold)}
-.hero h1{
-  font-family:'Cinzel',serif;
-  font-size:clamp(3rem,6.5vw,5.8rem);
-  font-weight:600;color:#FFFFFF;
-  line-height:1.06;letter-spacing:0.05em;
-  text-transform:uppercase;margin-bottom:1rem;
-}
-.hero-rule{width:60px;height:2px;background:var(--gold);margin:0 auto 1.2rem}
-.hero-tagline{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1rem,2.2vw,1.4rem);
-  font-style:italic;font-weight:300;
-  color:rgba(255,255,255,0.75);
-  letter-spacing:0.06em;margin-bottom:2.5rem;
-}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-gold{display:inline-flex;align-items:center;gap:0.4rem;padding:0.95rem 2.8rem;background:var(--gold);color:var(--purple-deep);font-family:'Jost',sans-serif;font-size:0.67rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;transition:all 0.3s;text-decoration:none}
-.btn-gold:hover{background:var(--gold-light)}
-.btn-ghost-white{display:inline-flex;align-items:center;gap:0.4rem;padding:0.95rem 2.8rem;background:transparent;color:#FFFFFF;font-family:'Jost',sans-serif;font-size:0.67rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;border:1.5px solid rgba(255,255,255,0.45);cursor:pointer;transition:all 0.3s;text-decoration:none}
-.btn-ghost-white:hover{border-color:#FFF;background:rgba(255,255,255,0.1)}
-
-/* ── GOLD QUOTE STRIP ── */
-.quote-strip{
-  background:var(--gold);padding:1.5rem 2.5rem;
-  text-align:center;
-}
-.quote-strip p{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.15rem;font-style:italic;font-weight:500;
-  color:var(--purple-deep);max-width:800px;margin:0 auto;
-  letter-spacing:0.02em;
-}
-
-/* ── SPLIT SECTION BASE ── */
-.split{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
-.split.reverse{direction:rtl}
-.split.reverse > *{direction:ltr}
-.split-img{
-  position:relative;overflow:hidden;
-  min-height:440px;
-}
-.split-img img{width:100%;height:100%;object-fit:cover;display:block}
-.split-img.banner-img{
-  background-size:cover;background-position:center;background-repeat:no-repeat;
-}
-.split-body{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:5rem 4rem;
-  background:var(--white);
-}
-.split-body.lavender{background:var(--lavender-soft)}
-.split-body.purple{background:var(--purple-deep)}
-.split-body.purple .s-label{color:var(--gold-light)}
-.split-body.purple .s-title{color:#FFFFFF}
-.split-body.purple .s-rule{background:var(--gold)}
-.split-body.purple p{color:rgba(255,255,255,0.72)}
-.split-body.purple .btn-ghost{border-color:rgba(255,255,255,0.4);color:#FFF}
-.split-body.purple .btn-ghost:hover{background:rgba(255,255,255,0.1)}
-
-/* ── TYPOGRAPHY ── */
-.s-label{font-size:0.56rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.75rem;display:block}
-.s-title{
-  font-family:'Cinzel',serif;
-  font-size:clamp(1.8rem,3.5vw,2.8rem);
-  font-weight:600;color:var(--purple-deep);
-  line-height:1.1;letter-spacing:0.04em;
-  text-transform:uppercase;
-}
-.s-rule{width:48px;height:2px;background:var(--gold);margin:1.2rem 0 1.6rem}
-.s-body{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.08rem;line-height:1.95;
-  color:var(--muted);margin-bottom:0.8rem;
-}
-.btn-purple{display:inline-flex;align-items:center;gap:0.4rem;padding:0.85rem 2.2rem;background:var(--purple);color:#FFF;font-family:'Jost',sans-serif;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;transition:background 0.3s;text-decoration:none;margin-top:1.5rem}
-.btn-purple:hover{background:var(--purple-mid)}
-.btn-outline-gold{display:inline-flex;align-items:center;gap:0.4rem;padding:0.85rem 2.2rem;background:transparent;color:var(--gold);font-family:'Jost',sans-serif;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;border:1.5px solid var(--gold);cursor:pointer;transition:all 0.3s;text-decoration:none;margin-top:1.5rem}
-.btn-outline-gold:hover{background:var(--gold);color:var(--purple-deep)}
-.btn-ghost{display:inline-flex;align-items:center;gap:0.4rem;padding:0.85rem 2.2rem;background:transparent;color:var(--purple);font-family:'Jost',sans-serif;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;border:1.5px solid var(--border);cursor:pointer;transition:all 0.3s;text-decoration:none;margin-top:1.5rem}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-
-/* ── OFFERINGS GRID (HOME) ── */
-.offerings-section{
-  padding:6rem 2.5rem;
-  background:var(--lavender-soft);
-  text-align:center;
-}
-.offerings-section .s-title{font-size:clamp(1.6rem,3vw,2.5rem)}
-.off-cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
-  margin-top:3.5rem;
-  border:1px solid var(--border);
-}
-.off-card{
-  padding:2.5rem 1.75rem;
-  background:var(--white);
-  border-right:1px solid var(--border);
-  text-align:left;
-  transition:all 0.35s;
-  cursor:pointer;
+  height:min(78vh, 820px);
+  min-height:560px;
+  max-height:820px;
   position:relative;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  padding:0 !important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background-image:url('sun_banner_desktop_v1.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
-.off-card:last-child{border-right:none}
-.off-card::after{
-  content:'';position:absolute;top:0;left:0;right:0;
-  height:2px;background:var(--gold);
-  transform:scaleX(0);transform-origin:left;transition:transform 0.35s;
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(250,246,241,0.06) 0%,rgba(250,246,241,0.18) 55%,rgba(250,246,241,0.36) 100%);
+  pointer-events:none;
 }
-.off-card:hover::after{transform:scaleX(1)}
-.off-card:hover{background:var(--gold-pale)}
-.off-num{
-  font-family:'Cinzel',serif;font-size:2.5rem;
-  font-weight:600;color:var(--lavender-mid);
-  line-height:1;margin-bottom:1rem;
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:720px;
+  padding:4rem 1.5rem 3rem;
 }
-.off-card h4{
-  font-family:'Cinzel',serif;font-size:0.7rem;
-  font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--purple);margin-bottom:0.6rem;line-height:1.5;
+.hero-star{color:#C4A265;font-size:0.8rem;margin:0.8rem 0;opacity:0.7}
+.hero h1{
+  font-family:'Cinzel Decorative',serif;
+  font-size:3rem;
+  font-weight:400;
+  color:#2E1E45;
+  line-height:1.18;
+  margin-bottom:0.6rem;
+  text-shadow:0 2px 24px rgba(255,255,255,0.95);
 }
-.off-card p{
-  font-family:'Cormorant Garamond',serif;font-size:0.93rem;
-  color:var(--muted);line-height:1.65;margin-bottom:0.8rem;
+.hero-subtitle{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;
+  font-style:italic;
+  color:#8A631D;
+  margin-bottom:0.5rem;
+  font-weight:400;
+  text-shadow:0 1px 12px rgba(255,255,255,0.9);
 }
-.off-card-link{
-  font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--gold);font-weight:700;text-decoration:none;
+.hero-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;
+  color:#2E1E45;
+  line-height:1.7;
+  margin-bottom:2rem;
+  text-shadow:0 1px 12px rgba(255,255,255,0.95);
 }
+.hero-buttons{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap}
+.h-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid #4A3066;color:#4A3066;transition:all 0.3s;font-weight:600;background:rgba(255,255,255,0.52);backdrop-filter:blur(4px);cursor:pointer}
+.h-btn:hover{background:#4A3066;color:#FAF6F1}
 
-/* ── PAGE HEADER ── */
+/* SECTIONS */
+section{padding:4.5rem 2.5rem}
+.section-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#C4A265;margin-bottom:0.3rem;font-weight:500;text-align:center}
+.section-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:400;color:#4A3066;margin-bottom:0.6rem;text-align:center}
+.div-line{width:35px;height:1px;background:#C4A265;margin:0.6rem auto 1.5rem}
 .page-header{
-  min-height:max(300px,28vw);
-  margin-top:68px;
-  position:relative;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:var(--purple-deep);
+  min-height:max(280px, 25vw);
+  margin-top:67px;
+  padding:1.5rem 2rem;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  background:#2E1E45;
 }
 .page-header::before{
-  content:"";position:absolute;inset:0;
+  content:"";
+  position:absolute;
+  inset:0;
   background-image:url('moon_banner_desktop_v4.png');
-  background-size:100% 100%;background-position:center;opacity:0.9;
+  background-size:100% 100%;
+  background-position:center center;
+  background-repeat:no-repeat;
+  opacity:1;
 }
 .page-header::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(30,10,60,0.55) 0%,rgba(61,26,110,0.22) 50%,rgba(30,10,60,0.6) 100%);
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(46,30,69,.45) 0%,rgba(46,30,69,.15) 45%,rgba(46,30,69,.35) 100%);
+  pointer-events:none;
 }
-.page-header-inner{position:relative;z-index:2;text-align:center;padding:2rem;margin-left:20%}
-.page-header-inner .s-label{color:var(--gold-light)}
-.page-header h1{
-  font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3.2rem);
-  font-weight:600;color:#FFFFFF;letter-spacing:0.07em;
-  text-transform:uppercase;line-height:1.2;
-  text-shadow:0 2px 30px rgba(10,0,30,0.6);
+.page-header h1,.page-header .star{position:relative;z-index:1}
+.page-header h1{font-family:'Cinzel',serif;font-size:2.1rem;font-weight:400;color:#FFFFFF;margin-bottom:0.3rem;margin-left:18%;line-height:1.5;text-shadow:0 2px 28px rgba(30,15,58,0.85),0 0 60px rgba(200,160,255,0.3)}
+.page-header .star{color:#D9B56D;font-size:1rem;margin-top:0.65rem;text-shadow:0 1px 10px rgba(30,15,58,0.45)}
+
+/* WELCOME */
+.welcome{padding:4rem 2.5rem;background:#FAF6F1}
+.welcome-inner{max-width:950px;margin:0 auto;display:flex;align-items:flex-start;gap:2.5rem}
+.welcome-moon-char{font-size:4rem;color:#C4A265;opacity:0.2;flex-shrink:0}
+.welcome-body h2{font-family:'Cinzel',serif;font-size:1.45rem;font-weight:400;color:#4A3066;margin-bottom:0.8rem}
+.welcome-body p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.85;color:#2E1E45;margin-bottom:1.2rem}
+.outline-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.6rem 1.5rem;border:1.5px solid #4A3066;color:#4A3066;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;font-weight:500;cursor:pointer}
+.outline-btn:hover{background:#4A3066;color:#FAF6F1}
+.about-text .outline-btn{margin-top:1.4rem}
+
+/* OFFERINGS OVERVIEW (HOME) */
+.offerings{padding:4rem 2rem;background:#F0EAF4;text-align:center}
+.offerings-orn{display:flex;align-items:center;justify-content:center;gap:0.7rem;margin-bottom:0.8rem}
+.offerings-orn .ln{width:50px;height:1px;background:#C4A265}
+.offerings-orn .st{color:#C4A265;font-size:0.55rem}
+.offerings h2{font-family:'Jost',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#4A3066;margin-bottom:2.5rem}
+.off-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:2rem;
+  margin-top:2.5rem;
 }
-.page-header .star{color:var(--gold-light);font-size:1rem;margin-top:0.5rem;display:block;position:relative;z-index:2}
+.off-item{text-align:center;padding:0.5rem}
+.off-icon{width:60px;height:60px;border:1.5px solid #C4A265;border-radius:50%;margin:0 auto 0.8rem;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#C4A265;background:#FAF6F1;position:relative}
+.off-icon::before{content:'';position:absolute;inset:4px;border:1px solid rgba(196,162,101,0.25);border-radius:50%}
+.off-item h4{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#4A3066;margin-bottom:0.5rem;line-height:1.5}
+.off-item p{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:#3D2B56;line-height:1.55;margin-bottom:0.5rem}
+.off-item .lm{font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;text-decoration:none;font-weight:500;cursor:pointer}
+.off-item .lm:hover{color:#C4A265}
 
-/* ── ABOUT SECTION ── */
-.about-full{background:var(--white)}
+/* ABOUT */
+.about-section{
+  display:grid;
+  grid-template-columns:300px minmax(0, 1fr);
+  gap:3rem;
+  align-items:start;
+  max-width:950px;
+  margin:0 auto;
+}
+.about-photo{
+  background:transparent;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:0;
+  margin-top:0;
+}
+.about-photo .about-brand{
+  display:block;
+  width:auto;
+  height:372px;
+  max-width:100%;
+  object-fit:contain;
+}
+.about-text{
+  background:transparent;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+.about-text h2{
+  font-family:'Cinzel',serif;
+  font-size:1.5rem;
+  font-weight:400;
+  color:#4A3066;
+  margin-bottom:1rem;
+}
+.about-text p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  line-height:1.9;
+  color:#2E1E45;
+  margin-bottom:0.8rem;
+  max-width:62ch;
+}
+.about-text .outline-btn{margin-top:1.15rem}
 
-/* ── PHILOSOPHY ── */
-.philosophy-full{background:var(--purple-deep)}
-.philosophy-full .split-body{background:transparent}
+.philosophy{padding:3.5rem 2.5rem;background:linear-gradient(90deg,#FAF6F1 0%,#F5F0E8 100%)}
+.philosophy-inner{max-width:950px;margin:0 auto;display:flex;align-items:flex-start;gap:2rem}
+.philosophy-moon{flex-shrink:0;font-size:3.5rem;color:#C4A265;opacity:0.18;margin-top:0.3rem}
+.philosophy-body h2{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:400;color:#4A3066;margin-bottom:0.8rem;font-style:italic}
+.philosophy-body p{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.9;color:#2E1E45;margin-bottom:0.8rem}
 
-/* ── OFFERINGS DETAIL ── */
-.offerings-detail{padding:5rem 2.5rem;background:var(--lavender-soft)}
-.off-detail-list{max-width:960px;margin:0 auto}
-.off-category{margin-bottom:3rem}
-.off-cat-header{display:flex;align-items:center;gap:1rem;margin:2rem 0 1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
-.off-cat-icon{width:32px;height:32px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:0.8rem;flex-shrink:0}
-.off-cat-title{font-family:'Cinzel',serif;font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--purple)}
-.off-service{display:flex;align-items:center;gap:1.5rem;padding:1.5rem;background:var(--white);margin-bottom:2px;transition:all 0.3s;border-left:3px solid transparent}
-.off-service:hover{border-left-color:var(--gold);box-shadow:4px 0 28px rgba(30,10,60,0.06)}
-.off-service.has-img{padding:1.25rem}
-.off-service img{width:175px;height:175px;flex:0 0 175px;object-fit:cover;background:var(--lavender-mid);display:block}
+/* AKASHIC CARD */
+.akashic-card{position:relative;overflow:hidden;border-radius:18px;padding:1.35rem 1.25rem;margin-top:1rem;margin-bottom:.25rem;min-height:150px;background:linear-gradient(135deg,rgba(250,246,241,.22),rgba(250,246,241,.06)),linear-gradient(135deg,rgba(46,30,69,.88),rgba(91,63,124,.76)),url('moon_banner_desktop_v4.png');background-size:cover;background-position:center 46%;box-shadow:0 14px 34px rgba(46,30,69,.14);border:1px solid rgba(196,162,101,.38)}
+.akashic-orbit{position:absolute;inset:18px 24px;border:1px solid rgba(216,181,109,.55);border-radius:50%;transform:rotate(-10deg) scaleX(1.38);opacity:.72}
+.akashic-orbit::before,.akashic-orbit::after{content:"";position:absolute;inset:18px;border:1px solid rgba(250,246,241,.22);border-radius:50%}
+.akashic-orbit::after{inset:36px;border-color:rgba(216,181,109,.32)}
+.akashic-sun{position:absolute;left:28px;top:50%;width:30px;height:30px;margin-top:-15px;border-radius:50%;background:radial-gradient(circle,#FFF7CA 0%,#F4C65E 52%,#C89432 100%);box-shadow:0 0 24px rgba(244,198,94,.65)}
+.akashic-planet{position:absolute;right:54px;top:34px;width:13px;height:13px;border-radius:50%;background:#F5E7FF;box-shadow:-96px 64px 0 2px rgba(216,181,109,.85),-36px 20px 0 1px rgba(250,246,241,.65),28px 70px 0 2px rgba(196,162,101,.72)}
+.akashic-card span{position:relative;z-index:2;display:block;max-width:560px;margin-left:72px;color:#FAF6F1;font-family:'Cormorant Garamond',serif;font-size:.98rem;line-height:1.62;text-shadow:0 1px 12px rgba(30,15,58,.62)}
+.akashic-note{position:relative;z-index:2;margin-left:72px;color:#E8C98A;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+
+/* OFFERINGS DETAIL PAGE */
+.offerings-detail{padding:3rem 2.5rem;background:#FAF6F1}
+.off-detail-list{max-width:900px;margin:0 auto}
+.off-category{margin-bottom:2.2rem}
+.off-cat-header{display:flex;align-items:center;gap:0.7rem;margin:1.4rem 0 0.9rem}
+.off-cat-icon{width:34px;height:34px;border:1.5px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C4A265;background:#FFFFFF;font-size:0.85rem;flex-shrink:0;position:relative}
+.off-cat-icon::before{content:'';position:absolute;inset:3px;border:1px solid rgba(196,162,101,0.22);border-radius:50%}
+.off-cat-title{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:#4A3066}
+.off-service{display:flex;align-items:center;gap:1.25rem;padding:1rem;border:1px solid rgba(196,162,101,0.12);background:#FFFFFF;border-radius:16px;box-shadow:0 10px 22px rgba(46,30,69,0.06);margin-bottom:0.9rem}
+.off-service.has-img{padding:0.95rem}
+.off-service img{width:190px;height:190px;flex:0 0 190px;object-fit:cover;border-radius:14px;border:1px solid rgba(196,162,101,0.18);background:#F0EAF4;display:block}
 .off-service-text{flex:1;min-width:0}
-.off-service-text h4{font-family:'Cinzel',serif;font-size:1rem;font-weight:500;color:var(--purple);margin-bottom:0.3rem;letter-spacing:0.03em}
-.off-service-text .svc-desc,.off-service .svc-desc{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.7;color:var(--muted);margin:0 0 1rem;max-width:60ch}
-.off-service-text .duration{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;font-weight:600}
-.off-service-text .book-link,.off-service .book-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);font-weight:600;border-bottom:1px solid var(--gold);padding-bottom:1px;text-decoration:none;transition:color 0.2s;cursor:pointer}
-.off-service-text .book-link:hover,.off-service .book-link:hover{color:var(--gold)}
+.off-service-text h4{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:400;color:#4A3066;margin-bottom:0.35rem}
+.off-service-text .svc-desc{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.55;color:#140B22;margin:0 0 0.85rem}
+.off-service .svc-desc{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.55;color:#140B22;margin:0.2rem 0 0.85rem}
+.off-service-text .svc-desc,.off-service .svc-desc{max-width:70ch}
+.off-service-text .duration{font-size:0.62rem;letter-spacing:0.10em;text-transform:uppercase;color:#5D4A78;margin-bottom:0.75rem}
+.off-service-text .book-link{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;text-decoration:none;font-weight:500;border:1px solid #4A3066;padding:0.42rem 1rem;transition:all 0.3s;cursor:pointer}
+.off-service-text .book-link:hover{background:#4A3066;color:#FAF6F1}
 
-/* ── BOOK ── */
-.book-section{padding:7rem 2.5rem;background:var(--white)}
+/* BOOK A SESSION */
+.book-section{padding:3rem 2.5rem;background:#FAF6F1}
 .book-inner{max-width:700px;margin:0 auto;text-align:center}
-.book-inner .lead{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);color:var(--purple);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase}
-.book-inner .desc{font-family:'Cormorant Garamond',serif;font-size:1.08rem;line-height:1.9;color:var(--muted);margin-bottom:3rem}
-.book-details{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);max-width:580px;margin:0 auto 3rem}
-.book-card{background:var(--white);padding:2rem 1.5rem;text-align:center}
-.book-card .bc-icon{font-size:1.1rem;color:var(--gold);margin-bottom:0.6rem}
-.book-card h4{font-family:'Jost',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem}
-.book-card p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--muted);line-height:1.6}
-.book-note{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--muted);margin-top:1rem;font-style:italic}
+.book-inner .lead{font-family:'Cinzel',serif;font-size:1.15rem;color:#4A3066;margin-bottom:0.6rem;font-weight:400}
+.book-inner .desc{font-family:'Cormorant Garamond',serif;font-size:1.0rem;line-height:1.8;color:#2E1E45;margin-bottom:2rem}
+.book-details{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:550px;margin:0 auto 2.5rem}
+.book-card{background:#F0EAF4;border:1px solid rgba(196,162,101,0.1);padding:1.5rem;text-align:center}
+.book-card .bc-icon{font-size:1.2rem;color:#C4A265;margin-bottom:0.5rem}
+.book-card h4{font-family:'Jost',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#4A3066;margin-bottom:0.3rem}
+.book-card p{font-family:'Cormorant Garamond',serif;font-size:0.92rem;color:#2E1E45;line-height:1.6}
+.cta-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.8rem 2rem;background:#4A3066;color:#FAF6F1;border:1.5px solid #4A3066;font-family:'Jost',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all 0.3s;cursor:pointer}
+.cta-btn:hover{background:#6B4D8A;border-color:#6B4D8A}
+.payment-note{font-family:'Cormorant Garamond',serif;font-size:0.92rem;color:#2E1E45;margin-top:1.5rem;line-height:1.7;padding:1rem 1.5rem;background:#F0EAF4;border-left:2px solid #C4A265}
+.book-note{font-family:'Cormorant Garamond',serif;font-size:0.88rem;color:#5D4A78;margin-top:1rem;font-style:italic}
 
-/* ── TESTIMONIALS ── */
-.testimonials-section{padding:6rem 2.5rem;background:var(--lavender-soft)}
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem;max-width:1100px;margin-left:auto;margin-right:auto}
-.t-card{background:var(--white);padding:2.5rem 2rem;border-bottom:2px solid var(--gold)}
-.t-card .qm{font-size:4rem;color:rgba(196,154,46,0.15);font-family:'Cormorant Garamond',serif;line-height:1;margin-bottom:0.5rem}
-.t-card p{font-family:'Cormorant Garamond',serif;font-size:1.02rem;font-style:italic;line-height:1.85;color:var(--text);margin-bottom:1.25rem}
-.t-card .who{font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
-.cta-band{padding:5rem 2.5rem;background:var(--purple-deep);text-align:center;position:relative;overflow:hidden}
-.cta-band::before{content:'';position:absolute;inset:0;background:url('moon_banner_desktop_v4.png') center/cover;opacity:0.15}
-.cta-band p{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:rgba(255,255,255,0.85);margin-bottom:2rem;font-style:italic;position:relative;z-index:1}
-.cta-band .btn-gold{position:relative;z-index:1}
+/* TESTIMONIALS */
+.testimonials{padding:4rem 2rem;background:#FAF6F1;text-align:center}
+.test-grid{max-width:900px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.t-card{background:#FFFFFF;border:1px solid rgba(196,162,101,0.08);padding:1.5rem 1.2rem;text-align:left}
+.t-card .qm{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:#D8C8E8;line-height:1;margin-bottom:0.3rem}
+.t-card p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;line-height:1.75;color:#2E1E45;margin-bottom:0.7rem}
+.t-card .who{font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:#5D4A78;font-weight:500}
+.cta-band{padding:3rem 2rem;background:linear-gradient(135deg,#5B3C7E 0%,#6E5EA3 45%,#A88BCB 100%);text-align:center}
+.cta-band p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#FAF6F1;margin-bottom:1.2rem;font-style:italic}
 
-/* ── FAQ ── */
-.faq{padding:7rem 2.5rem;background:var(--white)}
-.faq-wrap{max-width:680px;margin:0 auto}
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-q{width:100%;background:none;border:none;padding:1.4rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left}
-.faq-q h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--purple);font-weight:500}
-.faq-q .plus{color:var(--gold);font-size:1.1rem;transition:transform 0.3s;flex-shrink:0;margin-left:1.5rem}
+/* FAQ */
+.faq{padding:3rem 2rem;background:#FAF6F1}
+.faq-wrap{max-width:600px;margin:0 auto}
+.faq-item{border-bottom:1px solid #E8E0F0}
+.faq-q{width:100%;background:none;border:none;padding:1.2rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left}
+.faq-q h4{font-family:'Cormorant Garamond',serif;font-size:1.02rem;color:#2E1E45;font-weight:500}
+.faq-q .plus{color:#C4A265;font-size:0.85rem;transition:transform 0.3s;flex-shrink:0;margin-left:1rem}
 .faq-item.open .faq-q .plus{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.faq-item.open .faq-a{max-height:220px;padding-bottom:1.25rem}
-.faq-a p{font-family:'Cormorant Garamond',serif;font-size:0.98rem;line-height:1.9;color:var(--muted)}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1rem}
+.faq-a p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;line-height:1.8;color:#2E1E45}
 
-/* ── SHOP ── */
-.shop-coming{padding:7rem 2rem;background:var(--lavender-soft);text-align:center}
-.coming-box{max-width:240px;margin:2rem auto;border:1px solid var(--gold);background:var(--white);padding:3rem 2rem}
-.coming-box h3{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--purple);font-weight:500;letter-spacing:0.14em;text-transform:uppercase}
-.shop-note{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--muted);line-height:1.85;max-width:440px;margin:0 auto;font-style:italic}
+/* SHOP */
+.shop-coming{padding:4.5rem 2rem;background:#FAF6F1;text-align:center}
+.coming-box{max-width:350px;margin:1rem auto 1.5rem;border:2px solid #C4A265;background:#FFFDF9;padding:2.5rem 2rem;box-shadow:0 8px 30px rgba(74,48,102,0.06)}
+.coming-box h3{font-family:'Cinzel',serif;font-size:1.3rem;color:#4A3066;font-weight:400;letter-spacing:0.08em}
+.shop-note{font-family:'Cormorant Garamond',serif;font-size:1rem;color:#2E1E45;line-height:1.75;max-width:520px;margin:0 auto}
 
-/* ── CONTACT ── */
-.contact-section{padding:7rem 2.5rem;background:var(--white)}
-.contact-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start}
-.contact-info{display:flex;flex-direction:column;gap:2rem}
-.contact-item{display:flex;gap:1.25rem;align-items:flex-start}
-.ci-icon{width:40px;height:40px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:var(--gold);flex-shrink:0}
-.contact-item h4{font-family:'Jost',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem}
-.contact-item p{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--muted)}
-.contact-form{display:flex;flex-direction:column;gap:1.25rem}
-.contact-form input,.contact-form textarea{width:100%;padding:0.9rem 0;border:none;border-bottom:1px solid rgba(196,154,46,0.35);background:transparent;font-family:'Jost',sans-serif;font-size:0.78rem;color:var(--text);outline:none;transition:border 0.3s}
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold)}
-.contact-form textarea{min-height:130px;resize:vertical}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(107,84,128,0.4)}
+/* CONTACT */
+.contact-section{padding:3rem 2.5rem;background:#FAF6F1}
+.contact-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;gap:0.8rem;align-items:flex-start}
+.contact-item .ci-icon{width:36px;height:36px;border:1px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:#C4A265;flex-shrink:0}
+.contact-item h4{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#4A3066;margin-bottom:0.15rem}
+.contact-item p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:#2E1E45}
+.contact-form{display:flex;flex-direction:column;gap:0.8rem}
+.contact-form input,.contact-form textarea{width:100%;padding:0.7rem 0.9rem;border:1px solid #D8CEE8;background:#FFFFFF;font-family:'Jost',sans-serif;font-size:0.75rem;color:#2E1E45;outline:none;transition:border 0.3s}
+.contact-form input:focus,.contact-form textarea:focus{border-color:#C4A265}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#A99BC4}
 
-/* ── FOOTER ── */
-footer{background:var(--purple-deep);padding:4rem 2.5rem 1.5rem}
-.foot-top{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(196,154,46,0.1)}
-.fl-name{font-family:'Cinzel Decorative',serif;font-size:0.92rem;color:var(--gold-light);line-height:1.3;margin-bottom:0.2rem}
-.fl-sub{font-size:0.46rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}
-.foot-social{display:flex;gap:0.5rem}
-.foot-social a{width:28px;height:28px;border:1px solid rgba(196,154,46,0.3);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.5rem;color:rgba(255,255,255,0.4);transition:all 0.2s;font-weight:600}
-.foot-social a:hover{border-color:var(--gold);color:var(--gold)}
-.foot-col h5{font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:700}
-.foot-col a{display:block;color:rgba(255,255,255,0.72);text-decoration:none;font-size:0.78rem;margin-bottom:0.5rem;transition:color 0.2s;cursor:pointer}
-.foot-col a:hover{color:var(--gold-light)}
-.foot-newsletter h5{font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;font-weight:700}
-.foot-newsletter p{font-size:0.78rem;color:rgba(255,255,255,0.62);margin-bottom:1rem;line-height:1.6}
+/* FOOTER */
+footer{background:#F5F0E8;border-top:1px solid rgba(196,162,101,0.12);padding:2.5rem 2.5rem 1rem}
+.foot-grid{max-width:1050px;margin:0 auto;display:grid;grid-template-columns:1.4fr 0.8fr 1fr 1.4fr;gap:1.5rem;margin-bottom:2rem;align-items:start}
+.foot-logo .fl-name{font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:#4A3066;line-height:1.2;margin-bottom:0.15rem}
+.foot-logo .fl-sub{font-size:0.5rem;color:#5D4A78;letter-spacing:0.06em;margin-bottom:0.6rem}
+.foot-social{display:flex;gap:0.4rem}
+.foot-social a{width:24px;height:24px;border:1px solid #C4A265;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.45rem;color:#4A3066;transition:all 0.2s;font-weight:500}
+.foot-social a:hover{background:#4A3066;color:#FAF6F1;border-color:#4A3066}
+.foot-col h5{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:#4A3066;margin-bottom:0.5rem;font-weight:500}
+.foot-col a{display:block;color:#3D2B56;text-decoration:none;font-size:0.75rem;margin-bottom:0.3rem;font-weight:400;transition:color 0.2s;cursor:pointer}
+.foot-col a:hover{color:#6B4D8A}
+.foot-newsletter h5{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:#4A3066;margin-bottom:0.3rem;font-weight:500}
+.foot-newsletter p{font-size:0.75rem;color:#3D2B56;margin-bottom:0.6rem;font-weight:400;line-height:1.5}
 .email-row{display:flex}
-.email-row input{flex:1;padding:0.6rem 0.85rem;border:1px solid rgba(196,154,46,0.25);border-right:none;background:rgba(255,255,255,0.04);font-family:'Jost',sans-serif;font-size:0.68rem;color:#FFF;outline:none}
-.email-row input::placeholder{color:rgba(255,255,255,0.22)}
-.email-row button{padding:0.6rem 1.1rem;background:var(--gold);color:var(--purple-deep);border:none;font-family:'Jost',sans-serif;font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-weight:700;transition:background 0.2s}
-.email-row button:hover{background:var(--gold-light)}
-.foot-bottom{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;flex-wrap:wrap;gap:0.5rem}
-.foot-bottom p{font-size:0.54rem;color:rgba(255,255,255,0.50)}
-.foot-bottom-links{display:flex;gap:1.25rem}
-.foot-bottom-links a{font-size:0.54rem;color:rgba(255,255,255,0.50);text-decoration:none}
-.foot-bottom-links a:hover{color:var(--gold)}
-.foot-bottom-links .sep{color:rgba(196,154,46,0.25)}
+.email-row input{flex:1;padding:0.45rem 0.7rem;border:1px solid #C4A265;border-right:none;background:#FFFFFF;font-family:'Jost',sans-serif;font-size:0.65rem;color:#2E1E45;outline:none}
+.email-row input::placeholder{color:#A99BC4}
+.email-row button{padding:0.45rem 0.9rem;background:#4A3066;color:#FAF6F1;border:1px solid #4A3066;font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;font-weight:500;transition:background 0.2s}
+.email-row button:hover{background:#6B4D8A}
+.foot-bottom{border-top:1px solid rgba(196,162,101,0.1);padding-top:0.8rem;display:flex;justify-content:space-between;align-items:center;max-width:1050px;margin:0 auto;flex-wrap:wrap;gap:0.4rem}
+.foot-bottom p{font-size:0.58rem;color:#5D4A78}
+.foot-bottom-links{display:flex;gap:1rem}
+.foot-bottom-links a{font-size:0.58rem;color:#5D4A78;text-decoration:none}
+.foot-bottom-links a:hover{color:#4A3066}
+.foot-bottom-links .sep{color:#C4A265}
 
-/* ── TABLET ≤900px ── */
+/* ===== Stronger contrast boost ===== */
+body{color:#140B22}
+p{color:#140B22}
+.section-title,.about-text h2,.philosophy-body h2,.book-inner .lead{color:#2A1540}
+.section-label{color:#8A5A12}
+.nav-menu a{color:#140B22}
+.nav-menu a:hover{color:#2A1540}
+.nav-logo-name{color:#140B22}
+.nav-logo-sub{color:#2A1540}
+.welcome-body p,.about-text p,.philosophy-body p,.book-inner .desc,.book-card p,.t-card p,.faq-q h4,.faq-a p,.shop-note,.contact-item p,.foot-newsletter p,.foot-bottom p{color:#140B22}
+.off-item p,.off-service-text .duration,.payment-note,.book-note{color:#2A1540}
+.faq-q .plus{color:#8A5A12}
+.foot-col a{color:#2A1540}
+.foot-col a:hover{color:#140B22}
+.outline-btn,.off-service-text .book-link{color:#2A1540;border-color:#2A1540}
+
+/* ===== Banner/Page Header text (always white) ===== */
+.page-header h1{color:#FFFFFF !important}
+.page-header .star{color:#D9B56D !important}
+
+/* Offerings: Book Session link for all service rows */
+.off-service .book-link{
+  display:inline-flex;align-items:center;gap:0.3rem;font-size:0.58rem;
+  letter-spacing:0.08em;text-transform:uppercase;color:#2A1540;text-decoration:none;
+  font-weight:500;border:1px solid #2A1540;padding:0.42rem 1rem;transition:all 0.3s;cursor:pointer;
+}
+.off-service .book-link:hover{background:#2A1540;color:#FAF6F1}
+
+/* Offerings: placeholder image block */
+.off-service.no-photo .img-ph{
+  width:190px;height:190px;flex:0 0 190px;border-radius:14px;
+  border:1px solid rgba(196,162,101,0.18);background:#F0EAF4;display:block;
+}
+
+/* ===========================
+   RESPONSIVE — TABLET (≤900px)
+   =========================== */
 @media(max-width:900px){
-  .split{grid-template-columns:1fr;min-height:auto}
-  .split.reverse{direction:ltr}
-  .split-img{min-height:340px}
-  .split-body{padding:3.5rem 2rem}
-  .off-cards{grid-template-columns:repeat(2,1fr)}
-  .off-card{border-right:none;border-bottom:1px solid var(--border)}
-  .test-grid{grid-template-columns:1fr;max-width:420px}
-  .foot-top{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:2rem}
+  .off-grid{grid-template-columns:repeat(3,1fr)}
+  .about-section{grid-template-columns:1fr;gap:2rem}
+  .about-photo{min-height:280px;justify-content:center}
+  .about-photo .about-brand{height:320px}
+  .about-text p{max-width:62ch}
+  .welcome-inner,.philosophy-inner{flex-direction:column;align-items:center;text-align:center}
+  .test-grid{grid-template-columns:1fr;max-width:380px}
+  .foot-grid{grid-template-columns:1fr 1fr}
   .nav-menu{display:none}
-  .nav-menu.show{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(253,251,255,0.99);padding:1.5rem 2rem;border-bottom:1px solid var(--border);gap:0.8rem}
+  .nav-menu.show{
+    display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+    background:rgba(250,246,241,0.98);padding:1rem 2rem;
+    border-bottom:1px solid rgba(196,162,101,0.1);gap:0.6rem;
+  }
   .mob-toggle{display:flex}
-  .nav-cta{display:none}
-  .about-split-inner,.contact-grid{grid-template-columns:1fr;gap:3rem}
+  .contact-grid{grid-template-columns:1fr}
   .book-details{grid-template-columns:1fr}
-  .page-header-inner{margin-left:0}
+  .nav-inner{max-width:none;width:100%;justify-content:space-between}
+  .nav-logo-name{font-size:0.88rem}
+  .off-detail-list{max-width:760px}
+  .off-service img{width:160px;height:160px;flex-basis:160px}
+  .off-service.no-photo .img-ph{width:160px;height:160px;flex-basis:160px}
 }
 
-/* ── MOBILE ≤600px ── */
+/* ===========================
+   RESPONSIVE — MOBILE (≤600px)
+   =========================== */
 @media(max-width:600px){
-  .off-cards{grid-template-columns:1fr}
-  .foot-top{grid-template-columns:1fr}
+  .off-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr}
+  .offerings-detail{padding:3rem 1.5rem}
   .off-service{flex-direction:column;text-align:center}
-  .off-service img{width:100%;height:auto;max-width:300px;flex-basis:auto}
+  .off-service img{width:100%;height:auto;max-width:360px;flex-basis:auto}
   .off-service-text .book-link,.off-service .book-link{justify-content:center}
+  .off-service.no-photo .img-ph{width:100%;height:220px;max-width:360px;flex-basis:auto}
+  .off-service-text .svc-desc,.off-service .svc-desc{font-size:0.95rem;margin-bottom:0.9rem}
+  .akashic-card span,.akashic-note{margin-left:0}
+  .akashic-sun{opacity:.35}
 }
 
-/* ── MOBILE ≤768px ── */
+/* ===========================
+   RESPONSIVE — MOBILE (≤768px)
+   SINGLE consolidated block — replaces all previous duplicates
+   =========================== */
 @media(max-width:768px){
-  .nav-inner{padding:0 1rem;height:60px}
-  .nav-logo-circle{width:38px;height:38px}
-  .nav-logo-name{font-size:0.8rem}
 
-  .hero{height:100svh !important;min-height:560px !important;background-image:url('sun_banner_mobile_750x500.png') !important;background-size:cover !important;background-position:20% center !important}
-  .hero h1{font-size:clamp(2.2rem,7.5vw,3.4rem) !important;letter-spacing:0.03em !important}
-  .hero-btns{flex-direction:column !important;align-items:center !important;gap:0.75rem !important}
-  .btn-gold,.btn-ghost-white{width:240px !important;max-width:240px !important;justify-content:center !important;padding:0.85rem 1.5rem !important;font-size:0.64rem !important;flex:0 0 auto !important}
+  /* Nav */
+  .nav-inner{padding:0.45rem 0.9rem}
+  .nav-logo-circle{width:40px;height:40px}
+  .nav-logo-name{font-size:0.80rem}
+  .nav-menu.show{padding:0.8rem 1.2rem}
 
-  .page-header{min-height:190px;margin-top:60px}
-  .page-header h1{font-size:clamp(1.1rem,5vw,1.7rem)}
-  .page-header::before{background-image:url('moon_banner_mobile_v1.png');background-size:cover;background-position:center}
+  /* Hero */
+  .hero{
+    height:auto !important;
+    min-height:480px !important;
+    padding:0 !important;
+    background-image:url('sun_banner_mobile_750x500.png') !important;
+    background-size:cover !important;
+    background-position:20% center !important;
+  }
+  .hero-content{
+    padding:5.5rem 1.25rem 2.5rem;
+    max-width:100%;
+  }
+  .hero h1{
+    font-size:clamp(1.5rem, 6.5vw, 2.2rem);
+    line-height:1.12;
+    letter-spacing:0.01em;
+  }
+  .hero-subtitle{font-size:1rem}
+  .hero-desc{font-size:0.92rem}
+  .hero-buttons{
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:0.75rem !important;
+    flex-wrap:nowrap !important;
+  }
+  .h-btn{
+    width:260px !important;
+    max-width:260px !important;
+    justify-content:center !important;
+    padding:0.65rem 1.5rem !important;
+    font-size:0.68rem !important;
+    flex:0 0 auto !important;
+  }
 
-  .split-body{padding:3rem 1.5rem}
-  .offerings-section,.testimonials-section,.book-section,.faq,.contact-section,.shop-coming,.offerings-detail{padding:4rem 1.25rem}
-  .quote-strip{padding:1.2rem 1.25rem}
-  .quote-strip p{font-size:0.98rem}
+  /* Inner page banner */
+  .page-header{
+    aspect-ratio:unset;
+    min-height:160px;
+    margin-top:54px;
+    padding:2rem 1.25rem 1.5rem;
+  }
+  .page-header h1{
+    font-size:clamp(1rem, 4.5vw, 1.45rem);
+    line-height:1.25;
+    word-break:break-word;
+    hyphens:auto;
+    margin-left:0;
+  }
+  .page-header::before{
+    background-image:url('moon_banner_mobile_v1.png');
+    background-size:cover;
+    background-position:center center;
+  }
+
+  /* Welcome section */
+  .welcome{padding:2rem 1.25rem}
+  .welcome-inner{flex-direction:column;align-items:center;gap:0.75rem}
+  .welcome-moon-char{font-size:2.2rem;line-height:1;margin:0.2rem 0 0;opacity:0.12}
+  .welcome-body{text-align:center}
+  .welcome-body h2{margin:0.25rem 0 0.75rem;font-size:1.6rem;line-height:1.2}
+  .welcome-body p{margin:0 auto 1.25rem;max-width:42ch}
+
+  /* About */
+  .about-text{padding:0}
+
+  /* General sections */
+  section,.book-section,.contact-section{padding:3rem 1.5rem}
 }
 
-/* ── SMALL MOBILE ≤420px ── */
+/* ===========================
+   RESPONSIVE — SMALL MOBILE (≤420px)
+   =========================== */
 @media(max-width:420px){
-  .hero{min-height:500px !important}
-  .hero h1{font-size:clamp(2rem,7vw,2.8rem) !important}
-  .page-header{min-height:170px}
-  .page-header h1{font-size:clamp(1rem,4.5vw,1.4rem)}
-  .btn-gold,.btn-ghost-white{width:210px !important;max-width:210px !important}
+  .nav-logo-circle{width:38px;height:38px}
+  .hero{min-height:440px;background-image:url('sun_banner_mobile_750x500.png');background-size:cover;background-position:20% center}
+  .hero h1{font-size:clamp(1.35rem, 6vw, 1.8rem)}
+  .page-header{min-height:150px;margin-top:50px;padding:1.75rem 1.25rem 1.25rem}
+  .page-header h1{font-size:clamp(0.95rem, 4.2vw, 1.3rem)}
+  .page-header::before{background-image:url('moon_banner_mobile_v1.png');background-size:cover;background-position:center center}
 }
 
 </style>
@@ -405,207 +513,233 @@ footer{background:var(--purple-deep);padding:4rem 2.5rem 1.5rem}
 <div class="nav" id="navbar">
   <div class="nav-inner">
     <div class="nav-logo" onclick="showPage('home')">
-      <div class="nav-logo-circle"><img width="170" height="170" loading="lazy" src="cosmic-logo.png" alt="The Cosmic Alchemy"></div>
-      <div>
-        <div class="nav-logo-name">The Cosmic Alchemy</div>
-        <div class="nav-logo-sub">Transmutative Journey of Soul</div>
-      </div>
+      <div class="nav-logo-circle"><img width="170" height="170" loading="lazy" decoding="async" src="brand_v3.png" alt="The Cosmic Alchemy logo"></div>
+      <div class="nav-logo-text"><div class="nav-logo-name">The Cosmic<br>Alchemy</div><div class="nav-logo-sub"></div></div>
     </div>
     <ul class="nav-menu" id="navMenu">
       <li><a onclick="showPage('home')" class="active" data-page="home">Home</a></li>
-      <li><a onclick="showPage('about')" data-page="about">About</a></li>
+      <li><a onclick="showPage('about')" data-page="about">About Me</a></li>
       <li><a onclick="showPage('offerings-page')" data-page="offerings-page">Offerings</a></li>
+      <li><a onclick="showPage('book')" data-page="book">Book a Session</a></li>
       <li><a onclick="showPage('testimonials-page')" data-page="testimonials-page">Testimonials</a></li>
       <li><a onclick="showPage('faq-page')" data-page="faq-page">FAQ</a></li>
       <li><a onclick="showPage('shop')" data-page="shop">Shop</a></li>
       <li><a onclick="showPage('contact')" data-page="contact">Contact</a></li>
     </ul>
-    <a class="nav-cta" onclick="showPage('book')">Book a Session</a>
     <div class="mob-toggle" onclick="document.getElementById('navMenu').classList.toggle('show')"><span></span><span></span><span></span></div>
   </div>
 </div>
 
-<!-- ══ HOME ══ -->
+<!-- ==================== PAGE: HOME ==================== -->
 <div class="page active" id="home">
-
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-eyebrow">Celestial Guidance</div>
+      <div class="hero-star">✧</div>
       <h1>TRANSMUTATIVE<br>JOURNEY OF SOUL</h1>
-      <div class="hero-rule"></div>
-      <p class="hero-tagline">Sovereign Truth. Sacred Remembrance.</p>
-      <div class="hero-btns">
-        <a class="btn-gold" onclick="showPage('offerings-page')">Explore Offerings</a>
-        <a class="btn-ghost-white" onclick="showPage('book')">Book a Session</a>
+      <p class="hero-subtitle">Celestial Guidance. Sovereign Truth.</p>
+      <div class="hero-star">✦</div>
+      <p class="hero-desc">You have arrived by way of sacred gravity.<br>This is your invitation to remember.</p>
+      <div class="hero-buttons">
+        <a class="h-btn" onclick="showPage('offerings-page')">Explore Offerings </a>
+        <a class="h-btn" onclick="showPage('book')">Book a Session </a>
       </div>
     </div>
   </section>
 
-  <!-- Gold quote strip -->
-  <div class="quote-strip">
-    <p>"You have arrived by way of sacred gravity. This is your invitation to remember."</p>
-  </div>
-
-  <!-- Split 1: Welcome — image right, text left -->
-  <div class="split">
-    <div class="split-body">
-      <span class="s-label">Welcome</span>
-      <div class="s-title">Welcome to Your<br>Sacred Sanctuary</div>
-      <div class="s-rule"></div>
-      <p class="s-body">You have arrived by way of sacred gravity. Call it a whisper of intuition; call it a divine summon. In this sanctuary, we do not merely seek — we remember.</p>
-      <p class="s-body">This is a space to honor that celestial pull and reconnect with the sovereign wisdom your soul has carried across lifetimes.</p>
-      <a class="btn-purple" onclick="showPage('about')">Read My Story →</a>
-    </div>
-    <div class="split-img" style="background-image:url('sun_banner_desktop_v1.png');background-size:cover;background-position:center"></div>
-  </div>
-
-  <!-- Split 2: About teaser — dark purple, image left -->
-  <div class="split reverse">
-    <div class="split-body purple">
-      <span class="s-label">Garima Sharma</span>
-      <div class="s-title s-title-light">The Path of<br>Transmutation</div>
-      <div class="s-rule"></div>
-      <p class="s-body">For a decade, I navigated the corporate architecture of a world that felt silent to the soul. Through Reiki and celestial channels, my world underwent a profound transmutation — shifting from shadow into gold.</p>
-      <a class="btn-outline-gold" onclick="showPage('about')">My Full Story →</a>
-    </div>
-    <div class="split-img">
-      <img src="brand.jpeg" alt="The Cosmic Alchemy — Garima Sharma" style="object-position:top">
-    </div>
-  </div>
-
-  <!-- Offerings grid -->
-  <section class="offerings-section">
-    <span class="s-label">Sacred Modalities</span>
-    <div class="s-title">Our Offerings</div>
-    <div class="s-rule" style="margin:1.2rem auto 0"></div>
-    <div class="off-cards">
-      <div class="off-card" onclick="showPage('offerings-page')"><div class="off-num">I</div><h4>The Channeled Oracle</h4><p>Automatic Writing, Akashic Records &amp; Tarot.</p><span class="off-card-link">Learn More →</span></div>
-      <div class="off-card" onclick="showPage('offerings-page')"><div class="off-num">II</div><h4>The Cosmic Blueprint</h4><p>Astrology &amp; Numerology.</p><span class="off-card-link">Learn More →</span></div>
-      <div class="off-card" onclick="showPage('offerings-page')"><div class="off-num">III</div><h4>The Luminous Restoration</h4><p>Reiki, Quantum &amp; Violet Flame Healing.</p><span class="off-card-link">Learn More →</span></div>
-      <div class="off-card" onclick="showPage('offerings-page')"><div class="off-num">IV–VII</div><h4>More Modalities</h4><p>Candle Magic, Inner Child, Vaastu Aroma &amp; more.</p><span class="off-card-link">View All →</span></div>
+  <section class="welcome">
+    <div class="welcome-inner">
+      <div class="welcome-moon-char">☽</div>
+      <div class="welcome-body">
+        <h2>Welcome to Your Sacred Sanctuary</h2>
+        <p>You have arrived by way of sacred gravity. Call it a whisper of intuition; call it a divine summon. In this sanctuary, we do not merely seek - we remember. This is a space to honor that celestial pull and reconnect with the sovereign wisdom your soul has carried across lifetimes.</p>
+        <a class="outline-btn" onclick="showPage('about')">Read My Story </a>
+      </div>
     </div>
   </section>
 
-  <!-- Split 3: Testimonial teaser — lavender, full width quote -->
-  <div class="split">
-    <div class="split-img" style="background-image:url('moon_banner_desktop_v4.png');background-size:cover;background-position:22% center"></div>
-    <div class="split-body lavender">
-      <span class="s-label">Client Stories</span>
-      <div class="s-title">Kind Words</div>
-      <div class="s-rule"></div>
-      <p class="s-body" style="font-size:1.2rem;font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.8">"Garima holds such a powerful and nurturing space. Her guidance helped me see what my soul already knew."</p>
-      <p style="font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:0.5rem">— Aanya S.</p>
-      <a class="btn-ghost" onclick="showPage('testimonials-page')">Read All Testimonials →</a>
+  <section class="offerings">
+    <div class="offerings-orn"><div class="ln"></div><span class="st">✦</span><div class="ln"></div></div>
+    <h2>OUR OFFERINGS</h2>
+    <div class="off-grid">
+      <div class="off-item"><div class="off-icon">✦</div><h4>I. The<br>Channeled Oracle</h4><p>Automatic Writing, Akashic Records, and Tarot.</p><a class="lm" onclick="showPage('offerings-page')">Learn More </a></div>
+      <div class="off-item"><div class="off-icon">☾</div><h4>II. The<br>Cosmic Blueprint</h4><p>Astrology and Numerology.</p><a class="lm" onclick="showPage('offerings-page')">Learn More </a></div>
+      <div class="off-item"><div class="off-icon">✧</div><h4>III. The Luminous<br>Restoration</h4><p>Reiki Healing, Quantum Healing, and Violet Flame Healing.</p><a class="lm" onclick="showPage('offerings-page')">Learn More </a></div>
+      <div class="off-item"><div class="off-icon">✷</div><h4>IV. The<br>Elemental Forge</h4><p>Candle Magic.</p><a class="lm" onclick="showPage('offerings-page')">Learn More </a></div>
+      <div class="off-item"><div class="off-icon">♢</div><h4>V. The Inner<br>Architecture</h4><p>Inner Child Healing.</p><a class="lm" onclick="showPage('offerings-page')">Learn More </a></div>
+      <div class="off-item"><div class="off-icon">✺</div><h4>VI. Specialized<br>Healing Sessions</h4><p>Personalized Healing for Specific Health Concerns.</p><a class="lm" onclick="showPage('offerings-page')">Learn More </a></div>
+      <div class="off-item"><div class="off-icon">✶</div><h4>VII. Vaastu Aroma<br>Therapy</h4><p>Vaastu Aroma Therapy - The Essence of Alignment.</p><a class="lm" onclick="showPage('offerings-page')">Learn More </a></div>
     </div>
-  </div>
-
+  </section>
 </div>
 
-<!-- ══ ABOUT ══ -->
+<!-- ==================== PAGE: ABOUT ME ==================== -->
 <div class="page" id="about">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <span class="s-label">My Journey</span>
-      <h1>About Me</h1>
+  <div class="page-header"><h1>About Me</h1><div class="star">✦</div></div>
+  <section class="about-section">
+    <div class="about-photo"><img class="about-brand" src="brand.jpeg" alt="The Cosmic Alchemy brand logo"></div>
+    <div class="about-text">
+      <p>For a decade, I navigated the corporate architecture of a world that looked complete to the eye but felt silent to the soul. Amidst the height of external success, a singular whisper persisted: <em>There is more.</em></p>
+      <p>That whisper became a summon, leading me away from the known and into the heart of the Divine. Through Reiki and celestial channels, my world underwent a profound transmutation - shifting from shadow into gold.</p>
+      <p>Today, I hold a sanctuary for those standing at their own sacred threshold. I do not provide the answers; I facilitate remembrance. I guide you inward, to the sovereign truth that has been waiting for you.</p>
+      <br><a class="outline-btn" onclick="showPage('book')">Work With Me </a>
     </div>
-    <div class="star">✦</div>
-  </div>
-
-  <!-- Split: image left, story right -->
-  <div class="split about-full">
-    <div class="split-img">
-      <img src="brand.jpeg" alt="Garima Sharma" style="object-position:top">
-    </div>
-    <div class="split-body">
-      <span class="s-label">Garima Sharma</span>
-      <div class="s-title">The Path of<br>Transmutation</div>
-      <div class="s-rule"></div>
-      <p class="s-body">For a decade, I navigated the corporate architecture of a world that looked complete to the eye but felt silent to the soul. Amidst the height of external success, a singular whisper persisted: <em>There is more.</em></p>
-      <p class="s-body">That whisper became a summon, leading me away from the known and into the heart of the Divine. Through Reiki and celestial channels, my world underwent a profound transmutation — shifting from shadow into gold.</p>
-      <p class="s-body">Today, I hold a sanctuary for those standing at their own sacred threshold. I do not provide the answers; I facilitate remembrance.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a class="btn-purple" onclick="showPage('book')">Work With Me →</a>
-        <a class="btn-outline-gold" onclick="showPage('offerings-page')">View Offerings →</a>
+  </section>
+  <section class="philosophy">
+    <div class="philosophy-inner">
+      <div class="philosophy-moon">☽</div>
+      <div class="philosophy-body">
+        <h2>My Philosophy</h2>
+        <p>&ldquo;I believe the resonance you seek is not a destination to be found, but a frequency to be remembered. The answers are not &lsquo;out there&rsquo; - they are woven into the very fabric of your being. I do not provide the map; I am the steward who helps you illuminate it.</p>
+        <p>Every encounter within The Cosmic Alchemy is an act of deep, celestial listening. Whether we are decoding the astral language of your birth chart, channeling the Unseen through the Channeled Script, or anchoring intention through fire and ritual, the process is bespoke. I do not dictate your path; I curate a hallowed container where your own truth can emerge with absolute clarity.</p>
+        <p>I work in the realm of pure intuition, meeting you at the precise intersection of your human experience and your divine essence. No scripts, no judgment. Only a sacred, honest silence between your soul and mine.&rdquo;</p>
+        <br><a class="outline-btn" onclick="showPage('offerings-page')">Explore My Approach </a>
       </div>
     </div>
-  </div>
-
-  <!-- Split: philosophy — dark purple -->
-  <div class="split reverse philosophy-full">
-    <div class="split-body purple">
-      <span class="s-label">Philosophy</span>
-      <div class="s-title s-title-light">The Sovereign<br>Truth</div>
-      <div class="s-rule"></div>
-      <p class="s-body">"I believe the resonance you seek is not a destination to be found, but a frequency to be remembered. The answers are not 'out there' — they are woven into the very fabric of your being."</p>
-      <p class="s-body">"I work in the realm of pure intuition, meeting you at the precise intersection of your human experience and your divine essence. No scripts, no judgment."</p>
-      <a class="btn-gold" onclick="showPage('offerings-page')">Explore My Approach →</a>
-    </div>
-    <div class="split-img" style="background-image:url('moon_banner_desktop_v4.png');background-size:cover;background-position:22% center"></div>
-  </div>
+  </section>
 </div>
 
-<!-- ══ OFFERINGS ══ -->
+<!-- ==================== PAGE: OFFERINGS ==================== -->
 <div class="page" id="offerings-page">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <span class="s-label">Sacred Modalities</span>
-      <h1>Our Offerings</h1>
-    </div>
-    <div class="star">✦</div>
-  </div>
+  <div class="page-header"><h1>Our Offerings</h1><div class="star">✦</div></div>
   <section class="offerings-detail">
     <div class="off-detail-list">
+
       <div class="off-category">
-        <div class="off-cat-header"><span class="off-cat-icon">✦</span><span class="off-cat-title">I. The Channeled Oracle</span></div>
-        <div class="off-service has-img"><img src="akashic_gold.png" alt="Akashic Records"><div class="off-service-text"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">The Akasha is the energetic library of every soul's journey — past, present, and potential. Entering the Records is like opening a ledger of your eternal self. It allows us to identify soul-contracts, ancestral patterns, and the "why" behind the recurring themes in your life.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
-        <div class="off-service has-img"><img src="autowriting_gold.png" alt="Automatic Writing"><div class="off-service-text"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">This is a pure form of mediumship. In a state of deep trance, I allow Divine intelligence to flow through my hand directly onto the page. This "Channeled Script" provides direct, unfiltered guidance from your spirit team, offering answers to questions the conscious mind cannot reach.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
-        <div class="off-service has-img"><img src="tarot_gold.png" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">Beyond simple divination, I use the Tarot as a psychological and spiritual mirror. Each card is an archetype — a key that unlocks the subconscious. We use these symbols to map your current energy and navigate the choices standing before you.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+        <div class="off-cat-header"><span class="off-cat-icon">✦</span><span class="off-cat-title">I. THE CHANNELED ORACLE</span></div>
+        <div class="off-service has-img"><img src="akashic_gold.png" alt="Akashic Records Reading">
+          <div class="off-service-text">
+            <h4>Akashic Records Reading</h4>
+            <p class="duration">15 mins · 30 mins · 60 mins</p>
+            <p class="svc-desc">The Akasha is the energetic library of every soul's journey - past, present, and potential. Entering the Records is like opening a ledger of your eternal self. It allows us to identify soul-contracts, ancestral patterns, and the "why" behind the recurring themes in your life.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
+        <div class="off-service has-img"><img src="autowriting_gold.png" alt="Automatic Writing">
+          <div class="off-service-text">
+            <h4>Automatic Writing</h4>
+            <p class="duration">15 mins · 30 mins · 60 mins</p>
+            <p class="svc-desc">This is a pure form of mediumship. In a state of deep trance, I allow Divine intelligence to flow through my hand directly onto the page. This "Channeled Script" provides direct, unfiltered guidance from your spirit team, offering answers to questions the conscious mind cannot reach.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
+        <div class="off-service has-img"><img src="tarot_gold.png" alt="Tarot Reading">
+          <div class="off-service-text">
+            <h4>Tarot Reading</h4>
+            <p class="duration">15 mins · 30 mins · 60 mins</p>
+            <p class="svc-desc">Beyond simple divination, I use the Tarot as a psychological and spiritual mirror. Each card is an archetype - a key that unlocks the subconscious. We use these symbols to map your current energy and navigate the choices standing before you.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
       </div>
+
       <div class="off-category">
-        <div class="off-cat-header"><span class="off-cat-icon">☾</span><span class="off-cat-title">II. The Cosmic Blueprint</span></div>
-        <div class="off-service has-img"><img src="astrology_gold.png" alt="Astrology"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">The moment of your birth was a celestial snapshot — a map of the stars designed specifically for your evolution. By decoding your natal chart, we understand your inherent strengths, your karmic challenges, and the divine timing of your life's seasons.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
-        <div class="off-service has-img"><img src="numerology_gold.png" alt="Numerology"><div class="off-service-text"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Numbers are the hidden code of the universe. By analyzing the frequencies of your name and birth date, we uncover your "Life Path" and "Soul Urge." This provides a mathematical foundation for understanding your personality and your destiny.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+        <div class="off-cat-header"><span class="off-cat-icon">☾</span><span class="off-cat-title">II. THE COSMIC BLUEPRINT</span></div>
+        <div class="off-service has-img"><img src="astrology_gold.png" alt="Astrology Consultation">
+          <div class="off-service-text">
+            <h4>Astrology Consultation</h4>
+            <p class="duration">30 mins · 60 mins</p>
+            <p class="svc-desc">The moment of your birth was a celestial snapshot - a map of the stars designed specifically for your evolution. By decoding your natal chart, we understand your inherent strengths, your karmic challenges, and the divine timing of your life's seasons.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
+        <div class="off-service has-img"><img src="numerology_gold.png" alt="Numerology Reading">
+          <div class="off-service-text">
+            <h4>Numerology Reading</h4>
+            <p class="duration">30 mins · 60 mins</p>
+            <p class="svc-desc">Numbers are the hidden code of the universe. By analyzing the frequencies of your name and birth date, we uncover your "Life Path" and "Soul Urge." This provides a mathematical foundation for understanding your personality and your destiny.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
       </div>
+
       <div class="off-category">
-        <div class="off-cat-header"><span class="off-cat-icon">✧</span><span class="off-cat-title">III. The Luminous Restoration</span></div>
-        <div class="off-service has-img"><img src="reikihealing_gold.png" alt="Reiki"><div class="off-service-text"><h4>Reiki Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">A Japanese lineage of stress reduction and relaxation that also promotes healing. I act as a conduit for Universal Life Force Energy, flowing it into your subtle body to dissolve blockages, balance your chakras, and restore your natural vitality.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
-        <div class="off-service has-img"><img src="quantumhealing_gold.png" alt="Quantum Healing"><div class="off-service-text"><h4>Quantum Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">This modality operates at the subatomic level. By shifting your consciousness, we can collapse old timelines of struggle and "jump" into a frequency of health and abundance. It is the art of changing reality by changing the observer.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
-        <div class="off-service has-img"><img src="violetflame_gold.png" alt="Violet Flame"><div class="off-service-text"><h4>Violet Flame Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">The Violet Flame is a high-frequency spiritual energy that "burns away" energetic debris. It is the tool of the Alchemist — used to transmit negative karma, heavy emotions, and ancestral trauma into pure, crystalline light.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+        <div class="off-cat-header"><span class="off-cat-icon">✧</span><span class="off-cat-title">III. THE LUMINOUS RESTORATION</span></div>
+        <div class="off-service has-img"><img src="reikihealing_gold.png" alt="Reiki Healing">
+          <div class="off-service-text">
+            <h4>Reiki Healing</h4>
+            <p class="duration">30 mins · 60 mins</p>
+            <p class="svc-desc">A Japanese lineage of stress reduction and relaxation that also promotes healing. I act as a conduit for Universal Life Force Energy, flowing it into your subtle body to dissolve blockages, balance your chakras, and restore your natural vitality.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
+        <div class="off-service has-img"><img src="quantumhealing_gold.png" alt="Quantum Healing">
+          <div class="off-service-text">
+            <h4>Quantum Healing</h4>
+            <p class="duration">30 mins · 60 mins</p>
+            <p class="svc-desc">This modality operates at the subatomic level. By shifting your consciousness, we can collapse old timelines of struggle and "jump" into a frequency of health and abundance. It is the art of changing reality by changing the observer.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
+        <div class="off-service has-img"><img src="violetflame_gold.png" alt="Violet Flame Healing">
+          <div class="off-service-text">
+            <h4>Violet Flame Healing</h4>
+            <p class="duration">30 mins · 60 mins</p>
+            <p class="svc-desc">The Violet Flame is a high-frequency spiritual energy that "burns away" energetic debris. It is the tool of the Alchemist - used to transmit negative karma, heavy emotions, and ancestral trauma into pure, crystalline light.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
       </div>
+
       <div class="off-category">
-        <div class="off-cat-header"><span class="off-cat-icon">✷</span><span class="off-cat-title">IV. The Elemental Forge</span></div>
-        <div class="off-service has-img"><img src="candle_magic.png" alt="Candle Magic"><div class="off-service-text"><h4>Candle Magic</h4><p class="duration">60 mins</p><p class="svc-desc">Fire is the fastest element for transmutation. In this practice, we use consecrated wax, sacred herbs, and focused intention. As the candle burns, it releases your desire into the ether, acting as a beacon that magnetizes your manifestation into the physical world.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+        <div class="off-cat-header"><span class="off-cat-icon">✷</span><span class="off-cat-title">IV. THE ELEMENTAL FORGE</span></div>
+        <div class="off-service has-img"><img src="candle_magic.png" alt="Candle Magic">
+          <div class="off-service-text">
+            <h4>Candle Magic</h4>
+            <p class="duration">60 mins</p>
+            <p class="svc-desc">Fire is the fastest element for transmutation. In this practice, we use consecrated wax, sacred herbs, and focused intention. As the candle burns, it releases your desire into the ether, acting as a beacon that magnetizes your manifestation into the physical world.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
       </div>
+
       <div class="off-category">
-        <div class="off-cat-header"><span class="off-cat-icon">♢</span><span class="off-cat-title">V. The Inner Architecture</span></div>
-        <div class="off-service has-img"><img src="inner_child.png" alt="Inner Child"><div class="off-service-text"><h4>Inner Child Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Much of our adult "lead" is actually the unhealed pain of our younger selves. We go back to the origin, meeting that child with the sovereign power of the adult you are now. This mends the fractured psyche and restores your sense of play and safety.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+        <div class="off-cat-header"><span class="off-cat-icon">♢</span><span class="off-cat-title">V. THE INNER ARCHITECTURE</span></div>
+        <div class="off-service has-img"><img src="inner_child.png" alt="Inner Child Healing">
+          <div class="off-service-text">
+            <h4>Inner Child Healing</h4>
+            <p class="duration">30 mins · 60 mins</p>
+            <p class="svc-desc">Much of our adult "lead" is actually the unhealed pain of our younger selves. We go back to the origin, meeting that child with the sovereign power of the adult you are now. This mends the fractured psyche and restores your sense of play and safety.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
       </div>
+
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✺</span><span class="off-cat-title">VI. Specialized Healing Sessions</span></div>
-        <div class="off-service has-img"><img src="healing.png" alt="Specialized Healing"><div class="off-service-text"><h4>Personalized Healing for Specific Health Concerns</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Focused healing tailored to your intention and what you're moving through.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img src="healing.png" alt="Personalized Healing for Specific Health Concerns">
+          <div class="off-service-text">
+            <h4>Personalized Healing for Specific Health Concerns</h4>
+            <p class="duration">30 mins · 60 mins</p>
+            <p class="svc-desc">Focused healing tailored to your intention and what you're moving through.</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
       </div>
+
       <div class="off-category">
         <div class="off-cat-header"><span class="off-cat-icon">✶</span><span class="off-cat-title">VII. Vaastu Aroma Therapy</span></div>
-        <div class="off-service has-img"><img src="vaastu.png" alt="Vaastu Aroma"><div class="off-service-text"><h4>Vaastu Aroma Therapy — The Essence of Alignment</h4><p class="duration">Duration — TBA</p><p class="svc-desc">By Dr. Jayessh Ramawat (Ph.D Numerology &amp; Vaastu Shastracharya — Gold Medalist). "Elevate the Vibrations of your sanctuary with Vaastu Aroma. We utilize a Specialized range of Aroma Products featuring a Patented formula — Designed to target Specific Energetic Imbalances in your space. Unlike standard Aromatherapy, Vaastu Aroma uses Precise Botanical Frequencies to clear Stagnant 'Vaastu Doshas' and invite Specific Energies like Abundance, Peace, Success &amp; Protection into your Home or Work Place."</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+        <div class="off-service has-img"><img src="vaastu.png" alt="Vaastu Aroma Therapy - The Essence of Alignment">
+          <div class="off-service-text">
+            <h4>Vaastu Aroma Therapy — The Essence of Alignment</h4>
+            <p class="duration">Duration - TBA</p>
+            <p class="svc-desc">By Dr. Jayessh Ramawat (Ph.D Numerology &amp; Vaastu Shastracharya — Gold Medalist)<br>
+            "Elevate the Vibrations of your sanctuary with Vaastu Aroma, an exclusive service offered by The Cosmic Alchemy. We utilize a Specialized range of Aroma Products featuring a Patented formula which provides Uniqueness to our Vaastu Practice in India — Designed to target Specific Energetic Imbalances in your space.<br><br>
+            Unlike standard Aromatherapy, Vaastu Aroma uses Precise Botanical Frequencies to clear Stagnant 'Vaastu Doshas' and invite Specific Energies like Abundance, Peace, Success &amp; Protection into your Home or Work Place. Experience the Science of Essence as a Tool for Architectural Alchemy."</p>
+            <a href="#" class="book-link" onclick="showPage('book'); return false;">Book Session </a>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 </div>
 
-<!-- ══ BOOK ══ -->
+<!-- ==================== PAGE: BOOK A SESSION ==================== -->
 <div class="page" id="book">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <span class="s-label">Begin Your Journey</span>
-      <h1>Book a Session</h1>
-    </div>
-    <div class="star">✦</div>
-  </div>
+  <div class="page-header"><h1>Book a Session</h1><div class="star">✦</div></div>
   <section class="book-section">
     <div class="book-inner">
-      <span class="s-label">Sacred Container</span>
       <div class="lead">Ready to Begin Your Journey Inward?</div>
-      <div class="s-rule" style="margin:1rem auto 1.5rem"></div>
       <div class="desc">Each session is a sacred container, uniquely crafted for you and guided by intuition, divine insight, and deep listening.</div>
       <div class="book-details">
         <div class="book-card"><div class="bc-icon">✦</div><h4>One on One Session</h4><p>Personalized guidance tailored to your soul's needs.</p></div>
@@ -613,50 +747,29 @@ footer{background:var(--purple-deep);padding:4rem 2.5rem 1.5rem}
         <div class="book-card"><div class="bc-icon">☾</div><h4>Location</h4><p>Online via Zoom / WhatsApp, or in person.</p></div>
         <div class="book-card"><div class="bc-icon">✧</div><h4>Investment</h4><p>Pricing shared upon booking confirmation.</p></div>
       </div>
-      <a class="btn-gold" onclick="window.open('https://calendly.com/','_blank')">Book an Appointment →</a>
-      <div class="book-note">Replace the Calendly URL above with your booking link once ready.</div>
+      <a class="cta-btn" onclick="window.open('https://calendly.com/', '_blank')">Book an Appointment </a>
+      <div class="book-note">If the link is not set yet, replace the Calendly URL above with your booking link.</div>
     </div>
   </section>
 </div>
 
-<!-- ══ TESTIMONIALS ══ -->
+<!-- ==================== PAGE: TESTIMONIALS ==================== -->
 <div class="page" id="testimonials-page">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <span class="s-label">Client Stories</span>
-      <h1>Kind Words from<br>Sacred Souls</h1>
-    </div>
-    <div class="star">✦</div>
-  </div>
-  <section class="testimonials-section">
-    <span class="s-label" style="display:block;text-align:center">Testimonials</span>
-    <div class="s-title" style="text-align:center">What Our Clients Say</div>
-    <div class="s-rule" style="margin:1.2rem auto"></div>
+  <div class="page-header"><h1>Kind Words from<br>Sacred Souls</h1><div class="star">✦</div></div>
+  <section class="testimonials">
     <div class="test-grid">
-      <div class="t-card"><div class="qm">"</div><p>"Garima holds such a powerful and nurturing space. Her guidance helped me see what my soul already knew."</p><span class="who">— Aanya S.</span></div>
-      <div class="t-card"><div class="qm">"</div><p>"The session was life-changing. I felt seen, heard, and deeply supported on my journey back to myself."</p><span class="who">— Rhea M.</span></div>
-      <div class="t-card"><div class="qm">"</div><p>"Her intuition is incredibly accurate and her energy is soothing. I left feeling lighter, clearer, and more aligned than ever."</p><span class="who">— Devika P.</span></div>
+      <div class="t-card"><div class="qm">"</div><p>"Garima holds such a powerful and nurturing space. Her guidance helped me see what my soul already knew."</p><span class="who"> - Aanya S.</span></div>
+      <div class="t-card"><div class="qm">"</div><p>"The session was life-changing. I felt seen, heard, and deeply supported on my journey back to myself."</p><span class="who"> - Rhea M.</span></div>
+      <div class="t-card"><div class="qm">"</div><p>"Her intuition is incredibly accurate and her energy is soothing. I left feeling lighter, clearer, and more aligned than ever."</p><span class="who"> - Devika P.</span></div>
     </div>
   </section>
-  <div class="cta-band">
-    <p>"Your transformation begins with a single step."</p>
-    <a class="btn-gold" onclick="showPage('book')">Book an Appointment →</a>
-  </div>
+  <div class="cta-band"><p>Your transformation begins with a single step.</p><a class="cta-btn" onclick="showPage('book')">Book an Appointment </a></div>
 </div>
 
-<!-- ══ FAQ ══ -->
+<!-- ==================== PAGE: FAQ ==================== -->
 <div class="page" id="faq-page">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <span class="s-label">Have Questions?</span>
-      <h1>Frequently Asked<br>Questions</h1>
-    </div>
-    <div class="star">✦</div>
-  </div>
+  <div class="page-header"><h1>Frequently Asked<br>Questions</h1><div class="star">✦</div></div>
   <section class="faq">
-    <span class="s-label" style="display:block;text-align:center">FAQ</span>
-    <div class="s-title" style="text-align:center">Common Questions</div>
-    <div class="s-rule" style="margin:1.2rem auto 2.5rem"></div>
     <div class="faq-wrap">
       <div class="faq-item"><button class="faq-q"><h4>What can I expect in a session?</h4><span class="plus">+</span></button><div class="faq-a"><p>Each session begins with a brief consultation to understand your intention. You may experience deep relaxation, emotional release, or vivid insight. Every experience is unique.</p></div></div>
       <div class="faq-item"><button class="faq-q"><h4>Do I need to provide my birth details?</h4><span class="plus">+</span></button><div class="faq-a"><p>For astrology and numerology, exact birth time helps provide the most accurate chart. If unavailable, we can still work with your birth date and location.</p></div></div>
@@ -669,47 +782,31 @@ footer{background:var(--purple-deep);padding:4rem 2.5rem 1.5rem}
   </section>
 </div>
 
-<!-- ══ SHOP ══ -->
+<!-- ==================== PAGE: SHOP ==================== -->
 <div class="page" id="shop">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <span class="s-label">Sacred Tools</span>
-      <h1>Shop</h1>
-    </div>
-    <div class="star">✦</div>
-  </div>
+  <div class="page-header"><h1>Shop</h1><div class="star">✦</div></div>
   <section class="shop-coming">
-    <span class="s-label" style="display:block">Coming Soon</span>
-    <div class="s-title" style="margin-bottom:2rem">Sacred Offerings</div>
     <div class="coming-box"><h3>COMING<br>SOON</h3></div>
-    <p class="shop-note">Beautiful tools and sacred offerings are being created for you. Thank you for your patience.</p>
+    <p class="shop-note">Beautiful tools and sacred offerings are being created for you.<br>Thank you for your patience.</p>
   </section>
 </div>
 
-<!-- ══ CONTACT ══ -->
+<!-- ==================== PAGE: CONTACT ==================== -->
 <div class="page" id="contact">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <span class="s-label">Reach Out</span>
-      <h1>Contact</h1>
-    </div>
-    <div class="star">✦</div>
-  </div>
+  <div class="page-header"><h1>Contact</h1><div class="star">✦</div></div>
   <section class="contact-section">
-    <span class="s-label" style="display:block;text-align:center">Get in Touch</span>
-    <div class="s-title" style="text-align:center;margin-bottom:3rem">We'd Love to Hear From You</div>
     <div class="contact-grid">
       <div class="contact-info">
         <div class="contact-item"><div class="ci-icon">✉</div><div><h4>Email</h4><p>hello@transmutativejourney.com</p></div></div>
         <div class="contact-item"><div class="ci-icon">◷</div><div><h4>Response Time</h4><p>Within 48 hours</p></div></div>
-        <div class="contact-item"><div class="ci-icon">⌖</div><div><h4>Location</h4><p>Online · Worldwide</p></div></div>
+        <div class="contact-item"><div class="ci-icon">⌖</div><div><h4>Location</h4><p>Online • Worldwide</p></div></div>
       </div>
       <div class="contact-form">
         <input type="text" placeholder="Your Name">
         <input type="email" placeholder="Your Email">
         <input type="text" placeholder="Subject">
         <textarea placeholder="Your Message"></textarea>
-        <a class="btn-purple" style="margin-top:1rem;width:fit-content">Send Message →</a>
+        <a class="cta-btn">Send Message</a>
       </div>
     </div>
   </section>
@@ -717,20 +814,13 @@ footer{background:var(--purple-deep);padding:4rem 2.5rem 1.5rem}
 
 <!-- FOOTER -->
 <footer>
-  <div class="foot-top">
-    <div>
-      <div class="fl-name">The Cosmic<br>Alchemy</div>
-      <div class="fl-sub">Transmutative Journey of Soul</div>
-      <div class="foot-social"><a href="#">IG</a><a href="#">FB</a><a href="#">YT</a></div>
-    </div>
-    <div class="foot-col"><h5>Navigation</h5><a onclick="showPage('home')">Home</a><a onclick="showPage('about')">About Me</a><a onclick="showPage('offerings-page')">Offerings</a><a onclick="showPage('book')">Book a Session</a></div>
-    <div class="foot-col"><h5>Offerings</h5><a onclick="showPage('offerings-page')">The Channeled Oracle</a><a onclick="showPage('offerings-page')">The Cosmic Blueprint</a><a onclick="showPage('offerings-page')">Energy Healing</a><a onclick="showPage('offerings-page')">Inner Child Healing</a></div>
+  <div class="foot-grid">
+    <div class="foot-logo"><div class="fl-name">The Cosmic<br>Alchemy</div><div class="fl-sub">Transmutative Journey of Soul</div><div class="foot-social"><a href="#">IG</a><a href="#">FB</a><a href="#">TK</a><a href="#">YT</a></div></div>
+    <div class="foot-col"><h5>Quick Links</h5><a onclick="showPage('home')">Home</a><a onclick="showPage('about')">About Me</a><a onclick="showPage('offerings-page')">Offerings</a><a onclick="showPage('book')">Book a Session</a></div>
+    <div class="foot-col"><h5>Offerings</h5><a onclick="showPage('offerings-page')">The Channeled Oracle</a><a onclick="showPage('offerings-page')">The Cosmic Blueprint</a><a onclick="showPage('offerings-page')">Energy Healing &amp; Restoration</a><a onclick="showPage('offerings-page')">Inner Child Healing</a></div>
     <div class="foot-newsletter"><h5>Stay Connected</h5><p>Receive celestial insights, invitations, and offerings.</p><div class="email-row"><input type="email" placeholder="Your email address"><button>Subscribe</button></div></div>
   </div>
-  <div class="foot-bottom">
-    <p>&copy; 2026 The Cosmic Alchemy by Garima. All rights reserved.</p>
-    <div class="foot-bottom-links"><a href="#">Disclaimer</a><span class="sep">|</span><a href="#">Privacy Policy</a><span class="sep">|</span><a href="#">Terms</a></div>
-  </div>
+  <div class="foot-bottom"><p>&copy; 2026 The Cosmic Alchemy by Garima. All rights reserved.</p><div class="foot-bottom-links"><a href="#">Disclaimer</a><span class="sep">|</span><a href="#">Privacy Policy</a><span class="sep">|</span><a href="#">Terms &amp; Conditions</a></div></div>
 </footer>
 
 <script>
