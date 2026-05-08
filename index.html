@@ -550,41 +550,61 @@ p{color:#140B22}
 }
 
 
+
 /* ===== Mobile banner fix ===== */
 @media (max-width: 768px){
-  /* Home hero */
+  /* Home hero: keep text readable but show more of the image */
   .hero{
-    min-height: 72vh;
+    height: 64svh !important;
+    min-height: 520px !important;
     background-size: cover !important;
-    background-position: center 25% !important; /* less zoom into mid */
+    background-position: 60% 40% !important; /* slight down + right */
   }
   .hero .hero-inner{
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 3rem !important;
+    padding-bottom: 2.5rem !important;
   }
   .hero h1{
-    font-size: 2.2rem;
-    line-height: 1.15;
+    font-size: clamp(2.0rem, 9vw, 3.0rem) !important;
+    line-height: 1.08 !important;
   }
-  .hero .sub{
-    font-size: 1.05rem;
+  .hero .sub{ font-size: 1rem !important; }
+  .hero .hero-buttons{
+    flex-direction: column !important;
+    gap: 0.85rem !important;
+  }
+  .hero .hero-buttons a{
+    width: min(100%, 340px);
+    text-align: center;
   }
 
-  /* Inner-page headers */
+  /* Reduce the big empty-looking gap just after the hero on mobile */
+  .section{
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .welcome, .intro, .home-intro, .welcome-section{
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* Inner page banners: keep the moon visible (left side) */
   .page-header{
-    height: 160px !important;
+    height: 190px !important;
   }
   .page-header::before{
     background-size: cover !important;
-    background-position: left 30% !important; /* keeps moon visible */
+    background-position: 18% 35% !important;
   }
 }
 @media (max-width: 420px){
   .hero{
-    min-height: 68vh;
-    background-position: center 22% !important;
+    height: 62svh !important;
+    min-height: 500px !important;
+    background-position: 62% 42% !important;
   }
-  .hero h1{ font-size: 2.0rem; }
+  .page-header{ height: 175px !important; }
+  .page-header::before{ background-position: 14% 35% !important; }
 }
 
 </style>
