@@ -607,6 +607,31 @@ p{color:#140B22}
   .page-header::before{ background-position: 14% 35% !important; }
 }
 
+
+/* ===== Mobile polish: smaller header + shorter hero ===== */
+@media (max-width: 768px){
+  .nav-inner{padding:0.45rem 0.9rem !important;}
+  .nav-logo-circle{width:40px !important;height:40px !important;}
+  .nav-logo-name{font-size:0.80rem !important;}
+  .nav-menu.show{padding:0.8rem 1.2rem !important;}
+  .hero{
+    height: 58svh !important;
+    min-height: 460px !important;
+  }
+  /* tighten first section after hero */
+  #home .section:first-of-type,
+  #home .welcome, #home .intro, #home .home-intro, #home .welcome-section{
+    padding-top: 2.0rem !important;
+  }
+}
+@media (max-width: 420px){
+  .hero{
+    height: 56svh !important;
+    min-height: 440px !important;
+  }
+  .nav-logo-circle{width:38px !important;height:38px !important;}
+}
+
 </style>
 </head>
 <body>
