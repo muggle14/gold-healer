@@ -102,9 +102,10 @@ section{padding:4.5rem 2.5rem}
 .section-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:400;color:#4A3066;margin-bottom:0.6rem;text-align:center}
 .div-line{width:35px;height:1px;background:#C4A265;margin:0.6rem auto 1.5rem}
 .page-header{
+  /* min-height grows with viewport width to match the 4:1 panoramic image ratio on desktop */
+  min-height:max(280px, 25vw);
   padding:7rem 2rem 3.5rem;
   text-align:center;
-  min-height:330px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -117,9 +118,9 @@ section{padding:4.5rem 2.5rem}
   content:"";
   position:absolute;
   inset:0;
-  background-image:url('moon_banner_v5.png');
+  background-image:url('moon_banner_v7.png');
   background-size:cover;
-  background-position:center 40%;
+  background-position:center 35%;
   background-repeat:no-repeat;
   opacity:1;
 }
@@ -450,10 +451,13 @@ p{color:#140B22}
     justify-content:center;
   }
 
-  /* Inner page banner — KEY FIX: title was never responsive */
+  /* Inner page banner */
   .page-header{
+    aspect-ratio:unset;
     min-height:260px;
-    padding:5.5rem 1.25rem 2rem;
+    /* Reduced top padding so flexbox centers title correctly.
+       Nav is ~54px on mobile; flex centering naturally clears it at 260px height. */
+    padding:1.5rem 1.25rem 1rem;
   }
   .page-header h1{
     font-size:clamp(1.2rem, 5.5vw, 1.85rem);
@@ -461,10 +465,12 @@ p{color:#140B22}
     word-break:break-word;
     hyphens:auto;
   }
-  /* Moon is upper-left ~22% of the wide panoramic image.
-     background-position: X% Y% anchors that part into the visible crop window. */
+  /* Switch to purpose-cropped mobile image — moon + star compass are centered in this version.
+     background-position: center center works cleanly since no extreme left/right cropping needed. */
   .page-header::before{
-    background-position:22% 30%;
+    background-image:url('moon_banner_mobile.png');
+    background-size:cover;
+    background-position:center center;
   }
 
   /* Welcome section */
@@ -491,8 +497,8 @@ p{color:#140B22}
   .hero h1{font-size:clamp(1.35rem, 6vw, 1.8rem)}
   .page-header{min-height:230px}
   .page-header h1{font-size:clamp(1.1rem, 5vw, 1.5rem)}
-  /* Shift slightly more left on very small screens to keep moon in frame */
-  .page-header::before{background-position:20% 28%}
+  /* Mobile image already centered — no position adjustment needed at this breakpoint */
+  .page-header::before{background-image:url('moon_banner_mobile.png');background-size:cover;background-position:center center}
 }
 
 </style>
