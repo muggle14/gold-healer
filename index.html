@@ -102,9 +102,10 @@ section{padding:4.5rem 2.5rem}
 .section-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:400;color:#4A3066;margin-bottom:0.6rem;text-align:center}
 .div-line{width:35px;height:1px;background:#C4A265;margin:0.6rem auto 1.5rem}
 .page-header{
-  /* min-height grows with viewport width to match the 4:1 panoramic image ratio on desktop */
   min-height:max(280px, 25vw);
-  padding:7rem 2rem 3.5rem;
+  /* Equal top/bottom padding = flexbox truly centers the title.
+     4rem (64px) clears the fixed desktop nav (~60px). */
+  padding:4rem 2rem;
   text-align:center;
   display:flex;
   flex-direction:column;
@@ -128,12 +129,12 @@ section{padding:4.5rem 2.5rem}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(46,30,69,.18),rgba(46,30,69,.08) 48%,rgba(250,246,241,.12));
+  background:linear-gradient(180deg,rgba(46,30,69,.45) 0%,rgba(46,30,69,.15) 45%,rgba(46,30,69,.35) 100%);
   pointer-events:none;
 }
 .page-header h1,.page-header .star{position:relative;z-index:1}
-.page-header h1{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:400;color:#FFFFFF;margin-bottom:0.3rem;text-shadow:0 2px 18px rgba(30,15,58,0.72)}
-.page-header .star{color:#D9B56D;font-size:0.9rem;margin-top:0.65rem;text-shadow:0 1px 10px rgba(30,15,58,0.45)}
+.page-header h1{font-family:'Cinzel',serif;font-size:2.6rem;font-weight:400;color:#FFFFFF;margin-bottom:0.3rem;text-shadow:0 2px 28px rgba(30,15,58,0.85),0 0 60px rgba(200,160,255,0.3)}
+.page-header .star{color:#D9B56D;font-size:1rem;margin-top:0.65rem;text-shadow:0 1px 10px rgba(30,15,58,0.45)}
 
 /* WELCOME */
 .welcome{padding:4rem 2.5rem;background:#FAF6F1}
@@ -454,10 +455,10 @@ p{color:#140B22}
   /* Inner page banner */
   .page-header{
     aspect-ratio:unset;
-    min-height:260px;
-    /* Reduced top padding so flexbox centers title correctly.
-       Nav is ~54px on mobile; flex centering naturally clears it at 260px height. */
-    padding:1.5rem 1.25rem 1rem;
+    min-height:220px;
+    /* Equal top/bottom = true flex center.
+       3.5rem (56px) clears the mobile nav (~50px). */
+    padding:3.5rem 1.25rem;
   }
   .page-header h1{
     font-size:clamp(1.2rem, 5.5vw, 1.85rem);
@@ -465,8 +466,6 @@ p{color:#140B22}
     word-break:break-word;
     hyphens:auto;
   }
-  /* Switch to purpose-cropped mobile image — moon + star compass are centered in this version.
-     background-position: center center works cleanly since no extreme left/right cropping needed. */
   .page-header::before{
     background-image:url('moon_banner_mobile.png');
     background-size:cover;
@@ -495,9 +494,8 @@ p{color:#140B22}
   .nav-logo-circle{width:38px;height:38px}
   .hero{min-height:440px;background-position:62% 42%}
   .hero h1{font-size:clamp(1.35rem, 6vw, 1.8rem)}
-  .page-header{min-height:230px}
+  .page-header{min-height:200px;padding:3rem 1.25rem}
   .page-header h1{font-size:clamp(1.1rem, 5vw, 1.5rem)}
-  /* Mobile image already centered — no position adjustment needed at this breakpoint */
   .page-header::before{background-image:url('moon_banner_mobile.png');background-size:cover;background-position:center center}
 }
 
