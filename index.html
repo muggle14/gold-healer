@@ -356,19 +356,28 @@ body::before{
   color:var(--taupe);margin-bottom:3rem;
 }
 /* Carousel */
-.carousel-outer{position:relative;max-width:1100px;margin:0 auto;overflow:hidden;padding:0 0 1rem}
+.carousel-outer{
+  position:relative;max-width:1100px;margin:0 auto;padding:0 0 1rem;
+}
 .carousel-track{
   display:flex;
   gap:1.25rem;
-  transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-  will-change:transform;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scroll-behavior:smooth;
+  padding:0.5rem 0.25rem 1rem;
+  /* hide scrollbar */
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
+.carousel-track::-webkit-scrollbar{display:none}
 .off-card{
   flex:0 0 calc(25% - 1rem);
-  min-width:0;
+  min-width:260px;
+  scroll-snap-align:start;
 }
-.off-card{border-radius:22px;overflow:hidden;
-  background:var(--card);
+.off-card{border-radius:22px;overflow:hidden;  background:var(--card);
   text-align:left;
   cursor:pointer;
   transition:box-shadow 0.3s,transform 0.3s;
@@ -833,7 +842,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   .hero-content{max-width:60%}
   .hero-img{width:55%}
   .about-intro-inner{grid-template-columns:300px 1fr;gap:3rem}
-  .carousel-track{grid-template-columns:repeat(2,1fr)}
+  .off-card{flex:0 0 calc(50% - 0.75rem)}
   .testi-row-inner{grid-template-columns:1fr;text-align:center;gap:2.5rem}
   .testi-portrait{margin:0 auto}
   .about-page-grid{grid-template-columns:1fr;gap:3rem}
@@ -878,7 +887,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   .feature-item{border-right:none;border-bottom:1px solid rgba(154,108,31,.10)}
   .about-intro-inner{grid-template-columns:1fr;gap:3rem}
   .about-arch-img-wrap{max-width:280px;margin:0 auto}
-  .carousel-track{grid-template-columns:1fr 1fr}
+  .off-card{flex:0 0 calc(50% - 0.75rem)}
   .book-cards{grid-template-columns:1fr}
   .foot-top{grid-template-columns:1fr}
   .page-header{padding:0 1.5rem 2rem;min-height:200px}
@@ -890,7 +899,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   .testi-row{padding:4rem 1.25rem}
 }
 @media(max-width:500px){
-  .carousel-track{grid-template-columns:1fr}
+  .off-card{flex:0 0 calc(100% - 0.5rem)}
   .feature-card{border-radius:22px;grid-template-columns:1fr}
   .feature-item{border-bottom:1px solid rgba(154,108,31,.10);border-right:none}
 }
@@ -1400,57 +1409,40 @@ function showPage(id){
   window.scrollTo({top:0,behavior:'auto'});
 }
 
-// Carousel
+// Carousel - offsetLeft based (reliable across all screen sizes)
 const track = document.getElementById('carousel');
-const cards = track ? track.querySelectorAll('.off-card') : [];
 const dots = document.querySelectorAll('.cdot');
-let currentSlide = 0;
 
-function getPerView(){
-  if(window.innerWidth <= 500) return 1;
-  if(window.innerWidth <= 768) return 2;
-  return 4;
+function getCards(){ return track ? [...track.querySelectorAll('.off-card')] : []; }
+
+function currentIndex(){
+  const cards = getCards();
+  if(!cards.length) return 0;
+  // find which card's left edge is closest to current scrollLeft
+  return cards.reduce((best, card, i) => {
+    return Math.abs(card.offsetLeft - track.scrollLeft) < Math.abs(cards[best].offsetLeft - track.scrollLeft) ? i : best;
+  }, 0);
 }
 
-function updateCarousel(){
-  const perView = getPerView();
-  const maxSlide = Math.max(0, cards.length - perView);
-  currentSlide = Math.min(currentSlide, maxSlide);
-  const cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 0;
-  track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
-  // Update card widths based on perView
-  const gap = 20;
-  const containerWidth = track.parentElement.offsetWidth;
-  const cardW = (containerWidth - gap * (perView - 1)) / perView;
-  cards.forEach(card => { card.style.flex = `0 0 ${cardW}px`; });
-  // Dots
-  dots.forEach((d,i) => d.classList.toggle('active', i === currentSlide));
+function goTo(i){
+  const cards = getCards();
+  if(!track || !cards[i]) return;
+  track.scrollTo({left: cards[i].offsetLeft, behavior:'smooth'});
 }
 
 function slideCarousel(dir){
-  const perView = getPerView();
-  const maxSlide = Math.max(0, cards.length - perView);
-  currentSlide = Math.max(0, Math.min(currentSlide + dir, maxSlide));
-  updateCarousel();
+  const idx = currentIndex();
+  goTo(idx + dir);
 }
 
-dots.forEach((d,i) => d.addEventListener('click', () => {
-  currentSlide = i;
-  updateCarousel();
-}));
-
-// Touch swipe support
-let touchStartX = 0;
 if(track){
-  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
-  track.addEventListener('touchend', e => {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if(Math.abs(diff) > 50) slideCarousel(diff > 0 ? 1 : -1);
+  track.addEventListener('scroll', () => {
+    const idx = currentIndex();
+    dots.forEach((d,i) => d.classList.toggle('active', i === idx));
   }, {passive:true});
 }
 
-window.addEventListener('resize', updateCarousel);
-setTimeout(updateCarousel, 100);
+dots.forEach((d,i) => d.addEventListener('click', () => goTo(i)));
 
 // FAQ
 document.querySelectorAll('.faq-q').forEach(b=>{
