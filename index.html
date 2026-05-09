@@ -373,15 +373,15 @@ body::before{
 }
 .carousel-track::-webkit-scrollbar{display:none}
 .off-card{
-  flex:0 0 calc(25% - 1rem);
-  min-width:260px;
+  flex:0 0 280px;
+  min-width:280px;
   scroll-snap-align:start;
-}
-.off-card{border-radius:22px;overflow:hidden;  background:var(--card);
+  border-radius:22px;
+  overflow:hidden;
+  background:var(--card);
   text-align:left;
   cursor:pointer;
   transition:box-shadow 0.3s,transform 0.3s;
-  overflow:visible;
   position:relative;
 }
 .off-card:hover{
@@ -842,7 +842,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   .hero-content{max-width:60%}
   .hero-img{width:55%}
   .about-intro-inner{grid-template-columns:300px 1fr;gap:3rem}
-  .off-card{flex:0 0 calc(50% - 0.75rem)}
+  .off-card{flex:0 0 calc(50% - 0.75rem);min-width:0}
   .testi-row-inner{grid-template-columns:1fr;text-align:center;gap:2.5rem}
   .testi-portrait{margin:0 auto}
   .about-page-grid{grid-template-columns:1fr;gap:3rem}
@@ -887,7 +887,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   .feature-item{border-right:none;border-bottom:1px solid rgba(154,108,31,.10)}
   .about-intro-inner{grid-template-columns:1fr;gap:3rem}
   .about-arch-img-wrap{max-width:280px;margin:0 auto}
-  .off-card{flex:0 0 calc(50% - 0.75rem)}
+  .off-card{flex:0 0 calc(50% - 0.75rem);min-width:0}
   .book-cards{grid-template-columns:1fr}
   .foot-top{grid-template-columns:1fr}
   .page-header{padding:0 1.5rem 2rem;min-height:200px}
@@ -899,7 +899,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   .testi-row{padding:4rem 1.25rem}
 }
 @media(max-width:500px){
-  .off-card{flex:0 0 calc(100% - 0.5rem)}
+  .off-card{flex:0 0 calc(100% - 0.5rem);min-width:0}
   .feature-card{border-radius:22px;grid-template-columns:1fr}
   .feature-item{border-bottom:1px solid rgba(154,108,31,.10);border-right:none}
 }
@@ -1069,8 +1069,44 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
           </div>
           <div class="off-card-body">
             <div class="off-card-cat">The Channeled Oracle</div>
-            <h4>Akashic Records & Automatic Writing</h4>
+            <h4>Akashic Records Reading</h4>
             <p>Access the energetic library of your soul's journey and receive unfiltered divine guidance.</p>
+            <span class="off-learn">Learn More →</span>
+          </div>
+        </div>
+        <div class="off-card" onclick="showPage('offerings-page')">
+          <div class="off-card-img">
+            <img src="autowriting_gold.png" alt="Automatic Writing">
+            <div class="off-card-icon">✦</div>
+          </div>
+          <div class="off-card-body">
+            <div class="off-card-cat">The Channeled Oracle</div>
+            <h4>Automatic Writing</h4>
+            <p>Direct, unfiltered guidance from your spirit team through divine channelled script.</p>
+            <span class="off-learn">Learn More →</span>
+          </div>
+        </div>
+        <div class="off-card" onclick="showPage('offerings-page')">
+          <div class="off-card-img">
+            <img src="tarot_gold.png" alt="Tarot Reading">
+            <div class="off-card-icon">✦</div>
+          </div>
+          <div class="off-card-body">
+            <div class="off-card-cat">The Channeled Oracle</div>
+            <h4>Tarot Reading</h4>
+            <p>A psychological and spiritual mirror to map your current energy and navigate your choices.</p>
+            <span class="off-learn">Learn More →</span>
+          </div>
+        </div>
+        <div class="off-card" onclick="showPage('offerings-page')">
+          <div class="off-card-img">
+            <img src="astrology_gold.png" alt="Astrology">
+            <div class="off-card-icon">☾</div>
+          </div>
+          <div class="off-card-body">
+            <div class="off-card-cat">The Cosmic Blueprint</div>
+            <h4>Astrology & Numerology</h4>
+            <p>Decode the celestial map of your birth and uncover your life path and divine timing.</p>
             <span class="off-learn">Learn More →</span>
           </div>
         </div>
@@ -1088,13 +1124,13 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         </div>
         <div class="off-card" onclick="showPage('offerings-page')">
           <div class="off-card-img">
-            <img src="astrology_gold.png" alt="Astrology">
-            <div class="off-card-icon">☾</div>
+            <img src="candle_magic.png" alt="Candle Magic">
+            <div class="off-card-icon">✷</div>
           </div>
           <div class="off-card-body">
-            <div class="off-card-cat">The Cosmic Blueprint</div>
-            <h4>Astrology & Numerology</h4>
-            <p>Decode the celestial map of your birth and uncover your life path and divine timing.</p>
+            <div class="off-card-cat">The Elemental Forge</div>
+            <h4>Candle Magic</h4>
+            <p>Use fire, sacred herbs, and focused intention to magnetize your manifestation into the physical world.</p>
             <span class="off-learn">Learn More →</span>
           </div>
         </div>
@@ -1113,12 +1149,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
       </div>
       <button class="carousel-arrow next" onclick="slideCarousel(1)">›</button>
     </div>
-    <div class="carousel-dots" id="carousel-dots">
-      <div class="cdot active"></div>
-      <div class="cdot"></div>
-      <div class="cdot"></div>
-      <div class="cdot"></div>
-    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
   </section>
 
   <!-- TESTIMONIAL + PORTRAIT + NEWSLETTER -->
@@ -1409,40 +1440,50 @@ function showPage(id){
   window.scrollTo({top:0,behavior:'auto'});
 }
 
-// Carousel - offsetLeft based (reliable across all screen sizes)
+// Carousel
 const track = document.getElementById('carousel');
-const dots = document.querySelectorAll('.cdot');
+const dotsContainer = document.getElementById('carousel-dots');
+let slide = 0;
 
-function getCards(){ return track ? [...track.querySelectorAll('.off-card')] : []; }
+function setup(){
+  if(!track || !dotsContainer) return;
+  const cards = [...track.querySelectorAll('.off-card')];
+  const gap = parseFloat(getComputedStyle(track).gap) || 20;
+  const trackW = track.parentElement.offsetWidth;
+  const cardW = cards[0] ? cards[0].offsetWidth : 280;
+  const perView = Math.max(1, Math.floor((trackW + gap) / (cardW + gap)));
+  const numDots = Math.max(1, cards.length - perView + 1);
 
-function currentIndex(){
-  const cards = getCards();
-  if(!cards.length) return 0;
-  // find which card's left edge is closest to current scrollLeft
-  return cards.reduce((best, card, i) => {
-    return Math.abs(card.offsetLeft - track.scrollLeft) < Math.abs(cards[best].offsetLeft - track.scrollLeft) ? i : best;
-  }, 0);
+  // Build dots
+  dotsContainer.innerHTML = '';
+  for(let i = 0; i < numDots; i++){
+    const d = document.createElement('div');
+    d.className = 'cdot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(d);
+  }
 }
 
-function goTo(i){
-  const cards = getCards();
-  if(!track || !cards[i]) return;
-  track.scrollTo({left: cards[i].offsetLeft, behavior:'smooth'});
+function getDots(){ return [...dotsContainer.querySelectorAll('.cdot')]; }
+
+function goTo(n){
+  if(!track) return;
+  const cards = [...track.querySelectorAll('.off-card')];
+  const numDots = getDots().length;
+  slide = Math.max(0, Math.min(n, numDots - 1));
+  const gap = parseFloat(getComputedStyle(track).gap) || 20;
+  let pos = 0;
+  for(let i = 0; i < slide; i++) pos += cards[i].offsetWidth + gap;
+  // Last dot always scrolls to end
+  if(slide === numDots - 1) pos = track.scrollWidth;
+  track.scrollTo({left: pos, behavior:'smooth'});
+  getDots().forEach((d,i) => d.classList.toggle('active', i === slide));
 }
 
-function slideCarousel(dir){
-  const idx = currentIndex();
-  goTo(idx + dir);
-}
+function slideCarousel(dir){ goTo(slide + dir); }
 
-if(track){
-  track.addEventListener('scroll', () => {
-    const idx = currentIndex();
-    dots.forEach((d,i) => d.classList.toggle('active', i === idx));
-  }, {passive:true});
-}
-
-dots.forEach((d,i) => d.addEventListener('click', () => goTo(i)));
+window.addEventListener('resize', () => { slide = 0; setup(); track && track.scrollTo({left:0}); });
+setTimeout(setup, 150);
 
 // FAQ
 document.querySelectorAll('.faq-q').forEach(b=>{
