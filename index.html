@@ -11,16 +11,15 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Jost',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;
-  color:#2d2018;
+  font-family:'Jost',sans-serif;color:var(--espresso);overflow-x:hidden;-webkit-font-smoothing:antialiased;
   background:
-    radial-gradient(circle at 8% 0%,rgba(214,169,79,.18),transparent 30%),
-    radial-gradient(circle at 95% 10%,rgba(214,169,79,.12),transparent 28%),
-    linear-gradient(180deg,#fbf6ed,#fffaf3 48%,#f5ead9);
-  min-height:100vh;
+    radial-gradient(circle at 12% 4%,rgba(248,221,176,.78),transparent 30%),
+    radial-gradient(circle at 88% 8%,rgba(226,184,95,.42),transparent 32%),
+    radial-gradient(circle at 50% 105%,rgba(198,133,26,.22),transparent 38%),
+    linear-gradient(180deg,#fff8ea 0%,#fff1cf 48%,#f6dfb6 100%);
 }
 body::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.4;
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.55;
   background-image:
     linear-gradient(rgba(214,169,79,.045) 1px,transparent 1px),
     linear-gradient(90deg,rgba(214,169,79,.035) 1px,transparent 1px);
@@ -29,11 +28,21 @@ body::before{
 
 /* ── COLOR TOKENS ── */
 :root{
-  --ivory:#fbf6ed;--cream:#fffaf3;--card:#fffdf8;--champagne:#d6a94f;--gold:#9a6c1f;
-  --espresso:#2d2018;--plum:#2e1e45;--taupe:#846f5a;--line:rgba(154,108,31,.18);
-  --shadow:0 22px 55px rgba(83,57,32,.10);--radius:26px;
-  --gold:#9a6c1f;   /* dark gold buttons, headings */
-  --gold-pale:rgba(214,169,79,.22);   /* very pale gold decorative */
+  --ivory:#fff8ea;
+  --cream:#fff1cf;
+  --card:#fffaf0;
+  --champagne:#e2b85f;
+  --gold:#a66f16;
+  --gold-rich:#c88a1e;
+  --gold-light:#f8ddb0;
+  --amber:#d5962a;
+  --espresso:#332111;
+  --plum:#2c1d3c;
+  --taupe:#7e644a;
+  --line:rgba(166,111,22,.26);
+  --shadow:0 24px 65px rgba(132,82,18,.16);
+  --glow:0 0 42px rgba(226,184,95,.28);
+  --radius:26px;
 }
 
 /* ── PAGE SYSTEM ── */
@@ -45,7 +54,7 @@ body::before{
 ══════════════════════════ */
 .nav{
   position:fixed;top:0;width:100%;z-index:200;
-  background:rgba(251,246,237,.88);
+  background:rgba(255,248,234,.92);
   backdrop-filter:blur(16px);
   border-bottom:1px solid rgba(154,108,31,.12);
 }
@@ -210,7 +219,7 @@ body::before{
    FEATURE STRIP
 ══════════════════════════ */
 .feature-strip{
-  background:var(--cream);
+  background:#fff1cf;
   padding:0 2.5rem 3rem;
   position:relative;z-index:10;
 }
@@ -245,7 +254,7 @@ body::before{
    ABOUT INTRO (Welcome section)
 ══════════════════════════ */
 .about-intro{
-  background:var(--cream);
+  background:#fff1cf;
   padding:5rem 2.5rem;
 }
 .about-intro-inner{
@@ -266,7 +275,7 @@ body::before{
   border-radius:200px 200px 160px 160px;
   overflow:hidden;
   border:1px solid rgba(154,108,31,.20);
-  background:#f5ead9;
+  background:#f6dfb6;
   position:relative;
 }
 .about-arch-img-wrap img{
@@ -334,7 +343,7 @@ body::before{
    OFFERINGS CAROUSEL
 ══════════════════════════ */
 .offerings-section{
-  background:var(--ivory);
+  background:#fff8ea;
   padding:5rem 2.5rem;
   text-align:center;
 }
@@ -371,7 +380,7 @@ body::before{
   min-width:280px;
   scroll-snap-align:start;
   border-radius:22px;
-  overflow:hidden;
+  overflow:visible;
   background:var(--card);
   text-align:left;
   cursor:pointer;
@@ -387,7 +396,8 @@ body::before{
   aspect-ratio:1/1;
   overflow:hidden;position:relative;
   border-radius:22px 22px 0 0;
-  background:#f5ead9;
+  z-index:0;
+  background:#f6dfb6;
 }
 .off-card-img img{
   width:100%;height:100%;
@@ -396,19 +406,19 @@ body::before{
 .off-card:hover .off-card-img img{transform:scale(1.06)}
 /* Small circular icon sitting at bottom of image */
 .off-card-icon{
-  position:absolute;
-  bottom:-18px;left:50%;transform:translateX(-50%);
-  width:38px;height:38px;
-  background:var(--card);
-  border:1.5px solid var(--champagne);
+  width:44px;height:44px;
+  background:linear-gradient(135deg,#9f6812,#c98c24);
+  border:2px solid rgba(255,248,234,0.8);
   border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;color:var(--gold);
-  box-shadow:0 4px 14px rgba(154,108,31,0.2);
-  z-index:2;
+  font-size:1.1rem;color:#ffffff;
+  box-shadow:0 4px 16px rgba(132,82,18,0.35);
   font-weight:700;
+  margin:0 auto 0.75rem;
+  position:relative;
+  z-index:1;
 }
-.off-card-body{padding:1.75rem 1.25rem 1.25rem}
+.off-card-body{padding:1.25rem 1.25rem 1.25rem;text-align:center;}
 .off-card-cat{
   font-size:0.5rem;letter-spacing:0.16em;text-transform:uppercase;
   color:var(--gold);font-weight:700;margin-bottom:0.4rem;
@@ -423,6 +433,7 @@ body::before{
   display:inline-flex;align-items:center;gap:0.3rem;
   font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;
   color:var(--gold);font-weight:700;text-decoration:none;cursor:pointer;
+  justify-content:center;
 }
 /* Carousel arrows */
 .carousel-arrow{
@@ -454,7 +465,7 @@ body::before{
    TESTIMONIAL + PORTRAIT + NEWSLETTER
 ══════════════════════════ */
 .testi-row{
-  background:var(--cream);
+  background:#fff1cf;
   padding:5rem 2.5rem;
 }
 .testi-row-inner{
@@ -536,7 +547,7 @@ body::before{
   position:relative;overflow:hidden;
   display:flex;align-items:flex-end;
   padding:0 4rem 2.5rem;
-  background:#f5ead9;
+  background:#f6dfb6;
 }
 .page-header::before{
   content:"";position:absolute;inset:0;
@@ -567,7 +578,7 @@ body::before{
 /* ══════════════════════════
    ABOUT PAGE
 ══════════════════════════ */
-.about-page{padding:5rem 2.5rem;background:var(--cream)}
+.about-page{padding:5rem 2.5rem;background:#fff1cf}
 .about-page-grid{
   max-width:1100px;margin:0 auto;
   display:grid;grid-template-columns:360px 1fr;
@@ -588,7 +599,7 @@ body::before{
   font-size:2rem;font-weight:600;color:var(--gold);display:block;
 }
 .stat-lbl{font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--taupe)}
-.philosophy{padding:5rem 2.5rem;background:var(--ivory)}
+.philosophy{padding:5rem 2.5rem;background:#fff8ea}
 .philosophy-inner{max-width:700px;margin:0 auto;text-align:center}
 .philosophy-inner .s-label{
   display:inline-flex;align-items:center;gap:0.5rem;
@@ -604,7 +615,7 @@ body::before{
 /* ══════════════════════════
    OFFERINGS DETAIL
 ══════════════════════════ */
-.offerings-detail{padding:5rem 2.5rem;background:var(--cream)}
+.offerings-detail{padding:5rem 2.5rem;background:#fff1cf}
 .off-detail-list{max-width:940px;margin:0 auto}
 .off-cat-header{
   display:flex;align-items:center;gap:0.8rem;
@@ -630,7 +641,7 @@ body::before{
   transition:all 0.3s;
 }
 .off-service:hover{border-left-color:var(--gold);box-shadow:0 4px 20px rgba(45,32,24,0.07)}
-.off-service img{width:160px;height:160px;flex:0 0 160px;object-fit:cover;background:#f5ead9}
+.off-service img{width:160px;height:160px;flex:0 0 160px;object-fit:cover;background:#f6dfb6}
 .off-service-text h4{
   font-family:'Cormorant Garamond',serif;font-size:1.1rem;
   font-weight:600;color:var(--espresso);margin-bottom:0.3rem;
@@ -652,7 +663,7 @@ body::before{
 /* ══════════════════════════
    BOOK
 ══════════════════════════ */
-.book-section{padding:6rem 2.5rem;background:var(--cream)}
+.book-section{padding:6rem 2.5rem;background:#fff1cf}
 .book-inner{max-width:660px;margin:0 auto;text-align:center}
 .book-lead{
   font-family:'Cormorant Garamond',serif;
@@ -688,7 +699,7 @@ body::before{
 /* ══════════════════════════
    TESTIMONIALS PAGE
 ══════════════════════════ */
-.testi-page{padding:5rem 2.5rem;background:var(--cream)}
+.testi-page{padding:5rem 2.5rem;background:#fff1cf}
 .testi-grid{
   max-width:1060px;margin:3rem auto 0;
   display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
@@ -725,7 +736,7 @@ body::before{
 /* ══════════════════════════
    FAQ
 ══════════════════════════ */
-.faq-section{padding:6rem 2.5rem;background:var(--cream)}
+.faq-section{padding:6rem 2.5rem;background:#fff1cf}
 .faq-wrap{max-width:660px;margin:2.5rem auto 0}
 .faq-item{border-bottom:1px solid rgba(154,108,31,.15)}
 .faq-q{
@@ -743,7 +754,7 @@ body::before{
 /* ══════════════════════════
    SHOP
 ══════════════════════════ */
-.shop-section{padding:7rem 2rem;background:var(--cream);text-align:center}
+.shop-section{padding:7rem 2rem;background:#fff1cf;text-align:center}
 .coming-box{border-radius:22px;max-width:220px;margin:2rem auto;border:1px solid var(--champagne);background:var(--card);padding:3rem 2rem}
 .coming-box h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--espresso);font-weight:400;letter-spacing:0.06em}
 .shop-note{font-size:0.88rem;color:var(--taupe);line-height:1.85;max-width:400px;margin:0 auto;font-style:italic;font-family:'Cormorant Garamond',serif}
@@ -751,7 +762,7 @@ body::before{
 /* ══════════════════════════
    CONTACT
 ══════════════════════════ */
-.contact-section{padding:6rem 2.5rem;background:var(--cream)}
+.contact-section{padding:6rem 2.5rem;background:#fff1cf}
 .contact-grid{
   max-width:960px;margin:3rem auto 0;
   display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start;
@@ -900,6 +911,261 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   .feature-item{border-bottom:1px solid rgba(154,108,31,.10);border-right:none}
 }
 
+
+
+
+
+/* ── BALANCED VANILLA / LINEN / CHAMPAGNE PALETTE ── */
+:root{
+  --ivory:#fbf3e6;
+  --cream:#fff8ec;
+  --card:#fffdf7;
+  --champagne:#d8b56d;
+  --gold:#a97624;
+  --gold-rich:#8f5f18;
+  --gold-light:#ead6aa;
+  --amber:#c18a32;
+  --espresso:#3a2718;
+  --plum:#2c1d3c;
+  --taupe:#8a7258;
+  --line:rgba(169,118,36,.20);
+  --shadow:0 22px 58px rgba(95,62,28,.11);
+  --glow:0 0 38px rgba(216,181,109,.20);
+  --radius:26px;
+}
+
+body{
+  color:var(--espresso);
+  background:
+    radial-gradient(circle at 12% 4%,rgba(234,214,170,.42),transparent 32%),
+    radial-gradient(circle at 88% 8%,rgba(216,181,109,.26),transparent 34%),
+    radial-gradient(circle at 50% 105%,rgba(169,118,36,.13),transparent 40%),
+    linear-gradient(180deg,#fbf3e6 0%,#fff8ec 50%,#f4e5cb 100%);
+}
+body::before{
+  opacity:.34;
+  background-image:
+    linear-gradient(rgba(169,118,36,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(169,118,36,.035) 1px,transparent 1px);
+  background-size:52px 52px;
+}
+
+/* NAV */
+.nav{
+  background:rgba(251,243,230,.92);
+  border-bottom:1px solid rgba(169,118,36,.16);
+  box-shadow:0 8px 30px rgba(95,62,28,.045);
+}
+.nav-logo-circle,.nav-logo-img{
+  background:linear-gradient(145deg,#fff8ec,#ead6aa);
+  border:1px solid rgba(169,118,36,.38);
+  box-shadow:0 10px 24px rgba(95,62,28,.10),inset 0 0 18px rgba(255,255,255,.45);
+}
+.nav-logo-name,.nav-menu a{color:#2c1d3c}
+.nav-logo-sub,.nav-menu a:hover,.nav-menu a.active,
+.kicker,.section-label,.off-cat-title,.book-card h4,.contact-item h4,
+.foot-col h5,.foot-newsletter h5,.s-label,.ph-label{
+  color:#a97624;
+}
+
+/* HERO */
+.hero{
+  background:
+    linear-gradient(90deg,rgba(251,243,230,.98) 0%,rgba(251,243,230,.92) 30%,rgba(255,248,236,.58) 58%,rgba(234,214,170,.14) 100%),
+    url('banners_gold/sun_desktop_1920x1080.png');
+  background-size:cover;
+  background-position:center right;
+  background-repeat:no-repeat;
+}
+.hero h1{color:#3a2718}
+.hero h1 em,
+.hero h1 span,
+.hero h1 .accent,
+span[style*="champagne"]{
+  color:#a97624 !important;
+}
+.hero-desc,.s-body,.off-sub,.feature-item p,.book-desc,.book-card p,
+.off-service-text .svc-desc,.off-service .svc-desc,.faq-a p,
+.contact-item p,.shop-note,.foot-brand p,.foot-newsletter p{
+  color:#8a7258;
+}
+
+/* BUTTONS */
+.cta-btn,.h-btn.primary,.btn-gold,.nav-book,.foot-email button,.newsletter-form button{
+  background:linear-gradient(135deg,#8f5f18 0%,#a97624 50%,#d8b56d 100%);
+  border-color:rgba(95,62,28,.22);
+  box-shadow:0 15px 30px rgba(95,62,28,.18),inset 0 1px 0 rgba(255,255,255,.26);
+  color:#fffdf7;
+}
+.cta-btn:hover,.h-btn.primary:hover,.btn-gold:hover,.nav-book:hover{
+  background:linear-gradient(135deg,#7b4e12 0%,#a97624 55%,#d8b56d 100%);
+  transform:translateY(-2px);
+  box-shadow:0 18px 34px rgba(95,62,28,.22);
+}
+.outline-btn,.h-btn.secondary,.btn-outline{
+  background:linear-gradient(135deg,rgba(255,253,247,.92),rgba(234,214,170,.46));
+  border:1px solid rgba(169,118,36,.30);
+  color:#3a2718;
+  box-shadow:0 10px 24px rgba(95,62,28,.06);
+}
+.outline-btn:hover,.h-btn.secondary:hover,.btn-outline:hover{
+  background:#f5e8d1;
+  transform:translateY(-2px);
+}
+
+/* SECTIONS */
+.welcome,.offerings-detail,.book-section,.testimonials,.testi-page,.faq,.faq-section,
+.shop-coming,.shop-section,.contact-section,.contact-page,.about-page,.about-intro{
+  background:linear-gradient(180deg,#fbf3e6 0%,#fff8ec 100%);
+}
+.offerings,.offerings-section{
+  background:linear-gradient(180deg,#fff8ec 0%,#f4e5cb 100%);
+}
+.philosophy,.philosophy-section{
+  background:linear-gradient(180deg,#fffdf7,#fbf3e6);
+}
+
+/* CARDS */
+.off-item,.book-card,.t-card,.contact-item,.contact-form,.coming-box,.faq-wrap,
+.philosophy-inner,.book-details,.feature-card,.off-card{
+  background:linear-gradient(145deg,rgba(255,253,247,.96),rgba(244,229,203,.72));
+  border:1px solid rgba(169,118,36,.18);
+  box-shadow:0 18px 42px rgba(95,62,28,.10);
+}
+.off-item:hover,.off-card:hover{
+  box-shadow:0 24px 54px rgba(95,62,28,.15);
+}
+.off-card-body{background:transparent}
+.off-icon,.off-card-icon,.off-cat-icon,.contact-item .ci-icon,.foot-social a,.feat-icon{
+  color:#a97624;
+  background:linear-gradient(145deg,#fff8ec,#ead6aa);
+  border-color:rgba(169,118,36,.30);
+}
+
+/* PAGE HEADER */
+.page-header{
+  background:#f4e5cb;
+}
+.page-header::before{
+  opacity:.46;
+  filter:saturate(.72) sepia(.22) brightness(1.08) contrast(1.02);
+}
+.page-header::after{
+  background:radial-gradient(circle at center,rgba(255,253,247,.68),rgba(244,229,203,.30));
+}
+.page-header h1,.page-header-content h1{
+  color:#3a2718!important;
+}
+
+/* ABOUT / IMAGERY FRAMES */
+.about-photo,.about-page-img,.about-arch-img-wrap{
+  background:radial-gradient(circle at 50% 35%,#fffdf7 0%,#ead6aa 100%);
+  border-color:rgba(169,118,36,.20);
+}
+
+/* SERVICE CARDS */
+.off-service{
+  background:linear-gradient(145deg,rgba(255,253,247,.96),rgba(244,229,203,.72));
+  border:1px solid rgba(169,118,36,.18);
+  box-shadow:0 18px 45px rgba(95,62,28,.10);
+}
+.off-service:hover{
+  border-left-color:#a97624;
+}
+.off-service img{
+  border-color:rgba(169,118,36,.18);
+  background:#ead6aa;
+}
+.off-service .book-link,.off-service-text .book-link{
+  background:linear-gradient(135deg,#fff8ec,#ead6aa);
+  border-color:rgba(169,118,36,.30);
+  color:#3a2718;
+}
+.off-service .book-link:hover,.off-service-text .book-link:hover{
+  background:#a97624;
+  color:#fffdf7;
+}
+
+/* CTA BAND */
+.cta-band{
+  background:linear-gradient(135deg,#f4e5cb,#ead6aa,#fff8ec);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.cta-band::before{
+  background:rgba(251,243,230,.58);
+}
+.cta-band p{
+  color:#3a2718;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+}
+
+/* FOOTER */
+footer{
+  background:linear-gradient(180deg,#f4e5cb,#ead6aa);
+  border-top:1px solid rgba(169,118,36,.18);
+  color:#3a2718;
+}
+.fl-name,.foot-brand .fl-name{color:#2c1d3c}
+.fl-sub,.foot-brand .fl-sub{color:#a97624}
+.foot-col a{color:#3a2718}
+.foot-col a:hover{color:#a97624}
+.foot-newsletter p,.foot-brand p{color:#3a2718}
+.foot-bottom p,.foot-bottom-links a{color:#7a644d}
+.foot-bottom-links .sep{color:#d8b56d}
+.email-row input,.foot-email input{
+  background:#fff8ec;
+  border-color:rgba(169,118,36,.22);
+  color:#3a2718;
+}
+.contact-form input,.contact-form textarea{
+  background:#fff8ec;
+  border-color:rgba(169,118,36,.22);
+}
+
+/* FEATURE / WELCOME */
+.feature-strip,.feature-card{
+  background:#fffdf7;
+}
+.welcome-moon-char{
+  background:radial-gradient(circle,#fffdf7 0%,#ead6aa 100%);
+  border:1px solid rgba(169,118,36,.20);
+  color:rgba(169,118,36,.46);
+  box-shadow:0 22px 55px rgba(95,62,28,.11),inset 0 0 30px rgba(255,255,255,.38);
+}
+
+/* SIDE NAV */
+.hero-sidenav-item{
+  background:rgba(255,248,236,.94);
+  border-color:rgba(169,118,36,.26);
+}
+.sn-icon{color:#a97624}
+.sn-label{color:#3a2718}
+.hero-sidenav-item:hover{
+  background:linear-gradient(135deg,#8f5f18,#a97624);
+}
+.hero-sidenav-item:hover .sn-icon,.hero-sidenav-item:hover .sn-label{
+  color:#fffdf7;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-content{
+    background-image:url('banners_gold/sun_mobile_750x750.png');
+  }
+  .hero-content::before{
+    background:linear-gradient(to top,
+      rgba(251,243,230,.96) 0%,
+      rgba(251,243,230,.72) 50%,
+      rgba(251,243,230,.24) 100%
+    );
+  }
+  .page-header::before{
+    background-image:url('banners_gold/moon_mobile_750x280.png')!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -908,7 +1174,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
 <div class="nav" id="navbar">
   <div class="nav-inner">
     <div class="nav-logo" onclick="showPage('home')">
-      <div class="nav-logo-img"><img src="brand_v3.png" alt="The Cosmic Alchemy" width="40" height="40"></div>
+      <div class="nav-logo-img"><img src="branding/brand_v3.png" alt="The Cosmic Alchemy" width="40" height="40"></div>
       <div>
         <div class="nav-logo-name">The Cosmic Alchemy</div>
         <div class="nav-logo-sub">Transmutative Journey<br>of Soul - <span style="color:var(--champagne)">by Garima</span></div>
@@ -1032,7 +1298,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
     <div class="about-intro-inner">
       <div class="about-arch-img">
         <div class="about-arch-img-wrap">
-          <img src="brand.jpeg" alt="Garima Sharma">
+          <img src="branding/brand.jpeg" alt="Garima Sharma">
           <div class="about-play">
             <div class="about-play-btn">▶</div>
             Play Intro
@@ -1061,9 +1327,9 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="off-card" onclick="showPage('offerings-page')">
           <div class="off-card-img">
             <img src="assets_gold_v2/akashic_gold2.png" alt="Akashic Records">
-            <div class="off-card-icon">✦</div>
           </div>
           <div class="off-card-body">
+          <div class="off-card-icon">✦</div>
             <div class="off-card-cat">The Channeled Oracle</div>
             <h4>Akashic Records Reading</h4>
             <p>Access the energetic library of your soul's journey and receive unfiltered divine guidance.</p>
@@ -1073,9 +1339,9 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="off-card" onclick="showPage('offerings-page')">
           <div class="off-card-img">
             <img src="assets_gold_v2/autowriting_gold2.png" alt="Automatic Writing">
-            <div class="off-card-icon">✦</div>
           </div>
           <div class="off-card-body">
+          <div class="off-card-icon">✦</div>
             <div class="off-card-cat">The Channeled Oracle</div>
             <h4>Automatic Writing</h4>
             <p>Direct, unfiltered guidance from your spirit team through divine channelled script.</p>
@@ -1085,9 +1351,9 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="off-card" onclick="showPage('offerings-page')">
           <div class="off-card-img">
             <img src="assets_gold_v2/tarot_gold2.png" alt="Tarot Reading">
-            <div class="off-card-icon">✦</div>
           </div>
           <div class="off-card-body">
+          <div class="off-card-icon">✦</div>
             <div class="off-card-cat">The Channeled Oracle</div>
             <h4>Tarot Reading</h4>
             <p>A psychological and spiritual mirror to map your current energy and navigate your choices.</p>
@@ -1097,9 +1363,9 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="off-card" onclick="showPage('offerings-page')">
           <div class="off-card-img">
             <img src="assets_gold_v2/astrology_gold2.png" alt="Astrology">
-            <div class="off-card-icon">☾</div>
           </div>
           <div class="off-card-body">
+          <div class="off-card-icon">☾</div>
             <div class="off-card-cat">The Cosmic Blueprint</div>
             <h4>Astrology & Numerology</h4>
             <p>Decode the celestial map of your birth and uncover your life path and divine timing.</p>
@@ -1109,9 +1375,9 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="off-card" onclick="showPage('offerings-page')">
           <div class="off-card-img">
             <img src="assets_gold_v2/reiki_gold2.png" alt="Energy Healing">
-            <div class="off-card-icon">✧</div>
           </div>
           <div class="off-card-body">
+          <div class="off-card-icon">✧</div>
             <div class="off-card-cat">The Luminous Restoration</div>
             <h4>Reiki, Quantum & Violet Flame Healing</h4>
             <p>Dissolve energetic blocks, balance your chakras, and restore your natural vitality.</p>
@@ -1121,9 +1387,9 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="off-card" onclick="showPage('offerings-page')">
           <div class="off-card-img">
             <img src="assets_gold_v2/candle_gold2.png" alt="Candle Magic">
-            <div class="off-card-icon">✷</div>
           </div>
           <div class="off-card-body">
+          <div class="off-card-icon">✷</div>
             <div class="off-card-cat">The Elemental Forge</div>
             <h4>Candle Magic</h4>
             <p>Use fire, sacred herbs, and focused intention to magnetize your manifestation into the physical world.</p>
@@ -1133,9 +1399,9 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="off-card" onclick="showPage('offerings-page')">
           <div class="off-card-img">
             <img src="assets_gold_v2/innerchild_gold2.png" alt="Inner Child">
-            <div class="off-card-icon">♢</div>
           </div>
           <div class="off-card-body">
+          <div class="off-card-icon">♢</div>
             <div class="off-card-cat">The Inner Architecture</div>
             <h4>Inner Child & Specialized Healing</h4>
             <p>Meet your younger self with sovereign love and restore your sense of play and safety.</p>
@@ -1158,7 +1424,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
       </div>
       <div>
         <div class="testi-portrait">
-          <img src="brand.jpeg" alt="Garima Sharma">
+          <img src="branding/brand.jpeg" alt="Garima Sharma">
           <div class="testi-moon">☽</div>
         </div>
       </div>
@@ -1187,7 +1453,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   <section class="about-page">
     <div class="about-page-grid">
       <div>
-        <div class="about-page-img"><img src="brand.jpeg" alt="Garima Sharma"></div>
+        <div class="about-page-img"><img src="branding/brand.jpeg" alt="Garima Sharma"></div>
         <div class="stats-row">
           <div style="text-align:center"><span class="stat-num">8+</span><span class="stat-lbl">Years of Experience</span></div>
           <div style="text-align:center"><span class="stat-num">1K+</span><span class="stat-lbl">Souls Guided</span></div>
