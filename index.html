@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Cosmic Alchemy — Garima Sharma</title>
+<title>The Cosmic Alchemy Garima Sharma</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
@@ -29,18 +29,11 @@ body::before{
 
 /* ── COLOR TOKENS ── */
 :root{
-  --ivory:#fbf6ed;   /* main warm sandy background */
-  --cream:#fffaf3;   /* lighter sand */
-  --sand-dark:#f5ead9;   /* darker sand for sections */
-  --card:#fffdf8;   /* cards / nav */
-  --espresso:#2d2018;   /* near-black warm brown */
-  --taupe:#846f5a;   /* mid brown text */
-  --muted:#846f5a;   /* muted body text */
-  --gold:#9a6c1f;   /* dark gold — buttons, headings */
-  --champagne:#d6a94f;   /* medium gold */
-  --gold-light:#d6a94f;   /* lighter gold */
-  --gold-pale:rgba(214,169,79,.22);   /* very pale gold — decorative */
-  --border:rgba(154,108,31,.18);
+  --ivory:#fbf6ed;--cream:#fffaf3;--card:#fffdf8;--champagne:#d6a94f;--gold:#9a6c1f;
+  --espresso:#2d2018;--plum:#2e1e45;--taupe:#846f5a;--line:rgba(154,108,31,.18);
+  --shadow:0 22px 55px rgba(83,57,32,.10);--radius:26px;
+  --gold:#9a6c1f;   /* dark gold buttons, headings */
+  --gold-pale:rgba(214,169,79,.22);   /* very pale gold decorative */
 }
 
 /* ── PAGE SYSTEM ── */
@@ -75,7 +68,7 @@ body::before{
 .nav-logo-name{
   font-family:'Cormorant Garamond',serif;
   font-size:0.95rem;font-weight:600;
-  color:var(--espresso);line-height:1.2;
+  color:var(--plum);line-height:1.2;
 }
 .nav-logo-sub{font-size:0.42rem;color:var(--taupe);letter-spacing:0.14em;text-transform:uppercase}
 .nav-menu{display:flex;gap:1.8rem;list-style:none;margin-left:auto;align-items:center}
@@ -137,7 +130,7 @@ body::before{
   font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;
   color:var(--gold);font-weight:600;margin-bottom:1.5rem;
 }
-.hero-eyebrow .dot{color:var(--gold-light);font-size:0.6rem}
+.hero-eyebrow .dot{color:var(--champagne);font-size:0.6rem}
 .hero h1{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(2.8rem,5vw,4.4rem);
@@ -184,7 +177,7 @@ body::before{
   color:var(--taupe);cursor:pointer;
 }
 .hero-scroll-circle{
-  width:28px;height:28px;border:1px solid var(--border);
+  width:28px;height:28px;border:1px solid var(--line);
   border-radius:50%;display:flex;align-items:center;justify-content:center;
   font-size:0.7rem;color:var(--gold);
 }
@@ -272,7 +265,7 @@ body::before{
   border-radius:200px 200px 160px 160px;
   overflow:hidden;
   border:1px solid rgba(154,108,31,.20);
-  background:var(--sand-dark);
+  background:#f5ead9;
   position:relative;
 }
 .about-arch-img-wrap img{
@@ -284,7 +277,7 @@ body::before{
   bottom:1.5rem;left:50%;transform:translateX(-50%);
   background:rgba(255,253,249,0.9);
   backdrop-filter:blur(6px);
-  border:1px solid var(--border);
+  border:1px solid var(--line);
   padding:0.5rem 1.2rem 0.5rem 0.8rem;
   display:flex;align-items:center;gap:0.5rem;
   font-size:0.5rem;letter-spacing:0.14em;
@@ -311,7 +304,7 @@ body::before{
   color:var(--champagne);font-weight:600;margin-bottom:0.75rem;
 }
 .about-intro-text .s-label::after{
-  content:'';flex:1;max-width:40px;height:1px;background:var(--gold-pale);
+  content:'';flex:1;max-width:40px;height:1px;background:rgba(214,169,79,.22);
 }
 .s-title{
   font-family:'Cormorant Garamond',serif;
@@ -393,7 +386,7 @@ body::before{
   aspect-ratio:3/2;
   overflow:hidden;position:relative;
   border-radius:4px 4px 0 0;
-  background:var(--sand-dark);
+  background:#f5ead9;
 }
 .off-card-img img{
   width:100%;height:100%;
@@ -451,7 +444,7 @@ body::before{
 }
 .cdot{
   width:8px;height:8px;border-radius:50%;
-  background:var(--gold-pale);cursor:pointer;transition:background 0.2s;
+  background:rgba(214,169,79,.22);cursor:pointer;transition:background 0.2s;
 }
 .cdot.active{background:var(--gold)}
 
@@ -472,7 +465,7 @@ body::before{
 /* Left: quote */
 .testi-quote .big-q{
   font-family:'Cormorant Garamond',serif;
-  font-size:5rem;color:var(--gold-pale);
+  font-size:5rem;color:rgba(214,169,79,.22);
   line-height:0.8;margin-bottom:0.5rem;
 }
 .testi-quote blockquote{
@@ -541,7 +534,7 @@ body::before{
   position:relative;overflow:hidden;
   display:flex;align-items:flex-end;
   padding:0 4rem 2.5rem;
-  background:var(--sand-dark);
+  background:#f5ead9;
 }
 .page-header::before{
   content:"";position:absolute;inset:0;
@@ -559,7 +552,7 @@ body::before{
 .page-header-inner{position:relative;z-index:2}
 .ph-label{
   font-size:0.54rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold-light);font-weight:600;margin-bottom:0.5rem;
+  color:var(--champagne);font-weight:600;margin-bottom:0.5rem;
   display:flex;align-items:center;gap:0.5rem;
 }
 .ph-label::after{content:'';width:28px;height:1px;background:rgba(212,168,64,0.5)}
@@ -635,7 +628,7 @@ body::before{
   transition:all 0.3s;
 }
 .off-service:hover{border-left-color:var(--gold);box-shadow:0 4px 20px rgba(45,32,24,0.07)}
-.off-service img{width:160px;height:160px;flex:0 0 160px;object-fit:cover;background:var(--sand-dark)}
+.off-service img{width:160px;height:160px;flex:0 0 160px;object-fit:cover;background:#f5ead9}
 .off-service-text h4{
   font-family:'Cormorant Garamond',serif;font-size:1.1rem;
   font-weight:600;color:var(--espresso);margin-bottom:0.3rem;
@@ -700,12 +693,12 @@ body::before{
 }
 .t-card{
   background:var(--card);padding:2.5rem 2rem;
-  border-bottom:2px solid var(--gold-pale);
+  border-bottom:2px solid rgba(214,169,79,.22);
   border:1px solid rgba(154,108,31,.10);
 }
 .t-card .qm{
   font-family:'Cormorant Garamond',serif;font-size:4rem;
-  color:var(--gold-pale);line-height:1;margin-bottom:0.5rem;
+  color:rgba(214,169,79,.22);line-height:1;margin-bottom:0.5rem;
 }
 .t-card p{
   font-family:'Cormorant Garamond',serif;font-size:1rem;
@@ -791,7 +784,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   gap:3rem;padding-bottom:3rem;
   border-bottom:1px solid rgba(154,108,31,.10);
 }
-.foot-brand .fl-name{font-family:'Cinzel Decorative',serif;font-size:1rem;color:#2d2018;line-height:1.1;margin-bottom:.2rem;font-weight:700;}
+.foot-brand .fl-name{font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--plum);line-height:1.1;margin-bottom:.2rem;font-weight:700;}
 .foot-brand .fl-sub{font-size:.52rem;color:#9a6c1f;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem}
 .foot-brand p{font-size:.78rem;color:#2d2018;line-height:1.7;margin-bottom:1rem;font-family:'Cormorant Garamond',serif}
 .foot-social{display:flex;gap:0.4rem}
@@ -801,7 +794,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   text-decoration:none;font-size:0.5rem;color:#9a6c1f;
   transition:all 0.2s;font-weight:600;
 }
-.foot-social a:hover{border-color:var(--gold-light);color:var(--gold-light)}
+.foot-social a:hover{border-color:var(--champagne);color:var(--champagne)}
 .foot-col h5{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#9a6c1f;margin-bottom:0.9rem;font-weight:700}
 .foot-col a{
   display:block;color:#2d2018;text-decoration:none;
@@ -833,7 +826,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
 .foot-bottom p{font-size:0.52rem;color:#6d5946}
 .foot-bottom-links{display:flex;gap:1.25rem}
 .foot-bottom-links a{font-size:0.52rem;color:#6d5946;text-decoration:none;transition:color 0.2s}
-.foot-bottom-links a:hover{color:var(--gold-light)}
+.foot-bottom-links a:hover{color:var(--champagne)}
 .foot-bottom-links .sep{color:rgba(154,108,31,.28)}
 
 /* ══════════════════════════
@@ -860,7 +853,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
     display:flex;flex-direction:column;
     position:absolute;top:100%;left:0;right:0;
     background:rgba(255,253,249,0.99);padding:1.5rem;
-    border-bottom:1px solid var(--border);gap:0.8rem;
+    border-bottom:1px solid var(--line);gap:0.8rem;
   }
   .mob-toggle{display:flex}
   .nav-book{display:none}
@@ -916,7 +909,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
       <div class="nav-logo-img"><img src="brand_v3.png" alt="The Cosmic Alchemy" width="40" height="40"></div>
       <div>
         <div class="nav-logo-name">The Cosmic Alchemy</div>
-        <div class="nav-logo-sub">Transmutative Journey of Soul</div>
+        <div class="nav-logo-sub">Transmutative Journey<br>of Soul - <span style="color:var(--champagne)">by Garima</span></div>
       </div>
     </div>
     <ul class="nav-menu" id="navMenu">
@@ -943,10 +936,10 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
     <div class="hero-img-fade"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">
-        Intuition <span class="dot">✦</span> Alignment <span class="dot">✦</span> Transformation
+        Celestial Guidance. Sovereign Truth.
       </div>
-      <h1>Return to Your Soul.<br><em>Remember Your Magic.</em></h1>
-      <p class="hero-desc">Celestial guidance and sacred support to help you align with your truth, heal deeply, and reconnect with the sovereign wisdom your soul has carried across lifetimes.</p>
+      <h1>Transmutative Journey<br>of Soul - <span style="color:var(--champagne)">by Garima</span></h1>
+      <p class="hero-desc">You have arrived by way of sacred gravity. Call it a whisper of intuition; call it a divine summon. In this sanctuary, we do not merely seek, we remember. This is a space to honor that celestial pull and reconnect with the sovereign wisdom your soul has carried across lifetimes.</p>
       <div class="hero-btns">
         <a class="btn-gold" onclick="showPage('book')">Book a Session +</a>
         <a class="btn-outline" onclick="showPage('offerings-page')">Explore Offerings ›</a>
@@ -1048,7 +1041,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="s-label">Welcome, I'm Garima</div>
         <div class="s-title">Your Guide to<br>Sacred Alchemy</div>
         <p class="s-body">I help heart-led souls tune in, heal, and align with their deepest truth. Through celestial guidance, energy work, and soulful practices, you'll gain clarity, confidence, and a deeper connection to yourself.</p>
-        <p class="s-body">For a decade, I navigated a world that felt silent to the soul. A singular whisper persisted: <em>There is more.</em> That whisper led me into the heart of the Divine — and now I hold that sacred space for you.</p>
+        <p class="s-body">For a decade, I navigated a world that felt silent to the soul. A singular whisper persisted: <em>There is more.</em> That whisper led me into the heart of the Divine and now I hold that sacred space for you.</p>
         <a class="btn-learn" onclick="showPage('about')">Learn More About Me +</a>
         <div class="about-deco-botanical">✦</div>
       </div>
@@ -1159,7 +1152,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
       <div class="testi-quote">
         <div class="big-q">"</div>
         <blockquote>"Garima holds such a powerful and nurturing space. Her guidance helped me see what my soul already knew. I left feeling lighter, clearer, and more aligned than ever."</blockquote>
-        <cite>— Ayesha S.</cite>
+        <cite>  Ayesha S.</cite>
       </div>
       <div>
         <div class="testi-portrait">
@@ -1205,7 +1198,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
         <div class="s-title">The Path of<br>Transmutation</div>
         <p class="s-body">I'm Garima, an intuitive guide, energy healer, and forever student of life. My mission is to help you remember who you truly are and support you in living a life aligned with your soul.</p>
         <p class="s-body">For a decade, I navigated the corporate architecture of a world that looked complete to the eye but felt silent to the soul. Amidst the height of external success, a singular whisper persisted: <em>There is more.</em></p>
-        <p class="s-body">That whisper became a summon, leading me away from the known and into the heart of the Divine. Through Reiki and celestial channels, my world underwent a profound transmutation — shifting from shadow into gold.</p>
+        <p class="s-body">That whisper became a summon, leading me away from the known and into the heart of the Divine. Through Reiki and celestial channels, my world underwent a profound transmutation shifting from shadow into gold.</p>
         <p class="s-body">Today, I hold a sanctuary for those standing at their own sacred threshold. I do not provide the answers; I facilitate remembrance. I guide you inward, to the sovereign truth that has been waiting for you.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
           <a class="btn-gold" onclick="showPage('book')">Work With Me +</a>
@@ -1218,7 +1211,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
     <div class="philosophy-inner">
       <div class="s-label">My Philosophy</div>
       <div class="s-title" style="text-align:center;margin-bottom:1.5rem">The Sovereign Truth</div>
-      <p>"I believe the resonance you seek is not a destination to be found, but a frequency to be remembered. The answers are not 'out there' — they are woven into the very fabric of your being."</p>
+      <p>"I believe the resonance you seek is not a destination to be found, but a frequency to be remembered. The answers are not 'out there' they are woven into the very fabric of your being."</p>
       <p>"Every encounter within The Cosmic Alchemy is an act of deep, celestial listening. The process is bespoke. I curate a hallowed container where your own truth can emerge with absolute clarity."</p>
       <p>"I work in the realm of pure intuition, meeting you at the precise intersection of your human experience and your divine essence. No scripts, no judgment. Only a sacred silence between your soul and mine."</p>
       <div style="text-align:center;margin-top:2rem">
@@ -1239,18 +1232,18 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   <section class="offerings-detail">
     <div class="off-detail-list">
       <div class="off-cat-header"><span class="off-cat-icon">✦</span><span class="off-cat-title">I. The Channeled Oracle</span></div>
-      <div class="off-service"><img src="akashic_gold.png" alt="Akashic Records"><div class="off-service-text"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">The Akasha is the energetic library of every soul's journey — past, present, and potential. Entering the Records is like opening a ledger of your eternal self. It allows us to identify soul-contracts, ancestral patterns, and the "why" behind the recurring themes in your life.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+      <div class="off-service"><img src="akashic_gold.png" alt="Akashic Records"><div class="off-service-text"><h4>Akashic Records Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">The Akasha is the energetic library of every soul's journey past, present, and potential. Entering the Records is like opening a ledger of your eternal self. It allows us to identify soul-contracts, ancestral patterns, and the "why" behind the recurring themes in your life.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
       <div class="off-service"><img src="autowriting_gold.png" alt="Automatic Writing"><div class="off-service-text"><h4>Automatic Writing</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">This is a pure form of mediumship. In a state of deep trance, I allow Divine intelligence to flow through my hand directly onto the page. This "Channeled Script" provides direct, unfiltered guidance from your spirit team, offering answers the conscious mind cannot reach.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
-      <div class="off-service"><img src="tarot_gold.png" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">Beyond simple divination, I use the Tarot as a psychological and spiritual mirror. Each card is an archetype — a key that unlocks the subconscious. We use these symbols to map your current energy and navigate the choices standing before you.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+      <div class="off-service"><img src="tarot_gold.png" alt="Tarot Reading"><div class="off-service-text"><h4>Tarot Reading</h4><p class="duration">15 mins · 30 mins · 60 mins</p><p class="svc-desc">Beyond simple divination, I use the Tarot as a psychological and spiritual mirror. Each card is an archetype a key that unlocks the subconscious. We use these symbols to map your current energy and navigate the choices standing before you.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
 
       <div class="off-cat-header"><span class="off-cat-icon">☾</span><span class="off-cat-title">II. The Cosmic Blueprint</span></div>
-      <div class="off-service"><img src="astrology_gold.png" alt="Astrology"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">The moment of your birth was a celestial snapshot — a map of the stars designed specifically for your evolution. By decoding your natal chart, we understand your inherent strengths, your karmic challenges, and the divine timing of your life's seasons.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+      <div class="off-service"><img src="astrology_gold.png" alt="Astrology"><div class="off-service-text"><h4>Astrology Consultation</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">The moment of your birth was a celestial snapshot a map of the stars designed specifically for your evolution. By decoding your natal chart, we understand your inherent strengths, your karmic challenges, and the divine timing of your life's seasons.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
       <div class="off-service"><img src="numerology_gold.png" alt="Numerology"><div class="off-service-text"><h4>Numerology Reading</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Numbers are the hidden code of the universe. By analyzing the frequencies of your name and birth date, we uncover your "Life Path" and "Soul Urge." This provides a mathematical foundation for understanding your personality and your destiny.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
 
       <div class="off-cat-header"><span class="off-cat-icon">✧</span><span class="off-cat-title">III. The Luminous Restoration</span></div>
       <div class="off-service"><img src="reikihealing_gold.png" alt="Reiki"><div class="off-service-text"><h4>Reiki Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">A Japanese lineage of stress reduction and relaxation that also promotes healing. I act as a conduit for Universal Life Force Energy, flowing it into your subtle body to dissolve blockages, balance your chakras, and restore your natural vitality.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
       <div class="off-service"><img src="quantumhealing_gold.png" alt="Quantum Healing"><div class="off-service-text"><h4>Quantum Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">This modality operates at the subatomic level. By shifting your consciousness, we can collapse old timelines of struggle and "jump" into a frequency of health and abundance. It is the art of changing reality by changing the observer.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
-      <div class="off-service"><img src="violetflame_gold.png" alt="Violet Flame"><div class="off-service-text"><h4>Violet Flame Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">The Violet Flame is a high-frequency spiritual energy that "burns away" energetic debris. It is the tool of the Alchemist — used to transmit negative karma, heavy emotions, and ancestral trauma into pure, crystalline light.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+      <div class="off-service"><img src="violetflame_gold.png" alt="Violet Flame"><div class="off-service-text"><h4>Violet Flame Healing</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">The Violet Flame is a high-frequency spiritual energy that "burns away" energetic debris. It is the tool of the Alchemist used to transmit negative karma, heavy emotions, and ancestral trauma into pure, crystalline light.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
 
       <div class="off-cat-header"><span class="off-cat-icon">✷</span><span class="off-cat-title">IV. The Elemental Forge</span></div>
       <div class="off-service"><img src="candle_magic.png" alt="Candle Magic"><div class="off-service-text"><h4>Candle Magic</h4><p class="duration">60 mins</p><p class="svc-desc">Fire is the fastest element for transmutation. In this practice, we use consecrated wax, sacred herbs, and focused intention. As the candle burns, it releases your desire into the ether, acting as a beacon that magnetizes your manifestation into the physical world.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
@@ -1262,7 +1255,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
       <div class="off-service"><img src="healing.png" alt="Specialized Healing"><div class="off-service-text"><h4>Personalized Healing for Specific Health Concerns</h4><p class="duration">30 mins · 60 mins</p><p class="svc-desc">Focused healing tailored to your intention and what you're moving through.</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
 
       <div class="off-cat-header"><span class="off-cat-icon">✶</span><span class="off-cat-title">VII. Vaastu Aroma Therapy</span></div>
-      <div class="off-service"><img src="vaastu.png" alt="Vaastu Aroma"><div class="off-service-text"><h4>Vaastu Aroma Therapy — The Essence of Alignment</h4><p class="duration">Duration — TBA</p><p class="svc-desc">By Dr. Jayessh Ramawat (Ph.D Numerology &amp; Vaastu Shastracharya — Gold Medalist). "Elevate the Vibrations of your sanctuary with Vaastu Aroma. We utilize a Specialized range of Aroma Products featuring a Patented formula — Designed to target Specific Energetic Imbalances in your space. Unlike standard Aromatherapy, Vaastu Aroma uses Precise Botanical Frequencies to clear Stagnant 'Vaastu Doshas' and invite Specific Energies like Abundance, Peace, Success &amp; Protection into your Home or Work Place."</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
+      <div class="off-service"><img src="vaastu.png" alt="Vaastu Aroma"><div class="off-service-text"><h4>Vaastu Aroma Therapy The Essence of Alignment</h4><p class="duration">Duration TBA</p><p class="svc-desc">By Dr. Jayessh Ramawat (Ph.D Numerology &amp; Vaastu Shastracharya Gold Medalist). "Elevate the Vibrations of your sanctuary with Vaastu Aroma. We utilize a Specialized range of Aroma Products featuring a Patented formula Designed to target Specific Energetic Imbalances in your space. Unlike standard Aromatherapy, Vaastu Aroma uses Precise Botanical Frequencies to clear Stagnant 'Vaastu Doshas' and invite Specific Energies like Abundance, Peace, Success &amp; Protection into your Home or Work Place."</p><a href="#" class="book-link" onclick="showPage('book');return false;">Book Session →</a></div></div>
     </div>
   </section>
 </div>
@@ -1306,9 +1299,9 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
       <div class="s-title">What Our Clients Say</div>
     </div>
     <div class="testi-grid">
-      <div class="t-card"><div class="qm">"</div><p>"Garima holds such a powerful and nurturing space. Her guidance helped me see what my soul already knew."</p><span class="who">— Aanya S.</span></div>
-      <div class="t-card"><div class="qm">"</div><p>"The session was life-changing. I felt seen, heard, and deeply supported on my journey back to myself."</p><span class="who">— Rhea M.</span></div>
-      <div class="t-card"><div class="qm">"</div><p>"Her intuition is incredibly accurate and her energy is soothing. I left feeling lighter, clearer, and more aligned than ever."</p><span class="who">— Devika P.</span></div>
+      <div class="t-card"><div class="qm">"</div><p>"Garima holds such a powerful and nurturing space. Her guidance helped me see what my soul already knew."</p><span class="who">  Aanya S.</span></div>
+      <div class="t-card"><div class="qm">"</div><p>"The session was life-changing. I felt seen, heard, and deeply supported on my journey back to myself."</p><span class="who">  Rhea M.</span></div>
+      <div class="t-card"><div class="qm">"</div><p>"Her intuition is incredibly accurate and her energy is soothing. I left feeling lighter, clearer, and more aligned than ever."</p><span class="who">  Devika P.</span></div>
     </div>
   </section>
   <div class="cta-band">
@@ -1392,7 +1385,7 @@ footer{background:#f2e4cc;border-top:1px solid rgba(154,108,31,.18);padding:4rem
   <div class="foot-top">
     <div class="foot-brand">
       <div class="fl-name">The Cosmic Alchemy</div>
-      <div class="fl-sub">Transmutative Journey of Soul</div>
+      <div class="fl-sub">Transmutative Journey<br>of Soul - <span style="color:var(--champagne)">by Garima</span></div>
       <p>Celestial guidance and sacred support to help you align with your truth and live a life aligned with your soul.</p>
       <div class="foot-social"><a href="#">IG</a><a href="#">FB</a><a href="#">YT</a></div>
     </div>
