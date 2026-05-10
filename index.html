@@ -1148,7 +1148,7 @@ span[style*="champagne"]{
 }
 
 /* cards: cleaner white-cream cards with stronger border and shadow */
-.off-item,.book-card,.t-card,.contact-item,.contact-form,.coming-box,.faq-wrap,
+.off-item,.book-card,.t-card,.contact-item,.contact-form,.coming-box,
 .philosophy-inner,.book-details,.feature-card,.off-card{
   background:linear-gradient(145deg,#fffdf8 0%,#fffaf2 72%,#f8ead0 100%);
   border:1px solid rgba(159,104,30,.24);
@@ -1307,10 +1307,7 @@ a,
 .off-service,
 .t-card,
 .book-card,
-.contact-item,
-.contact-form,
 .coming-box,
-.faq-wrap,
 .philosophy-inner,
 .about-page-img,
 .about-arch-img-wrap{
@@ -1331,6 +1328,23 @@ a,
   border-radius:50%;
 }
 
+/* FAQ should not have an outer box */
+.faq-wrap{
+  background:transparent!important;
+  border:none!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  overflow:visible!important;
+}
+
+.faq-item{
+  background:transparent!important;
+  border-left:none!important;
+  border-right:none!important;
+  border-top:none!important;
+  border-bottom:1px solid rgba(154,108,31,.18)!important;
+  box-shadow:none!important;
+}
 </style>
 </head>
 <body>
