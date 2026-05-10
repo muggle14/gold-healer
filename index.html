@@ -575,14 +575,19 @@ body::before{
 .page-header::before{
   content:"";position:absolute;inset:0;
   background-image:url('banners_gold/moon_desktop_1920x600.png');
-  background-size:100% 100%;background-position:center;
+  background-size:cover;
+  background-position:center;
+  opacity:1;
+  filter:saturate(1.15) contrast(1.08) brightness(1.02);
 }
+
 .page-header::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(to right,
-    rgba(45,32,24,0.6) 0%,
-    rgba(45,32,24,0.15) 60%,
-    transparent 100%
+  background:linear-gradient(
+    90deg,
+    rgba(255,247,232,.30) 0%,
+    rgba(255,247,232,.14) 42%,
+    rgba(255,247,232,.04) 100%
   );
 }
 .page-header-inner{position:relative;z-index:2}
