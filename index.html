@@ -565,18 +565,23 @@ body::before{
    PAGE HEADER BANNER
 ══════════════════════════ */
 .page-header{
-  height:min(38vh,340px);min-height:220px;
+  height:360px;
+  min-height:360px;
   margin-top:68px;
-  position:relative;overflow:hidden;
-  display:flex;align-items:flex-end;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
   padding:0 4rem 2.5rem;
   background:#f6dfb6;
 }
 .page-header::before{
-  content:"";position:absolute;inset:0;
+  content:"";
+  position:absolute;
+  inset:0;
   background-image:url('banners_gold/moon_desktop_1920x600.png');
   background-size:cover;
-  background-position:center;
+  background-position:center center;
   opacity:1;
   filter:saturate(1.15) contrast(1.08) brightness(1.02);
 }
