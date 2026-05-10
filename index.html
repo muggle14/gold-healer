@@ -704,9 +704,12 @@ body::before{
   font-style:italic;font-size:1.05rem;
 }
 .book-cards{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:1px;background:rgba(154,108,31,.10);
-  max-width:520px;margin:0 auto 3rem;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+  background:transparent;
+  max-width:520px;
+  margin:0 auto 3rem;
 }
 .book-card{border-radius:20px;background:#fffdf8;padding:2rem 1.5rem;text-align:center}
 .book-card .ic{font-size:1.1rem;color:var(--champagne);margin-bottom:0.6rem}
@@ -765,19 +768,66 @@ body::before{
    FAQ
 ══════════════════════════ */
 .faq-section{padding:6rem 2.5rem;background:#fff1cf}
-.faq-wrap{max-width:660px;margin:2.5rem auto 0}
-.faq-item{border-bottom:1px solid rgba(154,108,31,.15)}
-.faq-q{
-  width:100%;background:none;border:none;padding:1.3rem 0;
-  display:flex;justify-content:space-between;align-items:center;
-  cursor:pointer;text-align:left;
+
+.faq-wrap{
+  max-width:660px;
+  margin:2.5rem auto 0;
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  padding:0;
 }
-.faq-q h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--espresso);font-weight:500}
-.faq-q .plus{color:var(--champagne);font-size:1rem;transition:transform 0.3s;flex-shrink:0;margin-left:1.5rem}
+
+.faq-item{
+  border-bottom:1px solid rgba(154,108,31,.18);
+  background:transparent;
+}
+
+.faq-q{
+  width:100%;
+  background:transparent;
+  border:none;
+  padding:1.3rem 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  text-align:left;
+}
+
+.faq-q h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;
+  color:var(--espresso);
+  font-weight:500;
+}
+
+.faq-q .plus{
+  color:var(--champagne);
+  font-size:1rem;
+  transition:transform 0.3s;
+  flex-shrink:0;
+  margin-left:1.5rem;
+}
+
 .faq-item.open .faq-q .plus{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.faq-item.open .faq-a{max-height:200px;padding-bottom:1.2rem}
-.faq-a p{font-size:0.86rem;line-height:1.9;color:var(--taupe)}
+
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.35s ease;
+}
+
+.faq-item.open .faq-a{
+  max-height:200px;
+  padding-bottom:1.2rem;
+}
+
+.faq-a p{
+  font-size:0.86rem;
+  line-height:1.9;
+  color:var(--taupe);
+}
 
 /* ══════════════════════════
    SHOP
@@ -1608,7 +1658,7 @@ footer{
       <div class="book-cards">
         <div class="book-card"><div class="ic">✦</div><h4>One on One</h4><p>Personalized guidance tailored to your soul's needs.</p></div>
         <div class="book-card"><div class="ic">⌛</div><h4>Duration</h4><p>15 mins · 30 mins · 60 mins (varies by offering)</p></div>
-        <div class="book-card"><div class="ic">☾</div><h4>Location</h4><p>Online via Zoom / WhatsApp, or in person.</p></div>
+        <div class="book-card"><div class="ic">☾</div><h4>Location</h4><p>Online via Zoom / WhatsAp.</p></div>
         <div class="book-card"><div class="ic">✧</div><h4>Investment</h4><p>Pricing shared upon booking confirmation.</p></div>
       </div>
       <a class="btn-gold" onclick="window.open('https://calendly.com/','_blank')">Book an Appointment +</a>
