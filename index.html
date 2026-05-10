@@ -1175,13 +1175,16 @@ span[style*="champagne"]{
   background:#f0d9a6;
 }
 .page-header::before{
-  opacity:.58;
+  opacity:.1;
   filter:saturate(.88) sepia(.20) brightness(1.04) contrast(1.08);
 }
 .page-header::after{
-  background:
-    linear-gradient(to right,rgba(36,22,13,.30),rgba(36,22,13,.06),transparent),
-    radial-gradient(circle at center,rgba(255,250,242,.42),rgba(240,217,166,.20));
+  background:linear-gradient(
+    90deg,
+    rgba(255,247,232,.18) 0%,
+    rgba(255,247,232,.08) 42%,
+    rgba(255,247,232,.02) 100%
+  );
 }
 .page-header h1,.page-header-content h1{
   color:#24160d !important;
