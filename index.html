@@ -1518,6 +1518,112 @@ a,
   border-bottom:1px solid rgba(154,108,31,.18)!important;
   box-shadow:none!important;
 }
+
+/* Booking CTA Banner */
+.booking-cta-banner{
+  position:relative;
+  width:100vw;
+  min-height:520px;
+  margin:4rem calc(50% - 50vw);
+  background-image:url('banners_gold/cta-banner-clean2.png');
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+.booking-cta-banner::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(255,247,232,.82) 0%,
+    rgba(255,247,232,.55) 34%,
+    rgba(255,247,232,.16) 62%,
+    rgba(255,247,232,.03) 100%
+  );
+  z-index:1;
+}
+
+.booking-cta-banner::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,247,232,1) 0%,
+    rgba(255,247,232,0) 18%,
+    rgba(255,247,232,0) 82%,
+    rgba(255,247,232,1) 100%
+  );
+  z-index:1;
+}
+
+.booking-cta-content{
+  position:relative;
+  z-index:2;
+  max-width:520px;
+  margin-left:calc((100vw - 1100px) / 2);
+  padding:4rem 2rem;
+  text-align:left;
+}
+
+.booking-cta-content h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.4rem;
+  font-weight:400;
+  line-height:1.05;
+  color:#24160d;
+  margin-bottom:1rem;
+}
+
+.booking-cta-content h2 span{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.booking-cta-content p{
+  font-size:0.78rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:#5f4933;
+  line-height:1.8;
+}
+
+@media(max-width:768px){
+  .booking-cta-banner{
+    min-height:620px;
+    margin:3rem calc(50% - 50vw);
+    background-position:center center;
+    align-items:flex-start;
+  }
+
+  .booking-cta-banner::before{
+    background:linear-gradient(
+      to bottom,
+      rgba(255,247,232,.90) 0%,
+      rgba(255,247,232,.72) 42%,
+      rgba(255,247,232,.18) 100%
+    );
+  }
+
+  .booking-cta-content{
+    max-width:100%;
+    margin-left:0;
+    padding:3rem 1.5rem;
+  }
+
+  .booking-cta-content h2{
+    font-size:2.6rem;
+  }
+
+  .booking-cta-content p{
+    font-size:0.72rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -1882,6 +1988,12 @@ a,
       <div class="s-label" style="justify-content:center;display:flex">Sacred Container</div>
       <div class="book-lead">Ready to Begin Your Journey Inward?</div>
       <p class="book-desc">Each session is a sacred container, uniquely crafted for you and guided by intuition, divine insight, and deep listening.</p>
+  <section class="booking-cta-banner">
+    <div class="booking-cta-content">
+      <h2>Walk Toward Your Light,<br><span>and Leave Your Past Behind.</span></h2>
+      <p>With compassionate energy healing, release what no longer serves you.</p>
+    </div>
+  </section>
       <div class="book-cards">
         <div class="book-card"><div class="ic">✦</div><h4>One on One</h4><p>Personalized guidance tailored to your soul's needs.</p></div>
         <div class="book-card"><div class="ic">⌛</div><h4>Duration</h4><p>15 mins · 30 mins · 60 mins (varies by offering)</p></div>
