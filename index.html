@@ -516,23 +516,29 @@ body::before{
   text-transform:uppercase;color:var(--gold);
   font-weight:700;font-style:normal;
 }
+  
 /* Center: oval portrait */
 .testi-portrait{
-  width:220px;height:280px;
-  border-radius:110px;
-  overflow:hidden;
-  border:1px solid rgba(154,108,31,.20);
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  overflow:visible;
+  border:none;
   margin:0 auto;
   position:relative;
 }
+
 .testi-portrait img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:top center;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
 }
 .testi-moon{
   position:absolute;top:-8px;right:-8px;
   font-size:1.4rem;color:var(--champagne);
 }
+  
 /* Right: newsletter */
 .newsletter-col .s-label{
   display:inline-flex;align-items:center;gap:0.5rem;
@@ -1657,6 +1663,19 @@ a,
     max-width:100%;
   }
 }
+
+/* mobile oval logo */
+@media(max-width:768px){
+  .testi-portrait{
+    width:220px;
+    height:220px;
+  }
+
+  .testi-portrait img{
+    object-fit:contain;
+  }
+}
+  
 </style>
 </head>
 <body>
@@ -1678,6 +1697,7 @@ a,
       <li><a onclick="showPage('testimonials-page')" data-page="testimonials-page">Testimonials</a></li>
       <li><a onclick="showPage('faq-page')" data-page="faq-page">FAQ</a></li>
       <li><a onclick="showPage('shop')" data-page="shop">Shop</a></li>
+      <li><a onclick="showPage('book')" data-page="book">Book a Session</a></li>
       <li><a onclick="showPage('contact')" data-page="contact">Contact</a></li>
     </ul>
     <a class="nav-book" onclick="showPage('book')">Book a Session +</a>
