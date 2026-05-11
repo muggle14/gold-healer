@@ -1623,13 +1623,15 @@ a,
     background-image:url('banners_gold/cta-banner-750x1000.png');
     background-size:cover;
     background-position:center center;
+    background-repeat:no-repeat;
     order:2;
+    z-index:0;
   }
 
   .booking-cta-banner::after{
     background:linear-gradient(to bottom,
       #fff7e8 0%,
-      rgba(255,247,232,0) 18%,
+      rgba(255,247,232,0) 12%,
       rgba(255,247,232,0) 82%,
       #fff7e8 100%
     );
@@ -1638,16 +1640,21 @@ a,
   .booking-cta-content{
     order:1;
     max-width:100%;
-    padding:0 1rem 1.5rem;
+    padding:0 1.5rem 1.4rem;
     text-align:left;
   }
 
   .booking-cta-content h2{
-    font-size:2.3rem;
+    font-size:2rem;
+    line-height:1.08;
+    margin-bottom:1rem;
   }
 
   .booking-cta-content p{
-    font-size:0.7rem;
+    font-size:0.62rem;
+    line-height:1.7;
+    letter-spacing:.12em;
+    max-width:100%;
   }
 }
 </style>
