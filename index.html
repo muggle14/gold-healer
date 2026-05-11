@@ -1382,27 +1382,32 @@ footer{
   .hero p{
     transform:none;
     text-shadow:0 1px 8px rgba(255,247,232,.85);
-  }
-
-  .hero .eyebrow{
-    margin-bottom:1.1rem;
-    display:block;
-  }
+  }  
 
   .hero h1{
     font-size:2.7rem;
     line-height:1.05;
     color:#1f130b;
-    margin-bottom:1.6rem;
   }
 
   .hero p{
     font-size:1rem;
     line-height:1.75;
     color:#2b1b10;
-    margin-bottom:2rem;
   }
 
+  .hero .eyebrow{
+  margin-bottom:1.1rem;
+  display:block;
+}
+
+.hero h1{
+  margin-bottom:1.6rem;
+}
+
+.hero p{
+  margin-bottom:2rem;
+}
   .hero-buttons{
     display:flex;
     flex-direction:column;
@@ -1452,50 +1457,6 @@ footer{
     position:relative;
     z-index:2;
   }
-
-  .booking-cta-banner{
-  width:100vw;
-  min-height:620px;
-  margin:3rem calc(50% - 50vw);
-  background-position:center center;
-  align-items:flex-start;
-}
-
-.booking-cta-banner::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to right,
-    rgba(255,247,232,.72) 0%,
-    rgba(255,247,232,.42) 34%,
-    rgba(255,247,232,.10) 62%,
-    rgba(255,247,232,.02) 100%
-  );
-}
-
-.booking-cta-banner::after{
-  background:linear-gradient(
-    to bottom,
-    rgba(255,247,232,0.01) 0%,
-    rgba(255,247,232,0) 16%,
-    rgba(255,247,232,0) 84%,
-    rgba(255,247,232,0.01) 100%
-  );
-}
-
-.booking-cta-content{
-  max-width:100%;
-  margin-left:0;
-  padding:3rem 1.5rem;
-}
-
-.booking-cta-content h2{
-  font-size:2.6rem;
-}
-
-.booking-cta-content p{
-  font-size:0.72rem;
 }
   
 /* ── GLOBAL ROUNDED EDGES OVERRIDE ── */
@@ -1556,65 +1517,6 @@ a,
   border-top:none!important;
   border-bottom:1px solid rgba(154,108,31,.18)!important;
   box-shadow:none!important;
-}
-
-/* CTA Banner */
-.booking-cta-banner{
-  position:relative;
-  width:100vw;
-  min-height:520px;
-  margin:4rem calc(50% - 50vw);
-  background:
-    linear-gradient(
-      to right,
-      rgba(255,247,232,0.86) 0%,
-      rgba(255,247,232,0.58) 34%,
-      rgba(255,247,232,0.16) 62%,
-      rgba(255,247,232,0.04) 100%
-    ),
-    url('banners_gold/cta-banner-clean2.png');
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-}
-
-.booking-cta-banner::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(255,247,232,0.01) 0%,
-    rgba(255,247,232,0) 18%,
-    rgba(255,247,232,0) 82%,
-    rgba(255,247,232,0.01) 100%
-  );
-}
-
-@media(max-width:768px){
-  .booking-cta-banner{
-    width:100vw;
-    min-height:620px;
-    margin:3rem calc(50% - 50vw);
-    background-position:center center;
-    align-items:flex-start;
-  }
-
-  .booking-cta-banner::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-      to bottom,
-      rgba(255,247,232,0.92) 0%,
-      rgba(255,247,232,0.72) 42%,
-      rgba(255,247,232,0.18) 100%
-    );
-  }
-}
 }
 </style>
 </head>
@@ -1980,24 +1882,12 @@ a,
       <div class="s-label" style="justify-content:center;display:flex">Sacred Container</div>
       <div class="book-lead">Ready to Begin Your Journey Inward?</div>
       <p class="book-desc">Each session is a sacred container, uniquely crafted for you and guided by intuition, divine insight, and deep listening.</p>
-    </div>
-    </section>
-
-    <section class="booking-cta-banner">
-      <div class="booking-cta-content">
-        <h2>Walk Toward Your Light,<br><span>and Leave Your Past Behind.</span></h2>
-        <p>With compassionate energy healing, release what no longer serves you.</p>
+      <div class="book-cards">
+        <div class="book-card"><div class="ic">✦</div><h4>One on One</h4><p>Personalized guidance tailored to your soul's needs.</p></div>
+        <div class="book-card"><div class="ic">⌛</div><h4>Duration</h4><p>15 mins · 30 mins · 60 mins (varies by offering)</p></div>
+        <div class="book-card"><div class="ic">☾</div><h4>Location</h4><p>Online via Zoom / WhatsAp.</p></div>
+        <div class="book-card"><div class="ic">✧</div><h4>Investment</h4><p>Pricing shared upon booking confirmation.</p></div>
       </div>
-    </section>
-  
-    <section class="book-section">
-      <div class="book-inner">
-        <div class="book-cards">
-          <div class="book-card"><div class="ic">✦</div><h4>One on One</h4><p>Personalized guidance tailored to your soul's needs.</p></div>
-          <div class="book-card"><div class="ic">⌛</div><h4>Duration</h4><p>15 mins · 30 mins · 60 mins (varies by offering)</p></div>
-          <div class="book-card"><div class="ic">☾</div><h4>Location</h4><p>Online via Zoom / WhatsApp.</p></div>
-          <div class="book-card"><div class="ic">✧</div><h4>Investment</h4><p>Pricing shared upon booking confirmation.</p></div>
-        </div>
       <a class="btn-gold" onclick="window.open('https://calendly.com/','_blank')">Book an Appointment +</a>
       <p class="book-note">Replace the Calendly URL above with your actual booking link once ready.</p>
     </div>
