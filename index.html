@@ -1518,6 +1518,82 @@ a,
   border-bottom:1px solid rgba(154,108,31,.18)!important;
   box-shadow:none!important;
 }
+
+/* CTA Banner */
+.booking-cta-banner{
+  position:relative;
+  min-height:520px;
+  background-image:url('banners_gold/cta-banner.png');
+  background-size:cover;
+  background-position:center center;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+
+.booking-cta-banner::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(255,247,232,.84) 0%,
+    rgba(255,247,232,.56) 42%,
+    rgba(255,247,232,.12) 100%
+  );
+}
+
+.booking-cta-content{
+  position:relative;
+  z-index:2;
+  max-width:620px;
+  padding:4rem 6rem;
+}
+
+.booking-cta-content h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;
+  line-height:1.05;
+  color:#24160d;
+  margin-bottom:1.2rem;
+}
+
+.booking-cta-content h2 span{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.booking-cta-content p{
+  font-size:0.85rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#5f4933;
+  margin-bottom:2rem;
+}
+
+@media(max-width:768px){
+  .booking-cta-banner{
+    min-height:680px;
+    background-position:center center;
+  }
+
+  .booking-cta-banner::before{
+    background:linear-gradient(
+      to bottom,
+      rgba(255,247,232,.88) 0%,
+      rgba(255,247,232,.68) 48%,
+      rgba(255,247,232,.30) 100%
+    );
+  }
+
+  .booking-cta-content{
+    padding:3rem 1.5rem;
+  }
+
+  .booking-cta-content h2{
+    font-size:2.7rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -1882,10 +1958,16 @@ a,
       <div class="s-label" style="justify-content:center;display:flex">Sacred Container</div>
       <div class="book-lead">Ready to Begin Your Journey Inward?</div>
       <p class="book-desc">Each session is a sacred container, uniquely crafted for you and guided by intuition, divine insight, and deep listening.</p>
+  <section class="booking-cta-banner">
+    <div class="booking-cta-content">
+      <h2>Walk Toward Your Light,<br><span>and Leave Your Past Behind.</span></h2>
+      <p>With compassionate energy healing, realize your transformation.</p>
+    </div>
+  </section>
       <div class="book-cards">
         <div class="book-card"><div class="ic">✦</div><h4>One on One</h4><p>Personalized guidance tailored to your soul's needs.</p></div>
         <div class="book-card"><div class="ic">⌛</div><h4>Duration</h4><p>15 mins · 30 mins · 60 mins (varies by offering)</p></div>
-        <div class="book-card"><div class="ic">☾</div><h4>Location</h4><p>Online via Zoom / WhatsAp.</p></div>
+        <div class="book-card"><div class="ic">☾</div><h4>Location</h4><p>Online via Zoom / WhatsApp.</p></div>
         <div class="book-card"><div class="ic">✧</div><h4>Investment</h4><p>Pricing shared upon booking confirmation.</p></div>
       </div>
       <a class="btn-gold" onclick="window.open('https://calendly.com/','_blank')">Book an Appointment +</a>
