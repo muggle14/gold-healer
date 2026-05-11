@@ -1526,11 +1526,9 @@ a,
   max-width:1100px;
   aspect-ratio:21/9;
   margin:4rem auto;
-  background-image:url('banners_gold/cta-banner-clean2.png');
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  display:flex;
+  background:#fff7e8;
+  display:grid;
+  grid-template-columns:34% 66%;
   align-items:center;
   overflow:hidden;
   border-radius:0;
@@ -1540,15 +1538,15 @@ a,
 .booking-cta-banner::before{
   content:'';
   position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to right,
-    rgba(255,247,232,.88) 0%,
-    rgba(255,247,232,.58) 36%,
-    rgba(255,247,232,.14) 68%,
-    rgba(255,247,232,.03) 100%
-  );
-  z-index:1;
+  top:0;
+  right:0;
+  bottom:0;
+  width:72%;
+  background-image:url('banners_gold/cta-banner-clean2.png');
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  z-index:0;
 }
 
 .booking-cta-banner::after{
@@ -1556,16 +1554,17 @@ a,
   position:absolute;
   inset:0;
   background:
-    linear-gradient(to bottom,
-      #fff7e8 0%,
-      rgba(255,247,232,0) 22%,
-      rgba(255,247,232,0) 76%,
-      #fff7e8 100%
-    ),
     linear-gradient(to right,
       #fff7e8 0%,
+      #fff7e8 27%,
+      rgba(255,247,232,.92) 34%,
+      rgba(255,247,232,.35) 48%,
+      rgba(255,247,232,0) 66%
+    ),
+    linear-gradient(to bottom,
+      #fff7e8 0%,
       rgba(255,247,232,0) 18%,
-      rgba(255,247,232,0) 84%,
+      rgba(255,247,232,0) 82%,
       #fff7e8 100%
     );
   z-index:1;
@@ -1575,15 +1574,15 @@ a,
 .booking-cta-content{
   position:relative;
   z-index:2;
-  max-width:360px;
-  padding:2rem 0 2rem 1.8rem;
+  grid-column:1;
+  max-width:330px;
+  padding-left:2rem;
   text-align:left;
-  transform:translateX(-18px);
 }
 
 .booking-cta-content h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:2.8rem;
+  font-size:2.35rem;
   font-weight:400;
   line-height:1.05;
   color:#24160d;
@@ -1596,37 +1595,49 @@ a,
 }
 
 .booking-cta-content p{
-  font-size:0.7rem;
+  font-size:0.68rem;
   letter-spacing:.13em;
   text-transform:uppercase;
   color:#5f4933;
   line-height:1.8;
-  max-width:340px;
 }
-
+  
 @media(max-width:768px){
   .booking-cta-banner{
-    width:100%;
-    aspect-ratio:4/5;
+    aspect-ratio:auto;
+    min-height:auto;
+    display:flex;
+    flex-direction:column;
     margin:3rem auto;
-    background-size:cover;
-    background-position:center center;
-    align-items:flex-start;
-    border-radius:20px;
+    background:#fff7e8;
   }
 
   .booking-cta-banner::before{
-    background:linear-gradient(
-      to bottom,
-      rgba(255,247,232,.92) 0%,
-      rgba(255,247,232,.72) 44%,
-      rgba(255,247,232,.18) 100%
+    position:relative;
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:750/1000;
+    background-image:url('banners_gold/cta-banner-750x1000.png');
+    background-size:cover;
+    background-position:center center;
+    order:2;
+  }
+
+  .booking-cta-banner::after{
+    background:linear-gradient(to bottom,
+      #fff7e8 0%,
+      rgba(255,247,232,0) 18%,
+      rgba(255,247,232,0) 82%,
+      #fff7e8 100%
     );
   }
 
   .booking-cta-content{
+    order:1;
     max-width:100%;
-    padding:2.5rem 1.5rem;
+    padding:0 1rem 1.5rem;
+    text-align:left;
   }
 
   .booking-cta-content h2{
