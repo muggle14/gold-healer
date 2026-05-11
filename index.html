@@ -1462,11 +1462,15 @@ footer{
 }
 
 .booking-cta-banner::before{
+  content:'';
+  position:absolute;
+  inset:0;
   background:linear-gradient(
-    to bottom,
-    rgba(255,247,232,.92) 0%,
-    rgba(255,247,232,.76) 42%,
-    rgba(255,247,232,.22) 100%
+    to right,
+    rgba(255,247,232,.72) 0%,
+    rgba(255,247,232,.42) 34%,
+    rgba(255,247,232,.10) 62%,
+    rgba(255,247,232,.02) 100%
   );
 }
 
@@ -1493,7 +1497,8 @@ footer{
 .booking-cta-content p{
   font-size:0.72rem;
 }
-  
+
+)
 /* ── GLOBAL ROUNDED EDGES OVERRIDE ── */
 button,
 a,
