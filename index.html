@@ -1533,7 +1533,7 @@ a,
   display:flex;
   align-items:center;
   overflow:hidden;
-  border-radius:22px;
+  border-radius:0;
   box-shadow:none;
 }
 
@@ -1558,14 +1558,14 @@ a,
   background:
     linear-gradient(to bottom,
       #fff7e8 0%,
-      rgba(255,247,232,0) 18%,
-      rgba(255,247,232,0) 82%,
+      rgba(255,247,232,0) 22%,
+      rgba(255,247,232,0) 76%,
       #fff7e8 100%
     ),
     linear-gradient(to right,
       #fff7e8 0%,
-      rgba(255,247,232,0) 12%,
-      rgba(255,247,232,0) 88%,
+      rgba(255,247,232,0) 18%,
+      rgba(255,247,232,0) 84%,
       #fff7e8 100%
     );
   z-index:1;
@@ -1575,9 +1575,10 @@ a,
 .booking-cta-content{
   position:relative;
   z-index:2;
-  max-width:420px;
-  padding:2rem 3rem;
+  max-width:360px;
+  padding:2rem 0 2rem 1.8rem;
   text-align:left;
+  transform:translateX(-18px);
 }
 
 .booking-cta-content h2{
