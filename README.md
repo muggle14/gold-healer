@@ -1,308 +1,170 @@
-# The Cosmic Alchemy — Website README
+# The Cosmic Alchemy — by Garima Sharma
 
-## Overview
+A single-page website for **The Cosmic Alchemy**, a solo spiritual practice offering
+Akashic Records readings, Automatic Writing, Tarot, Astrology, Numerology, Reiki,
+Quantum Healing, Violet Flame Healing, Candle Magic, Inner Child Healing and
+Vaastu Aroma Therapy.
 
-The Cosmic Alchemy is a spiritual and wellness website built for Garima’s offerings, including:
-
-* Akashic Records Readings
-* Automatic Writing
-* Tarot Readings
-* Astrology & Numerology
-* Reiki, Quantum & Violet Flame Healing
-* Candle Magic
-* Spiritual Guidance & Energy Work
-
-The site was designed with a soft luxury spiritual aesthetic using:
-
-* Gold accents
-* Warm cream backgrounds
-* Sacred geometry
-* Responsive mobile-first layouts
-* Cinematic banner sections
-* Elegant serif typography
-
-The project is hosted using GitHub Pages.
+Built as a static HTML/CSS/JS site, no build step, deployable to GitHub Pages.
 
 ---
 
-# Tech Stack
+## Repository layout
 
-## Frontend
-
-* HTML5
-* CSS3
-* Vanilla JavaScript
-
-## Hosting
-
-* GitHub Pages
-
-## Assets
-
-* Custom AI-generated branding
-* Custom banners
-* Spiritual illustration assets
-* Mobile and desktop optimized images
-
----
-
-# Folder Structure
-
-```plaintext
-/
-├── index.html
-├── README.md
-├── assets_gold_v2/
-├── banners_gold/
-├── testimonials/
-├── brand/
-└── other image assets
+```
+.
+├── index.html              ← all markup + inline CSS/JS, the entire site
+├── 404.html                ← styled fallback for GitHub Pages
+├── robots.txt              ← search-engine directives
+├── sitemap.xml             ← lists the in-app sections
+├── .nojekyll               ← tells GitHub Pages to skip Jekyll
+├── assets_gold_v2/         ← offering-card illustrations
+├── banners_gold/           ← hero, page-header, CTA banners
+└── branding/               ← logo and portrait of Garima
 ```
 
+## Branches
+
+| Branch  | Purpose                                                                |
+| ------- | ---------------------------------------------------------------------- |
+| `master`| **Pristine base** — exact clone of the upstream source, untouched.     |
+| `main`  | **Active site** — cleanup, SEO, accessibility, schema, README, 404 etc.|
+
+If you need to compare against the original or roll back a regression, `master`
+is the safety net.
+
 ---
 
-# Branding Notes
+## Run locally
 
-## Brand Name
+The site is plain static HTML. Any static server will do:
 
-The Cosmic Alchemy
+```bash
+# Python (no install needed on macOS)
+python3 -m http.server 8000
 
-## Current Brand Identity
+# or Node
+npx serve .
 
-* Gold spiritual luxury aesthetic
-* Sacred geometry motifs
-* Chakra symbolism
-* Soft cream and champagne palette
-* Elegant serif typography
-
-## Logo Notes
-
-Current logo version uses:
-
-```plaintext
-GARIMA
+# or just open the file
+open index.html
 ```
 
-instead of:
+Then visit <http://localhost:8000>.
 
-```plaintext
-GARIMA SHARMA
+---
+
+## Deploy via GitHub Pages
+
+1. Push to GitHub (already done for branches `master` and `main`).
+2. Repository **Settings → Pages**:
+   - **Source:** *Deploy from a branch*
+   - **Branch:** `main`
+   - **Folder:** `/ (root)`
+3. Save. After ~1 minute the site is live at
+   <https://muggle14.github.io/gold-healer/>.
+
+> ⚠️ **Important — repo visibility.** GitHub Pages on a *private* repository
+> requires a paid plan (Pro / Team / Enterprise). On the Free plan, switch the
+> repo to **Public** (Settings → General → Danger Zone → Change visibility) or
+> Pages will fail to build.
+
+### Custom domain (e.g. `thecosmicalchemy.com`)
+
+1. Add a file named `CNAME` at the repo root containing only the domain:
+   ```
+   www.thecosmicalchemy.com
+   ```
+2. At your DNS registrar, create:
+   - A CNAME record from `www` → `muggle14.github.io`
+   - Four A records for the apex pointing at GitHub's IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153)
+3. In **Settings → Pages**, fill in the custom domain and tick **Enforce HTTPS**.
+4. Also update the canonical/OG URLs inside `index.html` and the URLs in
+   `sitemap.xml`, `robots.txt`, and the JSON-LD schema block.
+
+---
+
+## What to update when content changes
+
+All copy lives inside `index.html`. Use *Find* in your editor to jump to each item.
+
+| What                          | Search for / find in                                                    | Notes                                                                                            |
+| ----------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Booking link**              | `id="primaryBookingCta"`                                                | Currently a `mailto:`. Replace `href` with a Calendly / Cal.com / TidyCal URL when ready.        |
+| **Contact email**             | `hello@thecosmicalchemy.com`                                            | Appears in 8 places: head schema, footer, contact section, FAQ, booking CTA, JS form handler.    |
+| **Social links**              | `class="foot-social"`                                                   | Update Instagram / Facebook / YouTube / WhatsApp URLs in the footer.                             |
+| **WhatsApp number**           | `https://wa.me/`                                                        | Append the international number (e.g. `https://wa.me/919876543210`).                             |
+| **Testimonials (home)**       | `<blockquote>"Garima holds such a powerful…`                            | Replace the home-page quote and `<cite>` attribution.                                            |
+| **Testimonials (page)**       | `class="testi-grid"`                                                    | Three `<div class="t-card">` blocks — edit quote and `who`.                                       |
+| **Offering names / blurbs**   | `class="off-card"` (home carousel) and `class="off-service"` (detail)   | Each modality has both a card on the home page and a long-form entry on the Offerings page.      |
+| **Duration / pricing**        | `class="duration"`                                                      | Inside each `.off-service` block.                                                                |
+| **FAQs**                      | `class="faq-wrap"`                                                      | Add / remove `<div class="faq-item">` blocks.                                                    |
+| **Booking page note**         | `class="book-note"`                                                     | The italic paragraph below the booking button.                                                   |
+| **About / Story copy**        | `<div class="page" id="about">`                                         | About page content.                                                                              |
+| **SEO description / keywords**| `<meta name="description">` / `<meta name="keywords">`                  | In `<head>`.                                                                                     |
+| **OG preview image**          | `<meta property="og:image">`                                            | Defaults to `banners_gold/sun_banner_peacock.png`. Use a 1200×630 image for best results.        |
+| **Site URL (canonical, OG)**  | `https://muggle14.github.io/gold-healer/`                               | Rewrite to your custom domain after DNS is live.                                                 |
+| **Footer year**               | `&copy; 2026`                                                           | Update annually.                                                                                 |
+| **Favicon / logo**            | `branding/brand_v3.png`                                                 | Swap the PNG in `branding/` to change the icon site-wide.                                        |
+
+### How to swap the booking CTA for Calendly
+
+In `index.html`, find:
+
+```html
+<a class="btn-gold" id="primaryBookingCta" href="mailto:hello@thecosmicalchemy.com?...">Book a Session +</a>
 ```
 
-per updated branding direction.
+Replace `href="mailto:…"` with your Calendly URL:
 
----
-
-# Main Website Sections
-
-## Home
-
-Features:
-
-* Hero banner
-* Call-to-action buttons
-* Feature strip
-* Offerings carousel
-* Testimonials
-* Newsletter section
-* Footer
-
-## About
-
-Contains:
-
-* Garima introduction
-* Spiritual philosophy
-* Journey background
-
-## Offerings
-
-Contains:
-
-* Detailed service descriptions
-* Spiritual healing offerings
-* Session information
-* Energy work categories
-
-## Testimonials
-
-Client testimonials and spiritual feedback.
-
-## FAQ
-
-Frequently asked questions related to:
-
-* Booking
-* Sessions
-* Spiritual guidance
-* Healing process
-* Rescheduling
-
-## Contact
-
-Contact form and social/contact information.
-
----
-
-# Responsive Design Notes
-
-The website is optimized for:
-
-* Desktop
-* Tablet
-* Mobile devices
-
-## Key Mobile Adjustments
-
-### CTA Banner
-
-Separate mobile image used:
-
-```plaintext
-cta-banner-750x1000.png
+```html
+<a class="btn-gold" id="primaryBookingCta" href="https://calendly.com/thecosmicalchemy/intro" target="_blank" rel="noopener">Book a Session +</a>
 ```
 
-Desktop image:
-
-```plaintext
-cta-banner-clean2.png
-```
-
-### Mobile Navigation
-
-* Hamburger menu enabled
-* Book a Session link added to mobile dropdown
-
-### Portrait Handling
-
-Brand/testimonial portrait uses:
-
-```css
-object-fit: contain;
-```
-
-to avoid cropping on mobile.
+You may also want to update the four secondary `Book a Session +` buttons in
+the hero, about, philosophy, and testimonials sections, plus all `Book Session →`
+links inside each offering card. Search for `showPage('book')` to find them.
 
 ---
 
-# CTA Banner Notes
+## What was changed in `main` (vs. `master`)
 
-The cinematic CTA banner uses:
+- Added full `<head>` SEO suite: `<title>`, `description`, `keywords`, `canonical`, `robots`, `theme-color`, Open Graph, Twitter cards, favicons, Google Fonts preconnect.
+- Added JSON-LD `ProfessionalService` schema with services and contact point.
+- Fixed `WhatsAp` → `WhatsApp` typo on the booking page.
+- Removed the `Replace the Calendly URL above…` developer placeholder.
+- Filled in the `Answer TBD.` FAQ ("How do I reschedule?") and added a safety-disclaimer FAQ.
+- Standardised all CTAs to `Book a Session +`.
+- Replaced footer `href="#"` social and policy links with real URLs (placeholder Instagram / FB / YT / WhatsApp and `privacy.html` / `terms.html` targets — create those pages when ready).
+- Converted the contact form's fake `<a>` "Send Message" into a real `<form>` with validation that opens a pre-filled `mailto:`.
+- Newsletter form now shows an inline polite message instead of silently doing nothing.
+- Promoted the wrapping `<div class="nav">` to a `<nav>` element; mobile burger menu is a real `<button>` with `aria-expanded` / `aria-controls`.
+- Added `aria-expanded` toggling for every FAQ accordion, `aria-label` for all icon-only buttons (carousel arrows, mobile toggle, social icons, slider dots), and `aria-current="page"` on the active nav link.
+- Added visible focus rings (`:focus-visible`) and an `.sr-only` utility class.
+- Added `loading="lazy"`, `decoding="async"`, and `width`/`height` to all 22 below-fold images.
+- Closed the previously unclosed `.carousel-track` / `.carousel-outer` wrappers.
+- Hash-routing: visiting `/#about` etc. opens the right section; browser back/forward now works.
+- Added `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll`.
 
-* CSS gradients
-* Layer blending
-* Desktop/mobile image swapping
-* Responsive typography
-* Background fade integration
-
-Goal:
-
-Blend the banner naturally into the cream site background without harsh borders.
-
----
-
-# Offerings Carousel Notes
-
-Carousel behavior:
-
-* First cards are informational preview cards
-* Final card links to full offerings page
-
-Reason:
-
-Direct section linking was intentionally simplified to reduce JavaScript complexity and avoid layout instability.
+The visual identity — palette, typography, banners, ornaments — is unchanged.
 
 ---
 
-# Styling Notes
+## Known follow-ups (need real data)
 
-## Main Colors
-
-### Cream Background
-
-```css
-#fff7e8
-```
-
-### Gold Accent
-
-Custom gold variables are used throughout the site.
-
-## Typography
-
-Primary serif font:
-
-```plaintext
-Cormorant Garamond
-```
-
-Used for:
-
-* Headlines
-* CTA sections
-* Elegant spiritual branding
+- [ ] Booking link — Calendly / Cal.com / TidyCal URL (currently `mailto:`).
+- [ ] Real testimonials with names and first-line consent.
+- [ ] Pricing — published either per offering, or as an "investment" sheet.
+- [ ] Payment method — UPI handle / bank details / wire instructions to share at booking confirmation.
+- [ ] Privacy Policy and Terms & Conditions pages (`privacy.html`, `terms.html`).
+- [ ] Real Instagram / Facebook / YouTube / WhatsApp URLs.
+- [ ] A 1200 × 630 Open-Graph image (a dedicated share card looks cleaner than a banner crop).
+- [ ] Optional: Google Business Profile + link from the JSON-LD `sameAs` array.
 
 ---
 
-# Deployment
+## Credits
 
-## GitHub Pages
-
-Typical workflow:
-
-1. Edit locally
-2. Push changes to GitHub
-3. GitHub Pages auto-deploys updates
-
----
-
-# Future Improvements
-
-Potential future additions:
-
-* Third-party booking integration
-* Payment integration
-* Newsletter automation
-* Session scheduling system
-* CMS/blog functionality
-* SEO optimization
-* Analytics integration
-* Testimonials CMS
-* Client portal
-
----
-
-# Maintenance Notes
-
-## Important
-
-When editing:
-
-* Be careful with nested divs and brackets
-* Validate carousel structure after edits
-* Test mobile responsiveness after CSS changes
-* Keep desktop and mobile banner assets separate
-
-## Recommended Testing
-
-Always test:
-
-* Desktop Chrome
-* Mobile Safari
-* Mobile Chrome
-* Responsive dev tools
-
----
-
-# Credits
-
-Website design, layout refinement, responsiveness, and styling were collaboratively developed and refined through iterative design sessions.
-
-Visual direction focuses on:
-
-* Spiritual elegance
-* Warmth
-* Luxury minimalism
-* Sacred symbolism
-* Soft cinematic presentation
-
+Design and original implementation by the upstream author at
+[maand3silva/garima-website](https://github.com/maand3silva/garima-website).
+Cleanup, accessibility, SEO and packaging on `main`.
