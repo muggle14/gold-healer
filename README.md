@@ -93,7 +93,7 @@ All copy lives inside `index.html`. Use *Find* in your editor.
 | What                       | Search for / find in                                   | Notes |
 | -------------------------- | ------------------------------------------------------ | ----- |
 | **Contact email**          | `thecosmicalchemy1111@gmail.com`                       | Appears in head schema, hero, quickbar, services CTA, booking, FAQ, contact, footer, sticky bar, JS handler, privacy/terms. |
-| **Instagram link**         | `instagram.com/p/DXpKWoEE2uf`                          | Used for every "Contact on Instagram" / feedback CTA and the footer icon. Swap for the profile URL if you prefer. |
+| **Instagram link**         | `instagram.com/thecosmicalchemy_garima`               | Profile URL used for every "Contact on Instagram" / feedback CTA and the footer icon. |
 | **Booking link**           | `mailto:thecosmicalchemy1111@gmail.com?subject=Booking` | Currently a pre-filled `mailto:`. Replace with a Calendly / Cal.com / TidyCal URL when ready. |
 | **Service cards**          | `class="svc-card"`                                     | Each modality. Icon is `data-lucide="…"`; copy is in `<h4>` + `<p>`. |
 | **Tools / readings**       | `class="tool-card"`                                    | Pendulum Reading and Lecher Antenna Reading. |
@@ -136,7 +136,7 @@ All copy lives inside `index.html`. Use *Find* in your editor.
 - [ ] Real testimonials — replace the three placeholders with consented Instagram quotes/screenshots.
 - [ ] Pricing — published per offering or as an "investment" sheet.
 - [ ] Payment method — UPI handle / bank details to share at booking confirmation.
-- [ ] Confirm the Instagram link — currently a specific post; swap for the profile URL if preferred.
+- [x] Instagram link — set to the profile `https://www.instagram.com/thecosmicalchemy_garima/`.
 - [ ] A dedicated 1200×630 Open-Graph share image (currently reuses a banner crop).
 - [ ] Optional: artwork for Dragon / Angel / Crystal / Sound if you ever want photographic cards again.
 
