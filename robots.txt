@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thecosmicalchemy.com/sitemap.xml
+Sitemap: https://muggle14.github.io/gold-healer/sitemap.xml
