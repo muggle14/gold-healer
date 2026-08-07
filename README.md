@@ -1,9 +1,9 @@
 # The Cosmic Alchemy — by Garima
 
 A single-page website for **The Cosmic Alchemy**, a solo spiritual practice offering
-**Dragon Healing**, Reiki, Akashic Records, Automatic Writing, Tarot, Astrology,
-Numerology, Violet Flame & Inner Child Healing, Personalized Healing, Candle Magic,
-Vaastu Aroma Therapy, plus **Pendulum** and **Lecher Antenna** readings.
+**Dragon Healing**, Reiki, Automatic Writing, Tarot, Violet Flame, Maa Kali and Inner
+Child Healing, Personalized Healing, Candle Magic, Vaastu Aroma Therapy, plus
+**Pendulum** and **Lecher Antenna** readings.
 
 Built as a static HTML/CSS/JS site, no build step, deployable to GitHub Pages.
 
@@ -18,6 +18,7 @@ service cards inspired by the Dragon Healing reference artwork.
 ```
 .
 ├── index.html              ← all markup + inline CSS/JS, the entire site
+├── staging.html            ← noindex review copy used before production promotion
 ├── privacy.html            ← Privacy Policy (light-luxe styled)
 ├── terms.html              ← Terms & Conditions (light-luxe styled)
 ├── 404.html                ← styled fallback for GitHub Pages
@@ -26,7 +27,8 @@ service cards inspired by the Dragon Healing reference artwork.
 ├── .nojekyll               ← tells GitHub Pages to skip Jekyll
 ├── assets_gold_v2/         ← legacy offering illustrations (kept, no longer referenced)
 ├── banners_gold/           ← legacy banners + OG share image
-└── branding/               ← logo and portrait of Garima (used in hero/about)
+├── branding/               ← web-ready logo derivatives and portrait of Garima
+└── architecture/source/    ← read-only recovered branding source
 ```
 
 > **Note:** the service cards now use inline line-art icons (via [Lucide](https://lucide.dev)),
@@ -57,7 +59,8 @@ npx serve .
 open index.html
 ```
 
-Then visit <http://localhost:8000>.
+Then visit <http://localhost:8000/staging.html> for the staged review page or
+<http://localhost:8000/> for the current production page.
 
 ---
 
@@ -68,21 +71,21 @@ Then visit <http://localhost:8000>.
    - **Source:** *Deploy from a branch*
    - **Branch:** `main` (or `redesign/dark-luxe` while reviewing)
    - **Folder:** `/ (root)`
-3. Save. After ~1 minute the site is live at
-   <https://muggle14.github.io/gold-healer/>.
+3. Save. After the Pages build completes, the site is live at
+   <https://thecosmicalchemy.com/>.
 
 > ⚠️ GitHub Pages on a *private* repository requires a paid plan. On the Free plan,
 > switch the repo to **Public** or Pages will fail to build.
 
-### Custom domain (e.g. `thecosmicalchemy.com`)
+### Custom domain (`thecosmicalchemy.com`)
 
 1. Add a `CNAME` file at the repo root containing only the domain.
 2. At your DNS registrar: a `CNAME` from `www` → `muggle14.github.io`, plus four A
    records for the apex pointing at GitHub's IPs
    (185.199.108.153, .109.153, .110.153, .111.153).
 3. In **Settings → Pages**, set the custom domain and tick **Enforce HTTPS**.
-4. Update the canonical/OG URLs in `index.html` and the URLs in `sitemap.xml`,
-   `robots.txt`, `privacy.html`, `terms.html`, and the JSON-LD schema block.
+4. Keep the canonical, Open Graph, sitemap, robots, policy-page, and JSON-LD URLs
+   aligned with `https://thecosmicalchemy.com/`.
 
 ---
 
@@ -94,17 +97,17 @@ All copy lives inside `index.html`. Use *Find* in your editor.
 | -------------------------- | ------------------------------------------------------ | ----- |
 | **Contact email**          | `thecosmicalchemy1111@gmail.com`                       | Appears in head schema, hero, quickbar, services CTA, booking, FAQ, contact, footer, sticky bar, JS handler, privacy/terms. |
 | **Instagram link**         | `instagram.com/thecosmicalchemy_garima`               | Profile URL used for every "Contact on Instagram" / feedback CTA and the footer icon. |
-| **Booking link**           | `mailto:thecosmicalchemy1111@gmail.com?subject=Booking` | Currently a pre-filled `mailto:`. Replace with a Calendly / Cal.com / TidyCal URL when ready. |
+| **Booking link**           | `wa.me/918095175533`                                   | WhatsApp is the primary booking route; email and Instagram remain available. |
 | **Service cards**          | `class="svc-card"`                                     | Each modality. Icon is `data-lucide="…"`; copy is in `<h4>` + `<p>`. |
 | **Tools / readings**       | `class="tool-card"`                                    | Pendulum Reading and Lecher Antenna Reading. |
-| **Feedback / testimonials**| `class="t-card"`                                       | Three placeholder cards — replace quotes, names, and the service tag with real Instagram feedback. |
+| **Feedback / testimonials**| `class="t-card"`                                       | Publish only consented client feedback; unverified draft cards are excluded. |
 | **Why Choose Us**          | `class="why-card"`                                     | Trust pillars (Calm & Safe, Intuitive, Personalised, Confidential). |
 | **FAQs**                   | `class="faq-item"`                                     | Add / remove items; mirror changes in the FAQ JSON-LD block in `<head>`. |
 | **SEO description/keywords** | `<meta name="description">` / `<meta name="keywords">` | In `<head>`. |
 | **JSON-LD schema**         | `application/ld+json`                                  | `ProfessionalService` + `FAQPage`; keep `serviceType`, `email`, and `sameAs` in sync. |
-| **Site URL (canonical/OG)**| `https://muggle14.github.io/gold-healer/`             | Rewrite to your custom domain after DNS is live. |
+| **Site URL (canonical/OG)**| `https://thecosmicalchemy.com/`                         | The custom domain is the canonical public address. |
 | **Footer year**            | `&copy; 2026`                                          | Update annually. |
-| **Favicon / logo**         | `branding/brand_v3.png`                                | Swap the PNG to change the icon site-wide. |
+| **Favicon / logo**         | `branding/logo-mark.png`                               | Small mark; the hero uses `branding/logo-emblem-gold.png`. |
 
 ---
 
@@ -123,8 +126,8 @@ All copy lives inside `index.html`. Use *Find* in your editor.
   hero, quick bar, services, booking, footer, and a sticky mobile CTA bar.
 - **New sections:** "Why Choose Us" trust pillars and an Instagram-sourced Feedback
   section.
-- **SEO:** rewritten title/description/keywords (Dragon/Reiki/Angel/Crystal/Sound +
-  Pendulum/Lecher + spiritual/energy/intuitive healing), `FAQPage` schema added,
+- **SEO:** rewritten title/description/keywords for the visible service catalogue,
+  Pendulum/Lecher and spiritual/energy/intuitive healing; `FAQPage` schema added,
   updated `ProfessionalService` schema, refreshed `sitemap.xml`, light `theme-color`.
 - **Legal:** added `privacy.html` and `terms.html` (previously broken footer links).
 
@@ -132,13 +135,12 @@ All copy lives inside `index.html`. Use *Find* in your editor.
 
 ## Known follow-ups (need real data)
 
-- [ ] Booking link — Calendly / Cal.com / TidyCal URL (currently `mailto:`).
-- [ ] Real testimonials — replace the three placeholders with consented Instagram quotes/screenshots.
+- [ ] Optional scheduler — Calendly / Cal.com / TidyCal can supplement the current WhatsApp booking flow.
+- [ ] Priya testimonial — publish only after the exact quotation and consent are confirmed.
 - [ ] Pricing — published per offering or as an "investment" sheet.
 - [ ] Payment method — UPI handle / bank details to share at booking confirmation.
 - [x] Instagram link — set to the profile `https://www.instagram.com/thecosmicalchemy_garima/`.
-- [ ] A dedicated 1200×630 Open-Graph share image (currently reuses a banner crop).
-- [ ] Optional: artwork for Dragon / Angel / Crystal / Sound if you ever want photographic cards again.
+- [ ] Confirm whether Crystal Healing is a separately bookable service or a modality used within personalised sessions.
 
 ---
 
