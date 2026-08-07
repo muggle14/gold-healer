@@ -24,6 +24,10 @@ class PageParser(HTMLParser):
         self.ids: list[str] = []
         self.refs: list[str] = []
         self.json_ld: list[str] = []
+        self.missing_image_alt: list[str] = []
+        self.unsafe_blank_links: list[str] = []
+        self.label_targets: set[str] = set()
+        self.form_control_ids: set[str] = set()
         self._in_json_ld = False
         self._json_chunks: list[str] = []
 
@@ -34,6 +38,16 @@ class PageParser(HTMLParser):
         for key in ("href", "src"):
             if attr.get(key):
                 self.refs.append(attr[key] or "")
+        if tag == "img" and "alt" not in attr:
+            self.missing_image_alt.append(attr.get("src") or "unknown image")
+        if tag == "a" and attr.get("target") == "_blank":
+            rel = set((attr.get("rel") or "").split())
+            if "noopener" not in rel:
+                self.unsafe_blank_links.append(attr.get("href") or "unknown link")
+        if tag == "label" and attr.get("for"):
+            self.label_targets.add(attr["for"] or "")
+        if tag in {"input", "textarea", "select"} and attr.get("id"):
+            self.form_control_ids.add(attr["id"] or "")
         if tag == "script" and attr.get("type") == "application/ld+json":
             self._in_json_ld = True
             self._json_chunks = []
@@ -77,6 +91,16 @@ def validate_homepage(page_name: str, production: bool, errors: list[str]) -> No
     if duplicates:
         fail(errors, f"Duplicate HTML ids in {page_name}: {', '.join(duplicates)}")
     validate_local_refs(parser, errors)
+    for ref in parser.refs:
+        if ref.startswith("#") and len(ref) > 1 and ref[1:] not in parser.ids:
+            fail(errors, f"Broken fragment reference in {page_name}: {ref}")
+    if parser.missing_image_alt:
+        fail(errors, f"Images without alt text in {page_name}: {parser.missing_image_alt}")
+    if parser.unsafe_blank_links:
+        fail(errors, f"New-tab links without noopener in {page_name}: {parser.unsafe_blank_links}")
+    unlabelled = sorted(parser.form_control_ids - parser.label_targets)
+    if unlabelled:
+        fail(errors, f"Form controls without associated labels in {page_name}: {unlabelled}")
 
     for index, block in enumerate(parser.json_ld, start=1):
         try:
@@ -167,4 +191,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
