@@ -28,7 +28,8 @@ service cards inspired by the Dragon Healing reference artwork.
 ├── assets_gold_v2/         ← legacy offering illustrations (kept, no longer referenced)
 ├── banners_gold/           ← legacy banners + OG share image
 ├── branding/               ← web-ready logo derivatives and portrait of Garima
-└── architecture/source/    ← read-only recovered branding source
+├── architecture/source/    ← read-only recovered branding source
+└── vendor/lucide/          ← pinned local icon runtime and licence
 ```
 
 > **Note:** the service cards now use inline line-art icons (via [Lucide](https://lucide.dev)),
@@ -107,7 +108,7 @@ All copy lives inside `index.html`. Use *Find* in your editor.
 | **JSON-LD schema**         | `application/ld+json`                                  | `ProfessionalService` + `FAQPage`; keep `serviceType`, `email`, and `sameAs` in sync. |
 | **Site URL (canonical/OG)**| `https://thecosmicalchemy.com/`                         | The custom domain is the canonical public address. |
 | **Footer year**            | `&copy; 2026`                                          | Update annually. |
-| **Favicon / logo**         | `branding/logo-mark.png`                               | Small mark; the hero uses `branding/logo-emblem-gold.png`. |
+| **Favicon / logo**         | `branding/favicon-om-lotus.png`                        | Approved small Om/lotus crop; the hero uses `branding/logo-emblem-gold.png`. |
 
 ---
 
@@ -130,6 +131,8 @@ All copy lives inside `index.html`. Use *Find* in your editor.
   Pendulum/Lecher and spiritual/energy/intuitive healing; `FAQPage` schema added,
   updated `ProfessionalService` schema, refreshed `sitemap.xml`, light `theme-color`.
 - **Legal:** added `privacy.html` and `terms.html` (previously broken footer links).
+- **Reliability:** Lucide is pinned locally at version 1.30.0, the no-JavaScript
+  reveal fallback is active, and public session-duration labels have been removed.
 
 ---
 

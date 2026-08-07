@@ -1,0 +1,8 @@
+{
+  "project": "the-cosmic-alchemy-website",
+  "current_stage": "phase-5-and-6-validation",
+  "release_branch": "redesign/dark-luxe",
+  "production_branch": "main",
+  "public_release_pending": true,
+  "last_checkpoint": "db363da"
+}

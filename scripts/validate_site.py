@@ -4,8 +4,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
+import struct
 import sys
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -16,6 +18,31 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_ORIGIN = "https://thecosmicalchemy.com/"
 HIDDEN_SERVICES = ("Akashic Records", "Astrology Consultation", "Numerology Reading")
+EXPECTED_READMES = (
+    "architecture/README.md",
+    "architecture/decisions/README.md",
+    "architecture/source/README.md",
+    "docs/README.md",
+    "docs/phases/README.md",
+    "docs/stages/README.md",
+    "docs/binary-source-docs/README.md",
+    "src/README.md",
+    "tests/README.md",
+    "scripts/README.md",
+    "data/README.md",
+    "data-drivers/README.md",
+    "archive/README.md",
+    ".goldie/README.md",
+    "configs/README.md",
+    "workspace/README.md",
+)
+EXPECTED_PNGS = {
+    "branding/favicon-om-lotus.png": (480, 480),
+    "branding/favicon-32.png": (32, 32),
+    "branding/favicon-48.png": (48, 48),
+    "branding/apple-touch-icon.png": (180, 180),
+}
+LUCIDE_SHA256 = "8550d4d51d4046fab58c9e9c786bdd62e2a1e917102389f9a94138d2b397c6a0"
 
 
 class PageParser(HTMLParser):
@@ -120,13 +147,18 @@ def validate_homepage(page_name: str, production: bool, errors: list[str]) -> No
         fail(errors, f"Expected 10 public service cards in {page_name}")
     if html.count('class="t-card') != 4:
         fail(errors, f"Expected 4 verified testimonial cards in {page_name}")
-    if html.count("Timing as per the guidance") != 7:
-        fail(errors, f"Expected 7 guidance-based timing labels in {page_name}")
+    for timing_marker in ('class="svc-dur"', "Timing as per the guidance", ">Duration<"):
+        if timing_marker in html:
+            fail(errors, f"Visible timing content remains in {page_name}: {timing_marker}")
     for required in (
         PUBLIC_ORIGIN,
         "branding/logo-emblem-gold.png",
         "branding/logo-mark.png",
+        "branding/favicon-32.png",
+        "branding/favicon-48.png",
+        "branding/apple-touch-icon.png",
         "branding/social-preview.png",
+        "vendor/lucide/lucide.min.js",
         "wa.me/918095175533",
         "tel:+918095175533",
     ):
@@ -171,6 +203,43 @@ def validate_supporting_files(errors: list[str]) -> None:
         fail(errors, "CNAME does not contain the canonical custom domain")
 
 
+def validate_repository_standard(errors: list[str]) -> None:
+    if not (ROOT / "STANDARD.md").exists():
+        fail(errors, "STANDARD.md is missing")
+    for relative_path in EXPECTED_READMES:
+        if not (ROOT / relative_path).exists():
+            fail(errors, f"Required folder README is missing: {relative_path}")
+
+    stage_state_path = ROOT / ".goldie/stage_state.json"
+    try:
+        json.loads(stage_state_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(errors, f"Invalid project stage state: {exc}")
+
+
+def validate_png_assets(errors: list[str]) -> None:
+    for relative_path, expected_size in EXPECTED_PNGS.items():
+        data = (ROOT / relative_path).read_bytes()
+        if data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+            fail(errors, f"Invalid PNG signature: {relative_path}")
+            continue
+        width, height = struct.unpack(">II", data[16:24])
+        colour_type = data[25]
+        if (width, height) != expected_size:
+            fail(errors, f"Unexpected PNG dimensions for {relative_path}: {(width, height)}")
+        if colour_type not in {4, 6}:
+            fail(errors, f"PNG does not contain an alpha channel: {relative_path}")
+
+
+def validate_vendored_dependency(errors: list[str]) -> None:
+    runtime = ROOT / "vendor/lucide/lucide.min.js"
+    digest = hashlib.sha256(runtime.read_bytes()).hexdigest()
+    if digest != LUCIDE_SHA256:
+        fail(errors, f"Lucide runtime integrity mismatch: {digest}")
+    if not (ROOT / "vendor/lucide/LICENSE").exists():
+        fail(errors, "Vendored Lucide licence is missing")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--production", action="store_true", help="Validate index.html")
@@ -180,6 +249,9 @@ def main() -> int:
     errors: list[str] = []
     validate_homepage(page_name, args.production, errors)
     validate_supporting_files(errors)
+    validate_repository_standard(errors)
+    validate_png_assets(errors)
+    validate_vendored_dependency(errors)
 
     if errors:
         for error in errors:
