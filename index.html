@@ -86,6 +86,11 @@
   --gold:#8A5E12;          /* bronze-gold — accent TEXT & small icons (AA on cream/oak) */
   --gold-soft:#E4C77E;     /* soft amber — decorative fills */
   --oak:#D9B56B;           /* oak yellow — decorative fills */
+  --sage:#4E5D42;          /* sage green — Tools & Readings accent (AA on panel/cream) */
+  --sage-soft:#DCE3CE;     /* pale sage — decorative fills */
+  --sage-wash:#EFEDDD;     /* barely-green cream — booking section wash */
+  --plum:#6E4A66;          /* amethyst plum — Feedback accent (AA on panel/cream) */
+  --plum-soft:#EBDDE8;     /* pale plum — decorative fills */
   --copper:#7B4A1E;        /* dark copper — headings */
   --copper-deep:#5E370F;   /* deep copper */
   --text:#3A2817;          /* dark copper-brown — body */
@@ -352,8 +357,25 @@ section{position:relative;z-index:1}
 .testi-note{text-align:center;color:var(--text-2);font-size:14.5px;max-width:560px;margin:8px auto 30px}
 .testi-cta{display:flex;justify-content:center;margin-top:44px}
 
+/* ── section accent variation: sage = Tools & Readings, plum = Feedback ── */
+.tools .eyebrow{color:var(--sage)}
+.tools .flourish i{color:var(--sage)}
+.tools .flourish b{border-color:var(--sage)}
+.tools .flourish span{background:linear-gradient(90deg,transparent,var(--sage-soft))}
+.tools .flourish span:last-child{background:linear-gradient(90deg,var(--sage-soft),transparent)}
+.tools .svc-ic{background:radial-gradient(circle,rgba(122,142,101,.30),rgba(122,142,101,.05) 72%)}
+.tools .svc-ic svg{color:var(--sage)}
+.tool-card:hover{border-color:var(--sage)}
+.testimonials .eyebrow{color:var(--plum)}
+.testimonials .flourish i{color:var(--plum)}
+.testimonials .flourish b{border-color:var(--plum)}
+.testimonials .flourish span{background:linear-gradient(90deg,transparent,var(--plum-soft))}
+.testimonials .flourish span:last-child{background:linear-gradient(90deg,var(--plum-soft),transparent)}
+.t-svc{color:var(--plum)}
+.t-via svg{color:var(--plum)}
+
 /* ════════════ BOOKING ════════════ */
-.booking{padding:var(--sp-sec) 0;text-align:center}
+.booking{padding:var(--sp-sec) 0;text-align:center;background:var(--sage-wash);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
 .booking-lead{font-size:50px;max-width:780px;margin:18px auto 0;color:var(--copper)}
 .booking-lead .accent{color:var(--gold);font-style:italic}
 .booking-desc{color:var(--text-2);max-width:600px;margin:18px auto 46px}
